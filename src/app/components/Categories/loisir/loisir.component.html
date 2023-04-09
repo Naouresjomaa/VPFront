@@ -1,0 +1,52 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="loi">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="banner-content banner-content-ptb text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="category-area pt-100 pb-70 top">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="center-container">
+                <div class="show">
+                    <div class="row" [hidden]=" brandf==0">
+                        <h4 style="color:white;">ACTIVITÉS & SORTIES<br>Evasion hors du salon</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='ACTIVITÉS & SORTIES'">
+                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brando==0">
+                        <h4 class="mt-3">JEUX & LOISIRS<br>Divertissements à la maison</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='JEUX & LOISIRS'">
+                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brands==0">
+                        <h4 class="mt-3">ESCAPADES <br>Séjours avec activités.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='ESCAPADES'">
+                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer-style-two></app-footer-style-two>
+

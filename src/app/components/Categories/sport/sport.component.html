@@ -1,0 +1,52 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="spo">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="banner-content banner-content-ptb text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="category-area pt-100 pb-70 top">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="center-container">
+                <div class="show">
+                    <div class="row" [hidden]=" brandf==0">
+                        <h4 style="color:white;">FITNESS<br>Bien dans son corps, bien dans sa tête</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='FITNESS'">
+                            <img src="https://media.veepee.com/v1/media/95d31698-1a3f-4728-b015-b6658df28012" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brando==0">
+                        <h4 class="mt-3">OUTDOOR<br>Profitez du plein air.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='OUTDOOR'">
+                            <img src="https://media.veepee.com/v1/media/95d31698-1a3f-4728-b015-b6658df28012" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brands==0">
+                        <h4 class="mt-3">SPORTSWEAR <br>Avant l'effort, le style.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='SPORTSWEAR'">
+                            <img src="https://media.veepee.com/v1/media/95d31698-1a3f-4728-b015-b6658df28012" class="img-fluid mx-auto d-block ime" />
+                            <div class="overlay">
+                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer-style-two></app-footer-style-two>
+

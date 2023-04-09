@@ -1,0 +1,122 @@
+<footer class="footer-area footer-bg2">
+    <div class="footer-middle pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <a routerLink="/" class="logo"><img  alt="VENTEPRIVÉE"></a>
+                        <p>Adresse</p>
+                        <ul class="footer-contact-list">
+                            <li>vp test</li>
+                            <li><span>Téléphone :</span> <a href="tel:2151234567"> 215 - 123 - 4567</a></li>
+                            <li><span>Email :</span> <a href="mailto:info@pilar.com"> mail@example.com</a></li>
+                        </ul>
+                        <ul class="social-link">
+                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li>
+                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-widget pl-1">
+                        <h3></h3>
+
+                        <ul class="footer-list">
+                            <li><a routerLink="/"></a></li>
+                            <li><a routerLink="/checkout"></a></li>
+                            <li><a routerLink="/cart"></a></li>
+                            <li><a routerLink="/faq"></a></li>
+                            <li><a routerLink="/login-register"></a></li>
+                            <li><a routerLink="/"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget pl-5">
+                        <h3></h3>
+
+                        <ul class="footer-list">
+                            <li><a routerLink="/about"></a></li>
+                            <li><a routerLink="/listing"></a></li>
+                            <li><a routerLink="/"></a></li>
+                            <li><a routerLink="/faq"></a></li>
+                            <li><a routerLink="/contact"></a></li>
+                            <li><a routerLink="/login-register"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h3>NEWSLETTER</h3>
+                        <p>Pour obtenir les dernières nouvelles et mises à jour de notre part</p>
+                        <div class="footer-form">
+                            <form (ngSubmit)="AddNewsletter()"  [formGroup]="NewsLetterForm">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input name="Email"
+                                                formControlName="Email"
+                                                required=""
+                                                class="form-control
+                                                border"
+                                                placeholder="Email"
+                                                type="email">
+
+                                            <div
+                                                *ngIf="NewsLetterForm.get('Email').invalid
+                                                &&
+                                                (NewsLetterForm.get('Email').dirty
+                                                ||
+                                                NewsLetterForm.get('Email').touched)">
+                                                <div
+                                                    *ngIf="NewsLetterForm.get('Email').errors.required"
+                                                    class="ChampError">
+                                                    Entrez Votre
+                                                    Email
+                                                    SVP !
+                                                </div>
+                                                <div
+                                                *ngIf="NewsLetterForm.get('Email').errors.email"
+                                                class="ChampError">
+                                                Entrez Email Valide !
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit"  class="default-btn">Abonnez-vous</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="copy-right-area copy-right-area-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="copy-right-list">
+                    <ul>
+                        <li><a routerLink="/" target="_blank"></a></li>
+                        <li><a routerLink="/" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8">
+                <div class="copy-right-text text-end">
+                    <p>Copyright @2023 <a href="https://agenceurbancom.fr" target="_blank">Urban Communication</a> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

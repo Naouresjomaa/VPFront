@@ -1,0 +1,79 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="voy">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="banner-content banner-content-ptb text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="category-area pt-100 pb-70 top">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="center-container">
+                <div class="show">
+                    <div class="row" [hidden]="brandc==0">
+                        <h4 style="color:white;">COUPS DE COEUR<br>Pour partir sur un coup de tête (ou pas)</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='COUPS DE COEUR'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brandt==0">                                                                                      
+                        <h4 class="mt-3">TOP 5 DESTINATIONS<br></h4>
+                        <div class="col-md-6 container"  routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='TOP 5 DESTINATIONS'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brande==0">
+                        <h4 class="mt-3">EUROPE ET MÉDITERRANÉE <br>Dépaysement à quelques heures de vol.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='EUROPE ET MÉDITERRANÉE'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brandde==0">
+                        <h4 class="mt-3">DESTINATIONS LOINTAINES <br>
+                            Pour partir loin des clichés.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='DESTINATIONS LOINTAINES'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brandcata==0">
+                        <h4 class="mt-3">CATALOGUE VOYAGE PERMANENT <br>Encore + de destinations et d'hôtels.</h4>
+                        <div class="col-md-6 container"  routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='CATALOGUE VOYAGE PERMANENT'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="brandder==0">
+                        <h4 class="mt-3">DERNIERS JOURS <br>Quelques heures pour profiter de ces ventes.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='DERNIERS JOURS'">
+                            <img src="https://media.veepee.com/v1/media/721616ef-9753-40fd-9f5f-8ad99a285f1c" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer-style-two></app-footer-style-two>

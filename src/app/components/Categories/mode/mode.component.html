@@ -1,0 +1,60 @@
+<app-navbar-style-one></app-navbar-style-one>
+<div class="mod">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="banner-content banner-content-ptb text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="category-area pt-100 pb-70 top">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="center-container">
+                <div class="show">
+                    <div class="row" [hidden]="NbP==0">
+                        <h4 class="mt-3">LE PRÊT-A-PORTER <br>Enfin un dressing qui change tous les matins.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LE PRÊT-A-PORTER'">
+                             <img src="https://media.veepee.com/v1/media/8e895400-2bc2-4b51-bd07-5ec7f50b2595" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="NbC==0">
+                        <h4 class="mt-3">LA CHAUSSURE <br>Repartez du bon pied !</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LA CHAUSSURE'">
+                               <img src="https://media.veepee.com/v1/media/5b987a7a-d08a-460c-a9ff-071e0279cff0" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="NbS==0">
+                        <h4 class="mt-3">LES SACS & ACCESSOIRES <br>Qui font toute la différence.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LES SACS & ACCESSOIRES'">
+                                <img src="https://media.veepee.com/v1/media/5b987a7a-d08a-460c-a9ff-071e0279cff0" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row" [hidden]="NbH==0">
+                        <h4 class="mt-3">L'HOMME <br>Du bleu, du noir et même de la couleur.</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='HOMME'">
+                              <img src="https://media.veepee.com/v1/media/5b987a7a-d08a-460c-a9ff-071e0279cff0" class="img-fluid mx-auto d-block ime" />
+                                <div class="overlay">
+                                    <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer-style-two></app-footer-style-two>
