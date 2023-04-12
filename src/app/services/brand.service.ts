@@ -98,5 +98,4 @@ export class BrandService {
           headers: headers,
         });
       }
-
 }

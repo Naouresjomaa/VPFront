@@ -49,7 +49,7 @@ const routes: Routes = [
     { path: "shop", component: ShopComponent },
     { path: "Panier", component: CartComponent },
     { path: "checkout", component: CheckoutComponent },
-    { path: "products-details", component: ProductsDetailsComponent },
+    { path: "products-details/:id", component: ProductsDetailsComponent },
     { path: "faq", component: FaqComponent },
     { path: "error", component: ErrorComponent },
     { path: "login-register", component: LoginRegisterComponent },

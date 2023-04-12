@@ -1533,7 +1533,7 @@ Banner Form Area
     }
 }
 .inner-bg1 {
-    background-image: url(assets/img/home-three/commande.jpg);
+    background-image: url(assets/img/home-three/panier.jpg);
 }
 .inner-bg2 {
     background-image: url(assets/img/home-three/compte.png);
@@ -5516,10 +5516,15 @@ Shop Details
 .shop-detls-image {
     margin-bottom: 30px;
     border: 1px dashed #eeeeee;
+    border-radius: 20px;
     &:hover {
         border-color: var(--mainColor);
     }
 }
+.shop-detls-image img {
+    border-radius: 20px;
+}
+
 .shop-desc {
     h3 {
         margin-bottom: 12px;

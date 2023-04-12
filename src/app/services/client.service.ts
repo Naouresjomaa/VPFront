@@ -41,6 +41,4 @@ export class ClientService {
           headers: headers,
         });
       }
-
-
 }
