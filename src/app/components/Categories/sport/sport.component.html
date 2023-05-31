@@ -25,6 +25,8 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brando==0">
                         <h4 class="mt-3">OUTDOOR<br>Profitez du plein air.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='OUTDOOR'">
@@ -34,6 +36,8 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brands==0">
                         <h4 class="mt-3">SPORTSWEAR <br>Avant l'effort, le style.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='SPORTSWEAR'">

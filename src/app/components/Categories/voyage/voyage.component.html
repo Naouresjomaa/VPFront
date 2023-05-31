@@ -25,6 +25,8 @@
                                 </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandt==0">                                                                                      
                         <h4 class="mt-3">TOP 5 DESTINATIONS<br></h4>
                         <div class="col-md-6 container"  routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='TOP 5 DESTINATIONS'">
@@ -34,6 +36,8 @@
                                 </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brande==0">
                         <h4 class="mt-3">EUROPE ET MÉDITERRANÉE <br>Dépaysement à quelques heures de vol.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='EUROPE ET MÉDITERRANÉE'">
@@ -43,6 +47,8 @@
                                 </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandde==0">
                         <h4 class="mt-3">DESTINATIONS LOINTAINES <br>
                             Pour partir loin des clichés.</h4>
@@ -53,6 +59,8 @@
                                 </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandcata==0">
                         <h4 class="mt-3">CATALOGUE VOYAGE PERMANENT <br>Encore + de destinations et d'hôtels.</h4>
                         <div class="col-md-6 container"  routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='CATALOGUE VOYAGE PERMANENT'">
@@ -62,6 +70,8 @@
                                 </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandder==0">
                         <h4 class="mt-3">DERNIERS JOURS <br>Quelques heures pour profiter de ces ventes.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='DERNIERS JOURS'">

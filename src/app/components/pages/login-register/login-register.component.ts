@@ -43,7 +43,7 @@ export class LoginRegisterComponent implements OnInit {
                     if (this.response.message == "Vous êtes connecté") {
                         Swal.fire({
                             position: "top-end",
-                            title: "Bienvenue à VentePrivée",
+                            title: "Bienvenue à VentePrivilegiée",
                             text: "",
                             showConfirmButton: false,
                             timer: 3000,
@@ -119,7 +119,7 @@ export class LoginRegisterComponent implements OnInit {
               } else {
                 Swal.fire({
                   position: 'top-end',
-                  title: 'Bienvenue à VentePrivée',
+                  title: 'Bienvenue à VentePrivilegiée',
                   text: '',
                   showConfirmButton: false,
                   timer: 3000,

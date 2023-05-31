@@ -33,7 +33,6 @@ export class CompteComponent implements OnInit {
     }
 
     GetGenre(event: any) {
-        console.log(event.target.value);
     }
 
     UpdateClient() {

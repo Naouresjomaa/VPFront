@@ -1,51 +1,51 @@
 <div class="navbar-area">
     <div class="mobile-nav">
-        <a routerLink="/" class="logo"><img src="" alt="Logo"></a>
+        <a routerLink="/" class="logo"><img src="../../../../assets/img/home-three/logo.webp" alt="Logo"></a>
     </div>
     <div class="main-nav">
         <div class="container-fluid">
-            <nav class="container-max navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" routerLink="/"><img alt="VentePrivée"></a>
+            <nav class="container-max navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" routerLink="/"><img alt="VentePrivée" src="../../../../assets/img/home-three/logo.webp" alt="Logo"></a>
                 <div class="collapse navbar-collapse mean-menu"
                     id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Accueil</a>
+                            <a  [href]="urlloc+'/'" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Mode" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Mode</a>
+                            <a  [href]="urlloc+'/Mode'"  class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Mode</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Maison" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Maison</a>
+                            <a  [href]="urlloc+'/Maison'"  class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Maison</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Voyage" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Voyage</a>
+                            <a  [href]="urlloc+'/Voyage'"  class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Voyage</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Beaute" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Beauté</a>
+                            <a  [href]="urlloc+'/Beaute'" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Beauté</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Gastronomie" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Gastronomie</a>
+                            <a  [href]="urlloc+'/Gastronomie'" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Gastronomie</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Enfant" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Enfant</a>
+                            <a  [href]="urlloc+'/Enfant'"  class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Enfant</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Sport"  class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Sport</a>
+                            <a  [href]="urlloc+'/Sport'" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Sport</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/Loisir" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">Loisir</a>
+                            <a  [href]="urlloc+'/Loisir'"  routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">Loisir</a>
                         </li>
                         <li class="nav-item" [hidden]="Loggedin==true">
-                            <a routerLink="/login-register" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">S'identifier</a>
+                            <a  [href]="urlloc+'/login-register'" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">S'identifier</a>
                         </li>
                         <li class="nav-item" [hidden]="Loggedin==false">
                             <a class="nav-link"
                                 routerLinkActive="active"
                                 [routerLinkActiveOptions]="{exact: true}"><i
-                                    class='bx bx-user-circle'></i> {{userData.UserName}}</a>
+                                    class='bx bx-user-circle'></i> {{Username}}</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/Compte"
+                                <li class="nav-item"><a  [href]="urlloc+'/Compte'"
                                         class="nav-link"
                                         routerLinkActive="active"[routerLinkActiveOptions]="{exact:
                                         true}"><i
@@ -53,35 +53,22 @@
                                         Compte</a></li>
 
                                 <li class="nav-item"><a
-                                        routerLink="/Commande"
+                                        [href]="urlloc+'/Commande'"
                                         class="nav-link"
                                         routerLinkActive="active"[routerLinkActiveOptions]="{exact:
                                         true}"><i
                                             class='bx bx-receipt'></i> Mes
                                         Commandes</a></li>
-
-                                <li class="nav-item"><a
-                                        class="nav-link"
-                                        routerLinkActive="active"[routerLinkActiveOptions]="{exact:
-                                            true}"
-                                        (click)="onLogout($event)"><i
-                                        class='bx bx-log-out-circle'></i>
-                                        Déconnexion</a></li>
                             </ul>
                         </li>
                     </ul>
-
                     <div class="side-nav d-in-line align-items-center mt-2">
                         <div class="side-item" *ngIf="Loggedin==true">
                             <div class="cart-btn">
                                 <a routerLink="/Panier">
                                     <i class="flaticon-shopping-bags"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="side-item">
-                            <div class="search-box">
-                                <i class="flaticon-loupe"></i>
+                                </a>&nbsp;&nbsp;&nbsp;
+                                <a (click)="onLogout($event)"><i class='bx bx-log-out'></i></a>
                             </div>
                         </div>
                     </div>
@@ -104,14 +91,9 @@
                         align-items-center">
                         <div class="side-item" *ngIf="Loggedin==true">
                             <div class="cart-btn">
-                                <a routerLink="/Panier">
+                                <a routerLink="/Panier" >
                                     <i class="flaticon-shopping-bags"></i>
                                 </a>
-                            </div>
-                        </div>
-                        <div class="side-item">
-                            <div class="search-box">
-                                <i class="flaticon-loupe"></i>
                             </div>
                         </div>
                         <div class="side-item" [hidden]="Loggedin==true">

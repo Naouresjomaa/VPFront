@@ -1,11 +1,9 @@
 <app-navbar-style-one></app-navbar-style-one>
-
 <div class="inner-banner brand-bg">
     <div class="container" *ngFor="let b of data">
         <div class="inner-banner-title text-center" >
             <h3 style="color: black;">{{b.BrandName}}</h3>
         </div>
-
         <div class="banner-list">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7">
@@ -14,7 +12,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-5">
-                    <p>30 <a>Produits</a></p>
+                    <p>{{nbrprod}} <a>Produits</a></p>
                 </div>
             </div>
         </div>
@@ -25,130 +23,47 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="listing-section-right">
-                    <h3 class="title"> <i class="flaticon-filter"></i> Filters</h3>
+                    <h3 class="title"> <i class="flaticon-filter"></i> Filtres</h3>
 
                     <div class="listing-right-form">
-                        <form>
+                        <form *ngFor="let p of parametres">
                             <div class="form-group">
-                                <i class='flaticon-filter'></i>
                                 <select class="form-control">
-                                    <option>All Listing Type</option>
-                                    <option>Restaurants</option>
-                                    <option>Events</option>
-                                    <option>Hotels</option>
+                                    <option *ngFor="let c of p.Couleur" value={{c}}>{{c}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <i class='flaticon-loupe'></i>
-                                <input type="text" class="form-control" placeholder="What Are Searching*">
-                            </div>
-                            <div class="form-group">
-                                <i class='flaticon-menu'></i>
-                                <input type="text" class="form-control" placeholder="All Cities">
-                            </div>
-                            <div class="form-group">
-                                <i class='flaticon-list'></i>
                                 <select class="form-control">
-                                    <option>All Category</option>
-                                    <option>Restaurants</option>
-                                    <option>Events</option>
-                                    <option>Hotels</option>
+                                    <option *ngFor="let t of p.Taille" value={{t}}>{{t}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <i class="flaticon-calendar"></i>
-                                <input type="text" class="form-control" placeholder="Date & Time">
+                                <select class="form-control">
+                                    <option *ngFor="let g of p.Genre" value={{g}}>{{g}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option *ngFor="let ga of p.GroupeAge" value={{ga}}>{{ga}}</option>
+                                </select>
                             </div>
                         </form>
                     </div>
-
-                    <div class="facilities-list">
-                        <h3 class="facilities-title"> Facilities</h3>
-                        <ul>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Air Conditioned</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Non-smoking</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Elevator building</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Free Parking</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Pet Friendly</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agree-label">
-                                    <input type="checkbox" id="chb1">
-                                    <label for="chb1">Free WiFi</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="col-lg-12 col-md-12 text-center">
-                        <button type="submit" class="default-btn border-radius">Search Result <i class='bx bx-plus'></i></button>
+                        <button type="submit" class="default-btn border-radius"><i class='bx bx-plus'></i> Recherche</button>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-8">
                 <div class="listing-widget-into">
-                    <div class="row">
-                        <div class="col-lg-9 col-sm-9">
-                            <div class="listing-right-form">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label>Sort by:</label>
-                                    </div>
-                                    <div class="col-lg-7 col-sm-8">
-                                        <div class="form-group">
-                                            <i class='flaticon-filter'></i>
-                                            <select class="form-control">
-                                                <option>All Listing Type</option>
-                                                <option>Restaurants</option>
-                                                <option>Events</option>
-                                                <option>Hotels</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-sm-3">
-                            <ul class="listing-widget-menu">
-                                <li><a routerLink="/listing" class="active"><i class="flaticon-filter"></i></a></li>
-                                <li><a routerLink="/listing"><i class="flaticon-menu"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
                     <div class="row">
                         <div class="col-lg-6 col-md-6 prod" *ngFor="let prod of product">
                             <div class="place-list-item">
                                 <div class="images">
                                     <a routerLink="/products-details/{{prod.id}}" class="images-list"><img src="assets/img/place-list/place-list1.jpg" alt="Images"></a>
-                                    <div class="place-status bg-dark-orange">
+                                  <!--<div class="place-status bg-dark-orange">
                                         <a><h3>Open Now</h3></a>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="content">
                                     <div class="row">
@@ -158,9 +73,14 @@
                                         <div class="col-md-3">
                                             <span><a>{{prod.Prix}}&nbsp;TND</a></span>
                                         </div>
+                                        <div class="col-md-12">
+                                            <a><h3>{{prod.Produit}}</h3></a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <span><a>{{prod.Couleur}}</a></span>
+                                        </div>
                                     </div>
-                                    <a><h3>{{prod.Produit}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prod.Couleur}}&nbsp;&nbsp;{{prod.Taille}}</h3></a>
-                                    <a class="default-btn border-radius">Ajouter au panier</a>
+                                    <a class="default-btn border-radius" type="button" (click)="Topanier(prod)" [hidden]="Loggedin==false"><i class='bx bx-plus'></i> Ajouter au panier</a>
                                 </div>
                             </div>
                         </div>

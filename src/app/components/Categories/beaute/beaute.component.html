@@ -25,6 +25,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandet==0">
                         <h4 class="mt-3">UNE ENVIE EN TÊTE ? <br>Encore plus de façons d'être vous.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='UNE ENVIE EN TÊTE ?'">
@@ -34,6 +36,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandch==0">
                         <h4 class="mt-3">LES CHEVEUX <br>L'expérience salon à la maison.</h4>
                         <div class="col-md-6 container" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LES CHEVEUX'">
@@ -43,6 +47,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandma==0">
                         <h4 class="mt-3">LE MAQUILLAGE <br>La couleur qui vous va au teint.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LES PARFUMS'">
@@ -52,6 +58,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandpar==0">
                         <h4 class="mt-3">LES PARFUMS <br>On vous met au parfum.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='AUJOURD’HUI'">
@@ -61,6 +69,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandsoi==0">
                         <h4 class="mt-3">LES SOINS <br>La crème de la beauté.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LES SOINS'">
@@ -70,6 +80,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandspa==0">
                         <h4 class="mt-3">LE SPA <br>Être ou bien-être, telle est la question.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LE SPA'">
@@ -79,6 +91,8 @@
                                  </div>
                          </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row" [hidden]="brandunib==0">
                         <h4 class="mt-3">LES UNIVERS BEAUTÉ <br>Notre offre disponible toute l'année.</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='LES UNIVERS BEAUTÉ'">

@@ -29,6 +29,7 @@ import { LoisirComponent } from "./components/Categories/loisir/loisir.component
 import { SportComponent } from "./components/Categories/sport/sport.component";
 import { CompteComponent } from "./components/pages/compte/compte.component";
 import { CommandeComponent } from "./components/pages/commande/commande.component";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 const routes: Routes = [
     { path: "", component: HomeThreeComponent },
@@ -46,9 +47,8 @@ const routes: Routes = [
     { path: "about", component: AboutComponent },
     { path: "pricing", component: PricingComponent },
     { path: "category", component: CategoryComponent },
-    { path: "shop", component: ShopComponent },
     { path: "Panier", component: CartComponent },
-    { path: "checkout", component: CheckoutComponent },
+    { path: "checkout/:id", component: CheckoutComponent },
     { path: "products-details/:id", component: ProductsDetailsComponent },
     { path: "faq", component: FaqComponent },
     { path: "error", component: ErrorComponent },
@@ -68,5 +68,6 @@ const routes: Routes = [
         RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" }),
     ],
     exports: [RouterModule],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}]
 })
 export class AppRoutingModule {}

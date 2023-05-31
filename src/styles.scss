@@ -1,6 +1,6 @@
 
 :root {
-    --fontFamily: 'Poppins', sans-serif;
+    --fontFamily: 'SF Pro' , sans-serif;
     --mainColor: #CF4DCE;
     --paragraphColor: #8c8c8c;
     --whiteColor: #ffffff;
@@ -1435,7 +1435,7 @@ Banner Form Area
     z-index: 1;
     position: relative;
     bottom: -40px;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-bottom: 40px;
     .list {
         list-style: none;
@@ -2026,9 +2026,11 @@ Banner Form Area
     margin-bottom: 30px;
     .images {
         position: relative;
+        border-radius: 30px;
         .images-list {
             display: block;
             position: relative;
+
             &::before {
                 content: '';
                 position: absolute;
@@ -2039,11 +2041,12 @@ Banner Form Area
                 width: 100%;
                 height: 100%;
                 background-color: #000000;
+                border-radius: 30px;
                 opacity: 0.5;
             }
             img {
                 width: 100%;
-                border-radius: 5px 0 5px 0;
+                border-radius: 30px;
             }
         }
         .place-profile {
@@ -2129,6 +2132,7 @@ Banner Form Area
         background-color: var(--whiteColor);
         box-shadow: 0 0 15px rgba(102, 102, 102, 0.1);
         padding: 30px 30px 20px 30px;
+        border-radius: 30px;
         &:hover a {
             h3 {
                 color: var(--mainColor);
@@ -2188,6 +2192,7 @@ Banner Form Area
     background-color: var(--whiteColor);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding-bottom: 30px;
+    border-radius: 20px;
     .title {
         font-size: 20px;
         color: var(--titleColor);
@@ -2262,7 +2267,7 @@ Banner Form Area
             color: #7f7f7f;
             border: 1px solid #e8e8e8;
             background-color: #ffffff;
-            border-radius: 0;
+            border-radius: 25px;
             font-size: 14px;
             padding: 10px 20px 10px 40px;
             width: 100%;
@@ -4901,6 +4906,7 @@ Cart Wraps Area
                                 img {
                                     width: 60px;
                                     height: 60px;
+                                    border-radius: 30px;
                                 }
                             }
                         }
@@ -4995,8 +5001,8 @@ Cart Wraps Area
     .cart-totals {
         background: #ffffff;
         padding: 46px;
+        border-radius: 20px;
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
-        border-radius: 0;
         margin: auto;
         margin-top: 50px;
         .default-btn{
@@ -5015,7 +5021,7 @@ Cart Wraps Area
                 border: 1px solid var(--optionalColor);
                 padding: 10px 15px;
                 color: var(--titleColor);
-                border-radius: 25px;
+                border-radius: 10px;
                 overflow: hidden;
                 font-weight: 500;
                 &:first-child {
@@ -5039,6 +5045,7 @@ Cart Wraps Area
     .cart-calc {
         margin-top: 50px;
         background-color: #ffffff;
+        border-radius: 30px;
         padding: 40px;
         box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
         .default-btn{
@@ -5179,6 +5186,7 @@ Checkout Area
 .billing-details {
     margin-bottom: 30px;
     background-color: var(--whiteColor);
+    border-radius: 20px;
     padding: 50px 30px 25px 30px;
     box-shadow: 0 5px 28px rgba(0, 0, 0, 0.07);
     h3 {
@@ -5284,7 +5292,9 @@ Checkout Area
 }
 
 .order-details {
+
     .order-table {
+        border-radius: 20px;
         background-color: var(--whiteColor);
         padding: 50px 30px;
         box-shadow: 0 5px 28px rgba(0, 0, 0, 0.07);
@@ -5364,6 +5374,7 @@ Checkout Area
         }
     }
     .payment-box {
+        border-radius: 20px;
         background-color: var(--whiteColor);
         box-shadow: 0 5px 28px rgba(0, 0, 0, 0.07);
         margin-top: 30px;
@@ -5881,7 +5892,7 @@ Footer Area
     }
 }
 .footer-bg2 {
-    background-color: #2a2a2a;
+    background-color: #000000;
 }
 .footer-top {
     padding-top: 50px;
@@ -6804,10 +6815,9 @@ Preloader CSS
     background: var(--mainColor);
 }
 .spinner {
-    width: 40px;
-    height: 40px;
+    width: 240px;
+    height: 0px;
     border-radius: 5px;
-    background-color: var(--whiteColor);
     margin: 100px auto;
     animation: rotate-in 1.2s infinite ease-in-out;
 }

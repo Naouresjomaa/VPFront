@@ -5,11 +5,6 @@
   .col-md-6 img{
     border-radius: 15px;
   }
-
-  .top{
-    margin-top: -650px;
-  }
-
 @media only screen and (max-width: 600px) {
     .loi{
         background-image:url(../../../../assets/img/home-three/loisirbgmobile.jpg);
@@ -23,6 +18,10 @@
       .text {
         display: none;
       }
+      .top{
+        margin-top: -550px;
+      }
+
   }
   @media only screen and (min-width: 600px) {
     .loi{
@@ -48,6 +47,7 @@
       }
 
       .container{
+        margin-top: -5px;
         position: relative;
         width: 50%;
       }
@@ -72,6 +72,10 @@
         width: 100%;
         height: auto;
       }
+      .top{
+        margin-top: -600px;
+      }
+
   }
   @media only screen and (min-width: 768px) {
     .loi{
@@ -97,6 +101,7 @@
       }
 
       .container{
+        margin-top: -5px;
         position: relative;
         width: 50%;
       }
@@ -121,6 +126,10 @@
         width: 100%;
         height: auto;
       }
+      .top{
+        margin-top: -600px;
+      }
+
   }
   @media only screen and (min-width: 992px) {
     .loi{
@@ -146,6 +155,7 @@
       }
 
       .container{
+        margin-top: -5px;
         position: relative;
         width: 50%;
       }
@@ -170,6 +180,11 @@
         width: 100%;
         height: auto;
       }
+
+      .top{
+        margin-top: -600px;
+      }
+
   }
   @media only screen and (min-width: 1200px) {
     .loi{
@@ -195,6 +210,7 @@
       }
 
       .container{
+        margin-top: -5px;
         position: relative;
         width: 50%;
       }
@@ -219,4 +235,9 @@
         width: 100%;
         height: auto;
       }
+
+      .top{
+        margin-top: -650px;
+      }
+
   }
