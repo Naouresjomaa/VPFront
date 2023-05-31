@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
     response1: any;
     nbrpanier: any;
     livraison: any;
-    lastinvoice:any;
+    lastinvoice: any;
     pl: any;
     constructor(
         private dataservice: DataService,
@@ -45,6 +45,8 @@ export class CartComponent implements OnInit {
                 this.Email = data[0].Email;
                 this.commande.Email = this.Email;
                 this.commande.UserName = this.Username;
+                this.commande.NomClient = data[0].NomComplet;
+                this.commande.Telephone = data[0].Telephone;
             }
             this.panierservice
                 .Getpanier(this.Email, this.Username)
@@ -67,10 +69,15 @@ export class CartComponent implements OnInit {
                     this.commande.Order = this.paniers;
                 });
         });
-        this.commande.RefCommande = "vp"+Math.floor(Math.random() * 10000).toString()
-        this.commande.Heure = formatDate(new Date(), 'h:mm a', 'en');
-        this.commande.Date= formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en');
-        this.commande.Couppons=0;
+        this.commande.RefCommande =
+            "vp" + Math.floor(Math.random() * 10000).toString();
+        this.commande.Heure = formatDate(new Date(), "h:mm a", "en");
+        this.commande.Date = formatDate(
+            new Date(),
+            "MMM d, y",
+            "en"
+        );
+        this.commande.Couppons = 0;
     }
     GetQte(event: any, p: any) {
         let qte = event.target.value;
@@ -237,10 +244,20 @@ export class CartComponent implements OnInit {
         this.commandeservice.CreateCommande(this.commande).subscribe((res) => {
             this.response = res;
             if (this.response.message == "Commande created succefully") {
-               this.commandeservice.LastInvoice(this.commande.Email,this.commande.UserName).subscribe(res=>{
-                 this.lastinvoice=res;
-                 this.router.navigate(['/checkout/'+this.lastinvoice[0].id]);
-               })
+                this.panierservice
+                    .RemoveAllpanier(
+                        this.commande.Email,
+                        this.commande.UserName
+                    )
+                    .subscribe((res) => {});
+                this.commandeservice
+                    .LastInvoice(this.commande.Email, this.commande.UserName)
+                    .subscribe((res) => {
+                        this.lastinvoice = res;
+                        this.router.navigate([
+                            "/checkout/" + this.lastinvoice[0].id,
+                        ]);
+                    });
             } else {
                 Swal.fire({
                     position: "center",

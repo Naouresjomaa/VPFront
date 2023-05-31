@@ -26,6 +26,9 @@ export class PanierService {
     Removepanier(id: any) {
         return this.http.delete(environment.apiurl + "/Deletepanier/" + id);
     }
+    RemoveAllpanier(Email: any, UserName: any) {
+        return this.http.delete(environment.apiurl + "/DeleteAllpanier/" + Email + "/" + UserName);
+    }
     UpdatePanier(id: any, data: PanierModel): Observable<any> {
         const headers = new HttpHeaders();
         return this.http.put(environment.apiurl + "/UpdatePanier/" + id, data, {

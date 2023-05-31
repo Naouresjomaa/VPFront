@@ -13,4 +13,8 @@ export class CommandeModel {
     PrixLivraison: any;
     Couppons: any;
     NetaPayer: any;
+    Telephone:any;
+    Message:any;
+    CodePostal:any;
+    TypePaiement:any;
 }

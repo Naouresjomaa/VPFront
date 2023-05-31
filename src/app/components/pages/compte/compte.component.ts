@@ -31,10 +31,6 @@ export class CompteComponent implements OnInit {
             this.client = this.data[0];
         });
     }
-
-    GetGenre(event: any) {
-    }
-
     UpdateClient() {
         const minLength = 6;
         const hasNumber = /\d/;
