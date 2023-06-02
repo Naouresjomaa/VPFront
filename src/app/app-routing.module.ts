@@ -30,6 +30,7 @@ import { SportComponent } from "./components/Categories/sport/sport.component";
 import { CompteComponent } from "./components/pages/compte/compte.component";
 import { CommandeComponent } from "./components/pages/commande/commande.component";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { ConfirmDeactivateGuard } from "./components/common/confirm-deactivate.guard";
 
 const routes: Routes = [
     { path: "", component: HomeThreeComponent },
@@ -48,7 +49,11 @@ const routes: Routes = [
     { path: "pricing", component: PricingComponent },
     { path: "category", component: CategoryComponent },
     { path: "Panier", component: CartComponent },
-    { path: "checkout/:id", component: CheckoutComponent },
+    {
+        path: "checkout/:id",
+        component: CheckoutComponent,
+        canDeactivate: [ConfirmDeactivateGuard],
+    },
     { path: "products-details/:id", component: ProductsDetailsComponent },
     { path: "faq", component: FaqComponent },
     { path: "error", component: ErrorComponent },
@@ -68,6 +73,6 @@ const routes: Routes = [
         RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" }),
     ],
     exports: [RouterModule],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}]
+    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
 })
 export class AppRoutingModule {}

@@ -7,6 +7,7 @@ import { DataService } from "src/app/services/data.service";
 import { PanierService } from "src/app/services/panier.service";
 import { PanierModel } from "src/app/model/Panier.model";
 import Swal from "sweetalert2";
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
     selector: "app-listing",
     templateUrl: "./listing.component.html",
@@ -32,7 +33,8 @@ export class ListingComponent implements OnInit {
         private brandservice: BrandService,
         private produitservice: ProduitService,
         private dataservice: DataService,
-        private panierservice: PanierService
+        private panierservice: PanierService,
+        private cdr: ChangeDetectorRef
     ) {}
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
@@ -106,6 +108,7 @@ export class ListingComponent implements OnInit {
                                             timer: 3000,
                                             icon: "success",
                                         });
+                                        this.cdr.detectChanges();
                                         this.panier.Produit = "";
                                         this.panier.ProdDetails = [];
                                         this.panier.PrixTotale = 0;

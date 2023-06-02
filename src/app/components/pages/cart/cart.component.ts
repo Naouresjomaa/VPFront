@@ -6,7 +6,6 @@ import { CommandeService } from "src/app/services/commande.service";
 import { DataService } from "src/app/services/data.service";
 import { PanierService } from "src/app/services/panier.service";
 import { ProduitService } from "src/app/services/produit.service";
-import { SharedService } from "src/app/services/shared.service";
 import Swal from "sweetalert2";
 @Component({
     selector: "app-cart",
@@ -30,12 +29,10 @@ export class CartComponent implements OnInit {
         private dataservice: DataService,
         private panierservice: PanierService,
         private produitservice: ProduitService,
-        private sharedservice: SharedService,
         private router: Router,
         private commandeservice: CommandeService
     ) {}
     ngOnInit(): void {
-        this.sharedservice.setCommande(this.commande);
         this.dataservice.auth.subscribe((data) => {
             if (data[0] == false) {
                 this.Loggedin = false;
@@ -72,11 +69,7 @@ export class CartComponent implements OnInit {
         this.commande.RefCommande =
             "vp" + Math.floor(Math.random() * 10000).toString();
         this.commande.Heure = formatDate(new Date(), "h:mm a", "en");
-        this.commande.Date = formatDate(
-            new Date(),
-            "MMM d, y",
-            "en"
-        );
+        this.commande.Date = formatDate(new Date(), "MMM d, y", "en");
         this.commande.Couppons = 0;
     }
     GetQte(event: any, p: any) {

@@ -6812,14 +6812,13 @@ Preloader CSS
     width: 100%;
     height: 100%;
     z-index: 99999;
-    background: var(--mainColor);
+    background: transparent;
 }
 .spinner {
     width: 240px;
     height: 0px;
     border-radius: 5px;
     margin: 100px auto;
-    animation: rotate-in 1.2s infinite ease-in-out;
 }
 /*==================================
 Preloader CSS End

@@ -3,29 +3,32 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { CommandeModel } from "src/app/model/Commande.model";
 import { CommandeService } from "src/app/services/commande.service";
 import { DataService } from "src/app/services/data.service";
-import { SharedService } from "src/app/services/shared.service";
 import Swal from "sweetalert2";
-
+import { ConfirmDeactivate } from "../../common/confirm-deactivate.guard";
+import { Observable } from "rxjs";
 @Component({
     selector: "app-checkout",
     templateUrl: "./checkout.component.html",
     styleUrls: ["./checkout.component.scss"],
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, ConfirmDeactivate {
     livraison: any;
     Loggedin: boolean;
     Username: any;
     Email: any;
     res: any;
     commande: any;
-    response:any;
+    response: any;
     id: any;
     constructor(
         private dataservice: DataService,
         private route: ActivatedRoute,
         private commandeservice: CommandeService,
-        private router: Router,
+        private router: Router
     ) {}
+    canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+        return confirm("Are you sure you want to leave this page?");
+    }
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
         this.dataservice.auth.subscribe((data) => {
@@ -63,23 +66,22 @@ export class CheckoutComponent implements OnInit {
                 timer: 3000,
                 icon: "error",
             });
-        }
-        else{
-            this.commandeservice.UpdateCommande(c.id,c).subscribe(res=>{
-                this.response=res;
-                if(this.response.message=='Commande updated succefully'){
+        } else {
+            this.commandeservice.UpdateCommande(c.id, c).subscribe((res) => {
+                this.response = res;
+                if (this.response.message == "Commande updated succefully") {
                     Swal.fire({
-                        title: 'Vous avez passé votre commande',
-                        text: '',
-                        imageUrl: 'https://us.123rf.com/450wm/gulzarkarimn/gulzarkarimn2305/gulzarkarimn230501954/204599500-flamingo-wearing-sunglasses-on-blue-background-3d-illustration.jpg?ver=6',
+                        title: "Vous avez passé votre commande",
+                        text: "",
+                        imageUrl:
+                            "https://us.123rf.com/450wm/gulzarkarimn/gulzarkarimn2305/gulzarkarimn230501954/204599500-flamingo-wearing-sunglasses-on-blue-background-3d-illustration.jpg?ver=6",
                         imageWidth: 400,
                         imageHeight: 200,
                         timer: 3000,
                         showConfirmButton: false,
-                      })
-                      this.router.navigate(['/Commande']);
-                }
-                else{
+                    });
+                    this.router.navigate(["/Commande"]);
+                } else {
                     Swal.fire({
                         position: "center",
                         title: "Quelque chose n'a pas marché !",
@@ -89,7 +91,7 @@ export class CheckoutComponent implements OnInit {
                         icon: "error",
                     });
                 }
-            })
+            });
         }
     }
 }
