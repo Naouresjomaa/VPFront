@@ -4,7 +4,6 @@ import { HomeThreeComponent } from "./components/pages/home-three/home-three.com
 import { AboutComponent } from "./components/pages/about/about.component";
 import { PricingComponent } from "./components/pages/pricing/pricing.component";
 import { CategoryComponent } from "./components/pages/category/category.component";
-import { ShopComponent } from "./components/pages/shop/shop.component";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
 import { ProductsDetailsComponent } from "./components/pages/products-details/products-details.component";

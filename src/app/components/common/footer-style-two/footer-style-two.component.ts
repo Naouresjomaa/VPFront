@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 })
 export class FooterStyleTwoComponent implements OnInit {
     response: any;
+    urlprod = "http://localhost:4200/#";
+    urlloc = "http://venteprivilegiee.com/#";
     constructor(private clientservice: ClientService, private router: Router) {}
 
     ngOnInit(): void {}

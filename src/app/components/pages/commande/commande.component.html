@@ -22,6 +22,7 @@
                             <th>Prix<br>livraison</th>
                             <th>Coupon</th>
                             <th>Montant<br>à payer</th>
+                            <th>Statut</th>
                         </tr>
                     </thead>
                     <tbody >
@@ -30,7 +31,7 @@
                                 <a>{{c.RefCommande}}</a>
                             </td>
                             <td >
-                                <a>{{c.Date | date:'medium'}}</a>
+                                <a>{{c.Date | date:'mediumDate'}}</a>
                             </td>
                             <td class="product-price">
                                 <span class="unit-amount">{{c.Heure}}</span>
@@ -47,11 +48,14 @@
                             <td class="product-subtotal">
                                 <span class="subtotal-amount">{{c.NetaPayer}} TND</span>
                             </td>
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount" style="color: violet;" *ngIf="c.Statut=='Commandeé'">{{c.Statut}}</span>
+                                <span class="subtotal-amount" style="color: green;" *ngIf="c.Statut=='Livrée'">{{c.Statut}}</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
     </div>
 </section>
-
 <app-footer-style-two></app-footer-style-two>

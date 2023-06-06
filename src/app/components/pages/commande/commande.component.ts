@@ -17,7 +17,6 @@ export class CommandeComponent implements OnInit {
         private dataservice: DataService,
         private commandeservice: CommandeService
     ) {}
-
     ngOnInit(): void {
         this.dataservice.auth.subscribe((data) => {
             if (data[0] == false) {
@@ -32,7 +31,6 @@ export class CommandeComponent implements OnInit {
                 .subscribe((res) => {
                     this.commandes = res;
                     this.nbrcommande = this.commandes.length;
-                    console.log(this.commandes);
                 });
         });
     }

@@ -70,6 +70,7 @@ export class CartComponent implements OnInit {
             "vp" + Math.floor(Math.random() * 10000).toString();
         this.commande.Heure = formatDate(new Date(), "h:mm a", "en");
         this.commande.Date = formatDate(new Date(), "MMM d, y", "en");
+        this.commande.Statut = "Pas Commandée";
         this.commande.Couppons = 0;
     }
     GetQte(event: any, p: any) {

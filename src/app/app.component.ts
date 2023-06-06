@@ -1,48 +1,70 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { filter } from 'rxjs/operators';
+import { Component, HostListener, OnInit } from "@angular/core";
+import {
+    Router,
+    NavigationStart,
+    NavigationCancel,
+    NavigationEnd,
+} from "@angular/router";
+import {
+    Location,
+    LocationStrategy,
+    PathLocationStrategy,
+} from "@angular/common";
+import { filter } from "rxjs/operators";
 declare let $: any;
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.scss"],
     providers: [
-        Location, {
+        Location,
+        {
             provide: LocationStrategy,
-            useClass: PathLocationStrategy
-        }
-    ]
+            useClass: PathLocationStrategy,
+        },
+    ],
 })
 export class AppComponent implements OnInit {
     location: any;
     routerSubscription: any;
 
-    constructor(private router: Router) {
-    }
+    constructor(private router: Router) {}
 
-    ngOnInit(){
+    ngOnInit() {
         this.recallJsFuntions();
     }
 
     recallJsFuntions() {
-        this.router.events
-        .subscribe((event) => {
-            if ( event instanceof NavigationStart ) {
-                $('.preloader').fadeIn('slow');
+        this.router.events.subscribe((event) => {
+            if (event instanceof NavigationStart) {
+                $(".preloader").fadeIn("slow");
             }
         });
         this.routerSubscription = this.router.events
-        .pipe(filter(event => event instanceof NavigationEnd || event instanceof NavigationCancel))
-        .subscribe(event => {
-            $.getScript('../assets/js/custom.js');
-            $('.preloader').fadeOut('slow');
-            this.location = this.router.url;
-            if (!(event instanceof NavigationEnd)) {
-                return;
-            }
-            window.scrollTo(0, 0);
-        });
+            .pipe(
+                filter(
+                    (event) =>
+                        event instanceof NavigationEnd ||
+                        event instanceof NavigationCancel
+                )
+            )
+            .subscribe((event) => {
+                $.getScript("../assets/js/custom.js");
+                $(".preloader").fadeOut("slow");
+                this.location = this.router.url;
+                if (!(event instanceof NavigationEnd)) {
+                    return;
+                }
+                window.scrollTo(0, 0);
+            });
+    }
+    @HostListener("document:contextmenu", ["$event"])
+    onContextMenu(event: Event) {
+        event.preventDefault();
+    }
+    @HostListener("document:keydown.ctrl+shift+i", ["$event"])
+    onDevTools(event: Event) {
+        event.preventDefault();
     }
 }

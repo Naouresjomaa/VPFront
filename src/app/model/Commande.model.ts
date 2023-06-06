@@ -17,4 +17,5 @@ export class CommandeModel {
     Message:any;
     CodePostal:any;
     TypePaiement:any;
+    Statut:any;
 }

@@ -4,14 +4,12 @@ import { CommandeModel } from "src/app/model/Commande.model";
 import { CommandeService } from "src/app/services/commande.service";
 import { DataService } from "src/app/services/data.service";
 import Swal from "sweetalert2";
-import { ConfirmDeactivate } from "../../common/confirm-deactivate.guard";
-import { Observable } from "rxjs";
 @Component({
     selector: "app-checkout",
     templateUrl: "./checkout.component.html",
     styleUrls: ["./checkout.component.scss"],
 })
-export class CheckoutComponent implements OnInit, ConfirmDeactivate {
+export class CheckoutComponent implements OnInit {
     livraison: any;
     Loggedin: boolean;
     Username: any;
@@ -26,9 +24,6 @@ export class CheckoutComponent implements OnInit, ConfirmDeactivate {
         private commandeservice: CommandeService,
         private router: Router
     ) {}
-    canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-        return confirm("Are you sure you want to leave this page?");
-    }
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
         this.dataservice.auth.subscribe((data) => {
@@ -49,6 +44,7 @@ export class CheckoutComponent implements OnInit, ConfirmDeactivate {
         });
     }
     Order(c: CommandeModel) {
+        c.Statut = "Commandéé";
         c.TypePaiement = "Paiement à la livraison";
         if (
             !c.NomClient ||
