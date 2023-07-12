@@ -53,6 +53,7 @@ export class AppComponent implements OnInit {
                 $.getScript("../assets/js/custom.js");
                 $(".preloader").fadeOut("slow");
                 this.location = this.router.url;
+                console.log(this.location);
                 if (!(event instanceof NavigationEnd)) {
                     return;
                 }

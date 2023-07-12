@@ -38,6 +38,7 @@ const routes: Routes = [
     { path: "Enfant", component: EnfantComponent },
     { path: "Beaute", component: BeauteComponent },
     { path: "Voyage", component: VoyageComponent },
+    
     { path: "Gastronomie", component: GastronomieComponent },
     { path: "Loisir", component: LoisirComponent },
     { path: "Sport", component: SportComponent },
