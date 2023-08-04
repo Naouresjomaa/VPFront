@@ -36,9 +36,11 @@
                         <li class="nav-item">
                             <a  [href]="urlloc+'/Loisir'"  routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">Loisir</a>
                         </li>
+                        <!-- s identifier -->
                         <li class="nav-item" [hidden]="Loggedin==true">
                             <a  [href]="urlloc+'/login-register'" routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}" class="nav-link">S'identifier</a>
                         </li>
+                         <!-- user name -->
                         <li class="nav-item" [hidden]="Loggedin==false">
                             <a class="nav-link"
                                 routerLinkActive="active"
@@ -61,7 +63,7 @@
                                         Commandes</a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul>                  
                     <div class="side-nav d-in-line align-items-center mt-2">
                         <div class="side-item" *ngIf="Loggedin==true">
                             <div class="cart-btn">
@@ -72,13 +74,24 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>               
             </nav>
+            <!--search bar-->
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-3">  
+                  <div class="form">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control form-input" placeholder="Recherchez une marque,un produit...">
+                    <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                  </div>               
+                </div>                
+            </div>
+           <!--end search bar-->
         </div>
     </div>
     <div class="side-nav-responsive">
         <div class="container">
-            <div class="dot-menu">
+            <div class="dot-menu"> <!--fel responsive 3 points ykharjou le mot s'identifier-->
                 <div class="circle-inner">
                     <div class="circle circle-one"></div>
                     <div class="circle circle-two"></div>
@@ -108,28 +121,12 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
-    </div>
+    </div>   
 </div>
-<div class="search-overlay">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="search-layer"></div>
-            <div class="search-layer"></div>
-            <div class="search-layer"></div>
-            <div class="search-close">
-                <span class="search-close-line"></span>
-                <span class="search-close-line"></span>
-            </div>
 
-            <div class="search-form">
-                <form>
-                    <input type="text" class="input-search"
-                        placeholder="Recherchez une marque, un produit ...">
-                    <button type="submit"><i class="flaticon-loupe"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
