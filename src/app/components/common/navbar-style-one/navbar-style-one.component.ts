@@ -15,8 +15,8 @@ export class NavbarStyleOneComponent implements OnInit {
     Username: any;
     Email: any;
     auth = [];
-    urlprod = "http://localhost:4200/#";
-    urlloc = "http://venteprivilegiee.com/#";
+    urlloc= "http://localhost:4200/#";
+  //  urlprod = "http://venteprivilegiee.com/#";
     constructor(private router: Router, private dataservice: DataService) {}
     ngOnInit() {
         this.token = localStorage.getItem("isLoggedin");
