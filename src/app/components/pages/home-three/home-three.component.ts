@@ -24,18 +24,21 @@ lb3:any;
   GetAcc1(){
     this.branservice.GetBrandAcc1().subscribe(res=>{
     this.brand1=res;
+    console.log("this.brand1",this.brand1)
     this.lb1 = this.brand1.length;
     })
   }
   GetAcc2(){
     this.branservice.GetBrandAcc2().subscribe(res=>{
     this.brand2=res;
+    console.log("this.brand2",this.brand2)
     this.lb2 = this.brand2.length;
     })
   }
   GetAcc3(){
     this.branservice.GetBrandAcc3().subscribe(res=>{
     this.brand3=res;
+    console.log("this.brand3",this.brand3)
     this.lb3 = this.brand3.length;
     })
   }
