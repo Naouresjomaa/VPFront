@@ -38,41 +38,18 @@ export class ListingComponent implements OnInit {
     ) {}
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
-        this.GetBrand();
-        this.dataservice.auth.subscribe((data) => {
-            if (data[0] == false) {
-                this.Loggedin = false;
-            } else {
-                this.Loggedin = true;
-                this.Username = data[0].UserName;
-                this.Email = data[0].Email;
-                this.panier.UserName = this.Username;
-                this.panier.Email = this.Email;
-            }
-        });
+        this.GetProduitByIdBrand(this.id)
     }
-    GetBrand() {
-        this.brandservice.getBrandByid(this.id).subscribe((res) => {
-            this.data = res;
-            this.produitservice
-                .GetProduitByBrand(
-                    this.data[0].BrandName,
-                    this.data[0].SousCategorie
-                )
-                .subscribe((res) => {
-                    this.product = res;
-                    this.nbrprod = this.product.length;
-                    this.produitservice
-                        .Getparameters(
-                            this.data[0].Categorie,
-                            this.data[0].SousCategorie
-                        )
-                        .subscribe((res) => {
-                            this.parametres = res;
-                        });
-                });
-        });
-    }
+GetProduitByIdBrand(id:any){
+   this.produitservice.GetProduitByIdBrand(id).subscribe(res=>{
+  console.log(res);
+    this.data= res;
+    this.product=res;
+})
+}
+
+
+
     Topanier(prod: any) {
         this.panier.Quantite = 1;
         if (prod.QteDsStock > this.panier.Quantite) {

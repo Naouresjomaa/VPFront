@@ -7,6 +7,7 @@ import { ProduitModel } from "../model/Produit.model";
     providedIn: "root",
 })
 export class ProduitService {
+  
     constructor(private http: HttpClient) {}
     GetProduitByBrand(Brand: any, SousCategorie: any): Observable<any> {
         const headers = new HttpHeaders();
@@ -17,6 +18,20 @@ export class ProduitService {
             }
         );
     }
+
+
+
+    GetProduitByIdBrand(id: any) : Observable<any> {
+        const headers = new HttpHeaders();
+        return this.http.get(
+            environment.apiurl + "/Produit/"+id ,
+            {
+                headers: headers,
+            }
+        );
+    }
+
+
     getProduitByid(id: any): Observable<any> {
         const headers = new HttpHeaders();
         return this.http.get(environment.apiurl + "/Product/" + id, {
