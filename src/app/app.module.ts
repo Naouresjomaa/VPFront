@@ -39,6 +39,13 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CompteComponent } from './components/pages/compte/compte.component';
 import { CommandeComponent } from './components/pages/commande/commande.component';
+import { ShopBrandComponent } from './components/pages/shop-brand/shop-brand.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { NavbarComponent } from './components/common/navbar/navbar.component';
+import { ShopPanierComponent } from './components/pages/shop-panier/shop-panier.component';
+import { ChaussureComponent } from './components/Categories/chaussure/chaussure.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,9 +81,16 @@ import { CommandeComponent } from './components/pages/commande/commande.componen
     GastronomieComponent,
     SportComponent,
     CompteComponent,
-    CommandeComponent
+    CommandeComponent,
+    ShopBrandComponent,
+    HomeComponent,
+    NavbarComponent,
+    ShopPanierComponent,
+    ChaussureComponent
   ],
   imports: [
+    MatButtonModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

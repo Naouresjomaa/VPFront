@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { CommandeModel } from "src/app/model/Commande.model";
 import { CommandeService } from "src/app/services/commande.service";
 import { DataService } from "src/app/services/data.service";
+import { CommandeModel } from "src/app/services/model/Commande.model";
 import Swal from "sweetalert2";
 @Component({
     selector: "app-checkout",
@@ -65,7 +65,7 @@ export class CheckoutComponent implements OnInit {
         } else {
             this.commandeservice.UpdateCommande(c.id, c).subscribe((res) => {
                 this.response = res;
-                if (this.response.message == "Commande updated succefully") {
+                if (this.response.message == "Commande mise à jour avec succès") {
                     Swal.fire({
                         title: "Vous avez passé votre commande",
                         text: "",

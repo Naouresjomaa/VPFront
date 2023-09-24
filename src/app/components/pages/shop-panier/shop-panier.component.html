@@ -1,0 +1,118 @@
+<app-navbar></app-navbar>
+<br><br><br><br><br><br>
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                          
+                            <h6 class="checkout__title">DÉTAILS DE LA FACTURATION</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Prénom<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Nom<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="checkout__input">
+                                <p><span>*</span></p>
+                                <input type="text">
+                            </div> -->
+                            <div class="checkout__input">
+                                <p>Addresse<span>*</span></p>
+                                <input type="text"  class="checkout__input__add">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Ville<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Country/State<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Code Postal<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Téléphone<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                         
+                          
+                            <div class="checkout__input">
+                                <p>Notes d'ordre<span>*</span></p>
+                                <input type="text"
+                                placeholder="Notes d'ordre">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4 class="order__title">VOTRE COMMANDE</h4>
+                                <div class="checkout__order__products">Article <span>Totale</span></div>
+                                <ul class="checkout__total__products">
+                                    <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
+                                    <br>
+                                    <li>02. German chocolate <span>$ 170.0</span></li><br>
+                                    <li>03. Sweet autumn <span>$ 170.0</span></li><br>
+                                    <li>04. Cluten free mini dozen <span>$ 110.0</span></li><br>
+                                </ul>
+                                <ul class="checkout__total__all">
+                                    
+                                    <li>Totale <span >$750.99</span></li>
+                                </ul>
+                               
+                                
+                                <div class="checkout__input__checkbox">
+                                    <h6 class="checkout__title">Choisir la Méthode DE paiement</h6>
+                                    <label for="payment">
+                                        <h6>Paiement à la livraison</h6>
+                                        <input type="checkbox" id="payment"  [checked]="payment" (click)="checked('payment')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="paypal">
+                                        <h6>Paiement en ligne par flousi</h6>
+                                        <input type="checkbox" id="paypal" [checked]="paypal" (click)="checked('paypal')">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            
+                                <button type="submit" class="site-btn">PASSER LA COMMANDE</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <app-footer-style-two></app-footer-style-two>
+    <script src="../shop-brand/js//jquery-3.3.1.min.js"></script>
+    <script src="../shop-brand/js//bootstrap.min.js"></script>
+    <script src="../shop-brand/js//jquery.nice-select.min.js"></script>
+    <script src="../shop-brand/js//jquery.nicescroll.min.js"></script>
+    <script src="../shop-brand/js//jquery.magnific-popup.min.js"></script>
+    <script src="../shop-brand/js//jquery.countdown.min.js"></script>
+    <script src="../shop-brand/js//jquery.slicknav.js"></script>
+    <script src="../shop-brand/js//mixitup.min.js"></script>
+    <script src="../shop-brand/js//owl.carousel.min.js"></script>
+    <script src="../shop-brand/js//main.js"></script>

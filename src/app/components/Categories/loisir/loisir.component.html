@@ -1,56 +1,182 @@
-<app-navbar-style-one></app-navbar-style-one>
-<div class="loi">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="banner-content banner-content-ptb text-center">
-                </div>
+ <!-- Header Section -->
+ <section class="headertop" id="headertop">
+    <div class="headercontainertop">
+        <!-- Hamburger Menu -->
+        <div class="tooltip t">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <span class="humberger-text">Menu</span>
             </div>
-        </div>
-    </div>
-</div>
-<section class="category-area pt-100 pb-70 top">
-    <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-8">
-            <div class="center-container">
-                <div class="show">
-                    <div class="row" [hidden]=" brandf==0">
-                        <h4 style="color:white;">ACTIVITÉS & SORTIES<br>Evasion hors du salon</h4>
-                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='ACTIVITÉS & SORTIES'">
-                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
-                            <div class="overlay">
-                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="row" [hidden]="brando==0">
-                        <h4 class="mt-3">JEUX & LOISIRS<br>Divertissements à la maison</h4>
-                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='JEUX & LOISIRS'">
-                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
-                            <div class="overlay">
-                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="row" [hidden]="brands==0">
-                        <h4 class="mt-3">ESCAPADES <br>Séjours avec activités.</h4>
-                        <div class="col-md-6 container" routerLink="/Brand/{{m.id}}" type="button" *ngFor="let m of brand" [hidden]="m.SousCategorie!='ESCAPADES'">
-                            <img src="https://media.veepee.com/v1/media/a7b80aac-19d7-4782-9d42-f1eccff5a279" class="img-fluid mx-auto d-block ime" />
-                            <div class="overlay">
-                                <p class="text">{{m.BrandName}} <br> Jusqu'à {{m.DateExpiration | date:'longDate'}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<app-footer-style-two></app-footer-style-two>
 
+            <!-- Tooltip for Menu -->
+            <span class="tooltiptext">
+                <h2>Bien le bonjour</h2>
+                <p>Déja membre Veepee?</p>
+                <button class="whitebutton">S'identifier</button>
+                <hr />
+
+                <!-- Menu Items -->
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/home.svg" />
+                    <h1>Accueil</h1>
+                </div>
+                <hr>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/avatar.svg">
+                    <h1>Mon compte</h1>
+                </div>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/cadeau.svg">
+                  <a href="payement.html" > <h1>Mes commandes</h1></a>
+                </div>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/alert.svg">
+                     <h1>Mes communications</h1>
+                </div>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/chat.svg">
+                    <h1>Le Club</h1>
+                </div>
+
+                <hr>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/help.svg">
+                    <h1>Aide et contact</h1>
+                </div>
+
+                <hr>
+                <div class="tooltip-item">
+                    <img src="assets/img/vp/mobile.svg">
+                    <h1>VPMobile</h1>
+                </div>
+
+                <!-- Add more menu items here -->
+            </span>
+        </div>
+
+        <!-- Veepee Logo -->
+        <div class="veeplogo">
+            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo" id="butterfly" />
+        </div>
+
+        <!-- Left Section -->
+        <div class="left">
+            <div>
+                <img src="assets/img/vp/question.png" class="icon" />
+                <p class="navp">Qui sommes-nous?</p>
+            </div>
+            <button class="button">S'identifier</button>
+        </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="navbar">
+        <div class="navlinks">
+            <ul>
+                <li><a href="#" class="titleunderline">Accueil </a></li>
+                <li><a routerLink="/Mode" class="titels"> Mode</a></li>
+                <li><a routerLink="/Chaussure" class="titels"> Chaussures</a></li>
+                <li><a routerLink="/Maison" class="titels">Maison</a></li>
+                <li><a routerLink="/Voyage" class="titels">Voyage</a></li>
+                <li><a routerLink="/Beaute" class="titels">Beauté </a></li>
+                <li><a routerLink="/Sport" class="titels"> Sport</a></li>
+                <li><a routerLink="/Enfant" class="titels"> Enfant</a></li>
+                <li><a routerLink="/Gastronomie" class="titels"> Gastronomie</a></li>
+                <li><a routerLink="/Loisir" class="titels">Loisir</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!-- Header -->
+<header style="background-image: url('../../../../assets/img/home-three/loisirbg.jpg');">
+    <!-- Search Bar -->
+    <div class="search">
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Rechercher une marque, un produit..." />
+            <button class="search-button">
+                <img src="assets/img/vp/search.png" alt="Logo" class="logosearch" />
+            </button>
+        </div>
+    </div>
+
+    
+</header>
+<section class="titlecontainer">
+<div class="title">
+  <h1 class="containertitle">ça va vous plaire</h1>
+  <p class="containerparagraphe">Coup de foudre inévitale</p>
+</div>
+</section>
+<!-- Container for Body Content -->
+<div class="bodycontainer">
+    <!-- Main Content -->
+    <main class="page-content">
+        <div *ngFor="let brand of brands">
+        <div class="card">
+            <div class="content">
+                <img
+                [src]="'http://localhost:3000/image/' + brand.Image" />
+                <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
+            </div>
+        </div>
+    </div>
+        <!-- <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/05b570bd-1bab-418d-90ac-031aa353917f" />
+                <h3 class="copy">Jusqu'au mercredie 20 septembre 2023 06:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/10675226-af3b-429f-935e-c619b5167397" />
+                <h3 class="copy">Jusqu'au mardi 19 septembre 2023 06:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/6b3bcf49-d6cb-4fa3-a2b8-6e7d87947f03 " />
+                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/7b3514bb-7871-47a5-8825-cf34e10f6543 " />
+                <h3 class="copy">Jusqu'au dimache 24 mars 2024 08:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/6f9116af-197e-4f63-bb3b-3fd71969d4af " />
+                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/1b07de54-4c8e-4791-b33e-1ff8abcccdf5 " />
+                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <img src="https://media.veepee.com/v1/media/31e81be7-f6f0-4df1-a185-2b11809cb438 " />
+                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
+            </div>
+        </div> -->
+        
+    </main>
+
+
+
+    
+</div>
+
+
+
+
+<!-- JavaScript Scripts -->
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<script src="./script.js"></script>
+<app-footer-style-two></app-footer-style-two>

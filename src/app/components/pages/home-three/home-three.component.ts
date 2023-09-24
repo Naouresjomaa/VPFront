@@ -13,6 +13,7 @@ brand3:any;
 lb1:any;
 lb2:any;
 lb3:any;
+image:any
   constructor(private branservice:BrandService) { }
 
   ngOnInit(): void {

@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&family=Lato&family=Rubik&family=Tilt+Prism&family=Ubuntu&display=swap");
+:root {
+    --main-color: rgb(237, 43, 153); /* Main color */
+    --background-color: rgba(245, 244, 250, 1); /* Background color */
+  }
+body {
+    font-family: "Ubuntu";
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  
+}
+main {
+    display: flex;
+}
+
+.navbaritems {
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 70px;
+   
+  }
+  .veeplogoo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 450px;
+  }
+  .logoo {
+    width: 150px;
+    height: 120px;
+  }
+  
+  .buttonpanier {
+    display: flex;
+    justify-content: center;
+  }
+  .leftt {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .buttonn {
+    background-color: transparent;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    font-size: 18px;
+    font-weight: 400;
+    border: 1px solid var(--main-color);
+    width: 90px;
+    height: 35px;
+    font-family: "Ubuntu";
+    border-radius: 2px;
+    
+  }
+  
+
+
+.container {
+    background-color: transparent;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  padding-left: 600px;
+    border-radius: 5px;
+}
+.containerr {
+    background-color: transparent;
+    padding: 20px;
+    max-width: 500px;
+    margin: 10px auto;
+  margin-right: -500px;
+    border-radius: 5px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+    height: 40px !important; 
+    padding: 0 10px
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    text-align: left;
+}
+.wi {
+    width: 31%;
+}
+.no-border {
+    border: 1px solid #ccc !important;
+}
+
+.no-border:focus {
+    outline: none; /* Supprime l'effet de focus (surlignage) lorsque l'input est sélectionné */
+}
+
+
+label:focus{
+    position: absolute;
+    left: 0;
+    top: 18px;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    background-color: #fff;
+    margin-left: 10px;
+}
+label{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    background-color: #fff;
+    margin-left: 20px;
+    color: #646363;
+}
+
+input:focus ~ label:focus,
+textarea:focus ~ label:focus,
+input:not(:placeholder-shown) ~ label:focus,
+textarea:not(:placeholder-shown) ~ label:focus {
+    top: -10px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+
+button {
+    background-color: rgb(237, 43, 153);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 500px;
+    height: 50px;
+}
+.haut{
+    font-size: 16px;
+    margin-bottom: 55px;
+    color :rgba(62, 60, 60, 0.845);
+}
+.bas{
+    font-size: 12px;
+    color: #4d4c4ce8;
+    line-height: 18px;
+}
+h2{
+    color: #1d1c1ce7;
+    margin-bottom: 20px;
+}
+.green {
+    color: rgba(69, 143, 69, 0.918);
+}
+
+
+
+
+
+
+
+
+footer {
+    display: block;
+    background-color: white;
+  }
+  .foterbody {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-bottom: 16px;
+    font-family: "HK Grotesk", arial, sans-serif;
+  }
+  .titlefoter {
+    font-weight: 600;
+    padding: 0px 1rem;
+    color: rgba(34, 34, 43, 0.798);
+    display: block;
+  }
+  .footercontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+  }
+  .footeritem {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 1rem;
+    font-weight: 500;
+    color: rgb(70, 70, 80);
+    padding-left: 40px;
+  }
+  .footerp {
+    font-weight: 500;
+    color: rgba(100, 100, 105, 0.914);
+    font-size: 16px;
+  }
+  .logo {
+    width: 150px;
+    height: 120px;
+  }

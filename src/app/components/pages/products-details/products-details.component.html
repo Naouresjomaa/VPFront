@@ -1,74 +1,134 @@
-<app-navbar-style-one></app-navbar-style-one>
-
-<div class="inner-banner inner-bg1">
-    <div class="container">
-        <div class="inner-title text-center" *ngFor="let p of produit">
-            <h3>{{p.Produit}}</h3>
-        </div>
-    </div>
-</div>
-
-<section class="shop-detls ptb-100">
-    <div class="container">
-        <div class="row" *ngFor="let p of produit">
-            <div class="col-lg-6 col-md-12">
-                <div class="shop-detls-image">
-                    <img src="assets/img/products/product-details.jpg" alt="Image">
+<app-navbar></app-navbar>
+<br><br><br><br><br><br>
+   <main *ngIf="produit">
+    <section>
+        <div class="flex-box" >
+            <div class="left">
+                <div  class="big-img">
+                    <img [src]="'http://localhost:3000/image/'+ produit.Image">
+                </div>
+                <div class="images">
+                    <!-- <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/65be0b06-5039-46d0-83a6-d9fb43470f9f" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/268f50d6-8889-48bf-b978-28d864610e6c" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/7769e0a0-bf20-4c2b-97ef-edde33c40395" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/b7939dc7-be0f-491c-ad7c-73564dfc20d8" onclick="showImg(this.src)">
+                    </div> -->
+                   
                 </div>
             </div>
+    
+            <div class="right">
+                
+                <h1>{{produit.Produit}} - {{produit.Couleur}}</h1>
 
-            <div class="col-lg-6 col-md-12" >
-                <div class="shop-desc">
-                    <h3>{{p.Brand}}</h3>
-                    <h3>{{p.Produit}}</h3>
 
-                    <div class="price">
-                        <span class="new-price">{{p.Prix}} TND</span>
-                       <!--<span class="old-price">TND30.00</span>-->
-                    </div>
-                    <div class="shop-review">
-                        <a  class="rating-count">{{p.Couleur}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a  class="rating-count">{{p.Taille}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a  class="rating-count">{{p.Genre}}</a>
-                    </div>
-                    <p>{{p.DetailsP}}</p>
-                    <div class="input-count-area">
-                        <h3>Quantity</h3>
-                        <div class="input-counter">
-                            <span class="minus-btn"><i class='bx bx-minus'></i></span>
-                            <input type="text" min="1" value="1">
-                            <span class="plus-btn"><i class='bx bx-plus'></i></span>
-                        </div>
-                    </div>
-                    <div class="shop-add">
-                        <button type="submit" class="default-btn"><i class="fas fa-cart-plus"></i> Ajouter au Panier</button>
-                    </div>
-                    <div class="tabs_item mt-4">
-                        <div class="shop-detls-tab-content">
-                            <ul class="additional-information">
-                                <li><span>Brand:</span> {{p.Produit}}</li>
-                                <li><span>Color:</span> {{p.Couleur}}</li>
-                                <li><span>Size:</span> {{p.Taille}}</li>
-                                <li><span>Genre:</span> {{p.Genre}}</li>
-                                <li><span>Groupe d'Age:</span> {{p.GroupeAge}}</li>
-                                <li><span>Estimation Livraison:</span> {{p.livraisonestime}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="shop-share">
-                        <ul>
-                            <li><span>Partager:</span></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook' ></i></a></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                            <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                        </ul>
-                    </div>
+               <div class="detail">
+                <div class="price"> <span class="pinkp">{{produit.PrixR}} DNT</span>
+                    <span class="greenspan">-{{produit.Reduction}}%</span></div>
+                <div class="size">
+                   
+                         <span class="greyp">{{produit.Prix}} DNT
+                         </span>  
                 </div>
+              
+               
+               </div>
+               <div class="quantity ">
+                <p>{{produit.DetailsP}}</p>
+                <div class="pname">Les Tailles Disponibles</div>
+                <div class="sizes" >
+                    <div *ngFor="let b of produit.Taille">
+                    <div class="size-box">{{b}}</div>
+                </div>
+                </div>
+                <div class="pname">Choisir La Quantité</div>
+                <div class="quantity-selector">
+                    <button class="quantity-change" id="decrement">-</button>
+                    <input  id="quantity-input" value="1" style="text-align: center">
+                    <button class="quantity-change" id="increment">+</button>
+                </div>
+                
             </div>
 
+                <!-- <div class="btn-box">
+                   <h1>Choisissez votre modèle</h1>
+
+                </div> -->
+                  <!-- <div class="btn-box">
+                   <h1>Choisissez votre modèle</h1>
+
+                </div> -->
+                <div class="flex-boxx">
+                    <div class="left">
+                       
+                        <!-- <div class="imagess">
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/7f27682f-3fb8-48b3-8c7d-f22dfd9e90db" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/9107018b-7c35-4226-b469-8d461f5971af" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/78ff8ee4-ada7-455c-8545-6c8c30b0fd13" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/65be0b06-5039-46d0-83a6-d9fb43470f9f" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/3c920273-4b7a-46bb-a329-ee070ecd28ad" onclick="showImg(this.src)">
+                            </div>
+                           
+                        </div> -->
+                        <div>
+                            <br>
+                            <!-- <div class="navv">
+                            
+                               <label for="touch"><span class="spann">{{ selectedTaille ? selectedTaille : 'Sélectionner une taille' }}</span></label> 
+                             <input type="checkbox" id="touch">
+                            
+                              <ul class="slidee" *ngFor="let b of produit.Taille">
+                                <li style="cursor: pointer;" (click)="selectTaille(b)">{{b}}</li>
+                              
+                              </ul> 
+                              
+                             <select class="slidee" class="form-select form-select-sm mb-6" [(ngModel)]="selectedTaille" [ngModelOptions]="{standalone: true}">
+                                <option disabled selected hidden [value]="">Sélectionner une taille</option>
+                                  <option *ngFor="let b of produit.Taille" [value]="b">{{ b}}</option>
+                                </select>
+                            
+                            </div> -->
+
+        
+                    </div>
+                        <br>
+                    <button class="pinkbutton" (click)="Topanier(produit)">Ajouter au panier</button>
+                    <br>
+                    <p>Vendu et expédié par <span style="color: rgba(211, 16, 84, 0.794);">Vente Privilégié</span>
+
+
+                    </p>
+                    </div>
+
+                    <!--------dropdown size-->
+               
+        </div>
         </div>
     </div>
-</section>
+    </section>
+</main>
+  <script>
+    let bigImg = document.querySelector('.big-img img');
+function showImg(pic){
+    bigImg.src = pic;
+}
+  </script>
+  <app-footer-style-two></app-footer-style-two>
 
-<app-footer-style-two></app-footer-style-two>
+

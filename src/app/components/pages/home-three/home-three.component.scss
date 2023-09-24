@@ -1,16 +1,38 @@
 .col-md-6{
     margin-top: 3%;
   }
+  .form-input {
+    border-radius: 25px; /* Adjust this as needed */
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.5); /* This replaces the default blue glow when the input is focused. Adjust color as needed */
+}
   .col-md-6 img{
     border-radius: 15px;
   }
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;  /* Adjust as per your requirement */
+    transform: translateY(-50%);
+    color: gray; /* Change icon color as per your requirement */
+}
+  .colo{
+    color: #0a0a0a !important;
+}
+.rad{
+  border-radius: 50%;
+}
 @media only screen and (max-width: 600px) {
     .Acc{
-        background-image:url(../../../../assets/img/home-three/homebgmobile.jpg);
+        background-image:url(../../../../assets/img/home-three/vp__home.png);
         background-size: cover;
         background-position: center top;
         background-repeat:
-        no-repeat; height: 100vh;
+        no-repeat; height: 80vh;
         padding-top: 120px;
         padding-bottom: 120px;
       }
@@ -23,11 +45,11 @@
   }
   @media only screen and (min-width: 600px) {
     .Acc{
-        background-image:url(../../../../assets/img/home-three/homebg.jpg);
+        background-image:url(../../../../assets/img/home-three/vp__home.png);
         background-size: cover;
         background-position: center top;
         background-repeat:
-        no-repeat; height: 100vh;
+        no-repeat; height: 80vh;
         padding-top: 120px;
         padding-bottom: 120px;
       }
@@ -73,11 +95,11 @@
   }
   @media only screen and (min-width: 768px) {
     .Acc{
-        background-image:url(../../../../assets/img/home-three/homebg.jpg);
+        background-image:url(../../../../assets/img/home-three/vp__home.png);
         background-size: cover;
         background-position: center top;
         background-repeat:
-        no-repeat; height: 100vh;
+        no-repeat; height: 80vh;
         padding-top: 120px;
         padding-bottom: 120px;
       }
@@ -123,11 +145,11 @@
   }
   @media only screen and (min-width: 992px) {
     .Acc{
-        background-image:url(../../../../assets/img/home-three/homebg.jpg);
+        background-image:url(../../../../assets/img/home-three/vp__home.png);
         background-size: cover;
         background-position: center top;
         background-repeat:
-        no-repeat; height: 100vh;
+        no-repeat; height: 80vh;
         padding-top: 120px;
         padding-bottom: 120px;
       }
@@ -173,11 +195,11 @@
   }
   @media only screen and (min-width: 1200px) {
     .Acc{
-        background-image:url(../../../../assets/img/home-three/homebg.jpg);
+        background-image:url(../../../../assets/img/home-three/vp__home.png);
         background-size: cover;
         background-position: center top;
         background-repeat:
-        no-repeat; height: 100vh;
+        no-repeat; height: 80vh;
         padding-top: 120px;
         padding-bottom: 120px;
       }
@@ -220,4 +242,9 @@
       .top{
         margin-top: -650px;
       }
+  }
+  .row{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }

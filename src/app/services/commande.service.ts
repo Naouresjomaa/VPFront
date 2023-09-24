@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
-import { CommandeModel } from "../model/Commande.model";
+import { CommandeModel } from "./model/Commande.model";
 @Injectable({
     providedIn: "root",
 })
@@ -47,5 +47,11 @@ export class CommandeService {
                 headers: headers,
             }
         );
+    }
+    sendOrderEmail() {
+        const headers = new HttpHeaders();
+        return this.http.post(environment.apiurl + "/send-email",{
+            headers: headers,
+        });
     }
 }

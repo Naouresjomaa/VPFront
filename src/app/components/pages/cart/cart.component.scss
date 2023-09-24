@@ -1,8 +1,35 @@
-.container{
-    border-radius: 30px;
+
+
+.primary-btn{
+  background-color:  rgb(237, 43, 153) !important; 
+  color: white !important;
 }
-.form-control{
-    border-radius: 30px !important;
-    margin-right: 120px;
-    width: 100px;
+.button{
+  background-color:  rgb(237, 43, 153) !important;   
+  color: white !important;
+}
+// .input{
+//   padding: 0 px  !important;
+// }
+
+.cart__discount form button {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: rgb(237, 43, 153) !important;
+	padding: 0 30px;
+	border: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+
+.product__cart__item__pic{
+  max-width: 100px;
+}
+.continue__btn a{
+  color: rgb(237, 43, 153) !important;
 }

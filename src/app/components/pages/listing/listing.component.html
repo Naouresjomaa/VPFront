@@ -1,94 +1,232 @@
-<app-navbar-style-one></app-navbar-style-one>
-<div class="inner-banner brand-bg">
-    <div class="container" *ngFor="let b of data">
-        <div class="inner-banner-title text-center" >
-            <h3 style="color: black;">{{b.BrandName}}</h3>
-        </div>
-        <div class="banner-list">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-7">
-                    <ul class="list">
-                Jusqu'à {{b.DateExpiration  | date:'longDate'}}
-                    </ul>
+<section>
+    <section class="navbaritems">
+        <!-- Hamburger Menu -->
+        <div class="headercontainertop">
+            <div class="tooltip t">
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <span class="humberger-text">Menu</span>
+                  
                 </div>
-                <div class="col-lg-6 col-md-5">
-                    <p>{{nbrprod}} <a>Produits</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="listing-widget-section pt-100 pb-70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="listing-section-right">
-                    <h3 class="title"> <i class="flaticon-filter"></i> Filtres</h3>
+                <div>
+              <input type="text" placeholder="     Rechercher une marque, un product ..." class="inputt">
+              <img src="/assets/img/vp//searchnav.svg" alt="" class="inputimg">
+             </div>
+                <!-- Tooltip for Menu -->
+                <span class="tooltiptext">
+                   
 
-                    <div class="listing-right-form">
-                        <form *ngFor="let p of parametres">
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option *ngFor="let c of p.Couleur" value={{c}}>{{c}}</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option *ngFor="let t of p.Taille" value={{t}}>{{t}}</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option *ngFor="let g of p.Genre" value={{g}}>{{g}}</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control">
-                                    <option *ngFor="let ga of p.GroupeAge" value={{ga}}>{{ga}}</option>
-                                </select>
-                            </div>
-                        </form>
+                    <!-- Menu Items -->
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp//home.svg" />
+                        <h1>Accueil</h1>
                     </div>
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <button type="submit" class="default-btn border-radius">Recherche</button>
+                    <hr>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp//avatar.svg">
+                        <h1>Mon compte</h1>
                     </div>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp//cadeau.svg">
+                        <a href="payement.html">
+                            <h1>Mes commandes</h1>
+                        </a>
+                    </div>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp//alert.svg">
+                        <h1>Mes communications</h1>
+                    </div>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp//chat.svg">
+                        <h1>Le Club</h1>
+                    </div>
+
+                    <hr>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp/help.svg">
+                        <h1>Aide et contact</h1>
+                    </div>
+
+                    <hr>
+                    <div class="tooltip-item">
+                        <img src="/assets/img/vp/mobile.svg">
+                        <h1>VPMobile</h1>
+                    </div>
+
+                    <!-- Add more menu items here -->
+                </span>
+            </div>
+
+
+
+            <!-- Veepee Logo -->
+            <div class="veeplogoo">
+                <img src="/assets/img/vp/midlelogo.jpg" alt="logo" class="logoo" id="butterfly" />
+            </div>
+
+            <!-- Left Section -->
+            <div class="leftt">
+                <div class="iconsnav">
+                    <img src="/assets/img/vp/parrainage.svg" class="iconn" />
+                    <a href="parrainage.html">
+                        <p class="navpp">Parrainage</p>
+                    </a>
+                </div>
+                
+
+                <button class="buttonn">
+                    <div class="buttonpanier">
+                        <a routerLink="/Panier"><img src="/assets/img/vp/panier.svg" id="my_image" ></a>
+                        Panier
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+
+
+    <!-- Navigation Links -->
+    <nav class="navbarr">
+        <div>
+
+            <ul class="navlinkss">
+                <li><a href="#" class="titleunderlinee">Accueil </a></li>
+                <li><a href="#" class="titels"> Mode</a></li>
+                <li><a href="#" class="titels"> Chaussures</a></li>
+                <li><a href="#" class="titels">Maison</a></li>
+                <li><a href="#" class="titels">Voyage</a></li>
+                <li><a href="#" class="titels">Beauté </a></li>
+                <li><a href="#" class="titels"> Sport</a></li>
+                <li><a href="#" class="titels"> Enfant</a></li>
+                <li><a href="#" class="titels">Loisir</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <hr>
+</section>
+
+<hr>
+
+
+
+  
+
+<!-----------------main--------->
+   <main *ngIf="product">
+    <section>
+        <div class="flex-box" >
+            <div class="left">
+                <div  class="big-img">
+                    <img [src]="'http://localhost:3000/image/'+ product.Image">
+                </div>
+                <div class="images">
+                    <!-- <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/65be0b06-5039-46d0-83a6-d9fb43470f9f" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/268f50d6-8889-48bf-b978-28d864610e6c" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/7769e0a0-bf20-4c2b-97ef-edde33c40395" onclick="showImg(this.src)">
+                    </div>
+                    <div class="small-img">
+                        <img src="https://media.veepee.com/v1/media/b7939dc7-be0f-491c-ad7c-73564dfc20d8" onclick="showImg(this.src)">
+                    </div> -->
+                   
                 </div>
             </div>
-            <div class="col-lg-8">
-                <div class="listing-widget-into">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 prod" *ngFor="let prod of product">
-                            <div class="place-list-item">
-                                <div class="images">
-                                    <a routerLink="/products-details/{{prod.id}}" class="images-list"><img src="https://www.coiffure-lc.fr/uploadfiles/vos_images/image_nous2-min.png" alt="Images"></a>
-                                  <!--<div class="place-status bg-dark-orange">
-                                        <a><h3>Open Now</h3></a>
-                                    </div> -->
-                                </div>
-                                <div class="content">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <span><a>{{prod.Brand}}</a></span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span><a>{{prod.Prix}}&nbsp;TND</a></span>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <a><h3>{{prod.Produit}}</h3></a>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <span><a>{{prod.Couleur}}</a></span>
-                                        </div>
-                                    </div>
-                                    <a class="default-btn border-radius" type="button" (click)="Topanier(prod)" [hidden]="Loggedin==false"><i class='bx bx-plus'></i> Ajouter au panier</a>
-                                </div>
+    
+            <div class="right">
+                
+                <div class="pname">{{product.produit}} - {{product.Couleur}}</div>
+
+
+               <div class="detail">
+                <div class="price"> <span class="pinkp">{{product.PrixR}} DNT</span>
+                    <span class="greenspan">-{{product.Reduction}}%</span></div>
+                <div class="size">
+                   
+                         <span class="greyp">{{product.Prix}} DNT
+                         </span>  
+                </div>
+              
+               
+               </div>
+               <div class="quantity ">
+                <p>{{product.DetailsP}}</p>
+                
+            </div>
+
+                <div class="btn-box">
+                   <h1>Choisissez votre modèle</h1>
+
+                </div>
+                <div class="flex-boxx">
+                    <div class="left">
+                       
+                        <div class="imagess">
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/7f27682f-3fb8-48b3-8c7d-f22dfd9e90db" onclick="showImg(this.src)">
                             </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/9107018b-7c35-4226-b469-8d461f5971af" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/78ff8ee4-ada7-455c-8545-6c8c30b0fd13" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/65be0b06-5039-46d0-83a6-d9fb43470f9f" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-imgg">
+                                <img src="https://media.veepee.com/v1/media/3c920273-4b7a-46bb-a329-ee070ecd28ad" onclick="showImg(this.src)">
+                            </div>
+                           
                         </div>
+                        <div>
+                            <br>
+                            <div class="navv">
+                            
+                              <label for="touch"><span class="spann">Sélectionner une taille</span></label>
+                              <input type="checkbox" id="touch">
+                            
+                              <ul class="slidee">
+                                <li>XS/34</li>
+                                <li>S/36</li>
+                                <li>M/38</li>
+                                <li>L/40</li>
+                                <li>XL/42</li>
+                                <li>XXL/44</li>
+                                <li>XXXL/46</li>
+                              </ul>
+                            
+                            </div>
                     </div>
-                </div>
-            </div>
+                    <p>Vendu et expédié par <span style="color: rgba(211, 16, 84, 0.794);">Vente Privilégié</span>
+                        <br>
+                    <button class="pinkbutton" (click)="Topanier(product)">Ajouter au panier</button>
+
+                    </p>
+                    </div>
+
+                    <!--------dropdown size-->
+               
+        </div>
         </div>
     </div>
-</div>
+    </section>
+</main>
+  <script>
+    let bigImg = document.querySelector('.big-img img');
+function showImg(pic){
+    bigImg.src = pic;
+}
+  </script>
+  <app-footer-style-two></app-footer-style-two>
 
-<app-footer-style-two></app-footer-style-two>
+

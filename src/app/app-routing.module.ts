@@ -30,35 +30,45 @@ import { CompteComponent } from "./components/pages/compte/compte.component";
 import { CommandeComponent } from "./components/pages/commande/commande.component";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { ConfirmDeactivateGuard } from "./components/common/confirm-deactivate.guard";
+import { ShopBrandComponent } from "./components/pages/shop-brand/shop-brand.component";
+import { HomeComponent } from "./components/pages/home/home.component";
+import { NavbarComponent } from "./components/common/navbar/navbar.component";
+import { ShopPanierComponent } from "./components/pages/shop-panier/shop-panier.component";
+import { ChaussureComponent } from "./components/Categories/chaussure/chaussure.component";
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
-    { path: "", component: HomeThreeComponent },
-    { path: "Mode", component: ModeComponent },
-    { path: "Maison", component: MaisonComponent },
-    { path: "Enfant", component: EnfantComponent },
-    { path: "Beaute", component: BeauteComponent },
-    { path: "Voyage", component: VoyageComponent },
+    { path: "", component: HomeComponent },
+ 
+    { path: "Mode", component: ModeComponent, canActivate: [AuthGuard] },
+    { path: "Chaussure", component: ChaussureComponent, canActivate: [AuthGuard] },
+    { path: "Maison", component: MaisonComponent , canActivate: [AuthGuard]},
+    { path: "Enfant", component: EnfantComponent , canActivate: [AuthGuard]},
+    { path: "Beaute", component: BeauteComponent , canActivate: [AuthGuard]},
+    { path: "Voyage", component: VoyageComponent , canActivate: [AuthGuard]},
     
-    { path: "Gastronomie", component: GastronomieComponent },
-    { path: "Loisir", component: LoisirComponent },
-    { path: "Sport", component: SportComponent },
-    { path: "Compte", component: CompteComponent },
-    { path: "Commande", component: CommandeComponent },
-    { path: "Brand/:id", component: ListingComponent },
-    { path: "about", component: AboutComponent },
-    { path: "pricing", component: PricingComponent },
-    { path: "category", component: CategoryComponent },
-    { path: "Panier", component: CartComponent },
+    { path: "Gastronomie", component: GastronomieComponent, canActivate: [AuthGuard] },
+    { path: "Loisir", component: LoisirComponent , canActivate: [AuthGuard]},
+    { path: "Sport", component: SportComponent , canActivate: [AuthGuard]},
+    { path: "Compte", component: CompteComponent , canActivate: [AuthGuard]},
+    { path: "Commande", component: CommandeComponent , canActivate: [AuthGuard]},
+    { path: "Brand/:id", component: ListingComponent , canActivate: [AuthGuard]},
+    { path: "about", component: AboutComponent , canActivate: [AuthGuard]},
+    { path: "pricing", component: PricingComponent , canActivate: [AuthGuard]},
+    { path: "category", component: CategoryComponent , canActivate: [AuthGuard]},
+    { path: "Panier", component: CartComponent , canActivate: [AuthGuard]},
+    { path: "shop-panier", component: ShopPanierComponent , canActivate: [AuthGuard]},
+    { path: "shopBrand/:id", component: ShopBrandComponent , canActivate: [AuthGuard]},
     {
         path: "checkout/:id",
         component: CheckoutComponent,
         canDeactivate: [ConfirmDeactivateGuard],
     },
-    { path: "products-details/:id", component: ProductsDetailsComponent },
+    { path: "products-details/:id", component: ProductsDetailsComponent, canActivate: [AuthGuard] },
     { path: "faq", component: FaqComponent },
     { path: "error", component: ErrorComponent },
     { path: "login-register", component: LoginRegisterComponent },
-    { path: "terms-condition", component: TermsConditionComponent },
+    { path: "parrainage", component: TermsConditionComponent , canActivate: [AuthGuard]},
     { path: "privacy-policy", component: PrivacyPolicyComponent },
     { path: "coming-soon", component: ComingSoonComponent },
     { path: "listing-details", component: ListingDetailsComponent },

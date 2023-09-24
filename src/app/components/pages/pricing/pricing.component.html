@@ -1,83 +1,93 @@
-<app-navbar-style-one></app-navbar-style-one>
+<section class="navbaritems">
+    <!-- Hamburger Menu -->
+ 
 
-<div class="inner-banner inner-bg1">
-    <div class="container">
-        <div class="inner-title text-center">
-            <h3>Pricing</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><i class='bx bx-chevron-right'></i></li>
-                <li>Pages</li>
-                <li><i class='bx bx-chevron-right'></i></li>
-                <li>Pricing</li>
-            </ul>
-        </div>
-    </div>
-</div>
 
-<section class="pricing-area ptb-100 pb-70">
-    <div class="container">
-        <div class="section-title text-center">
-            <span>Pricing</span>
-            <h2>Our Pricing Tables</h2>
+
+        <!-- Veepee Logo -->
+        <div class="veeplogoo">
+            <img src="assets/img/vp/midlelogo.jpg" alt="logo" class="logoo" id="butterfly" />
         </div>
 
-        <div class="row pt-45">
-            <div class="col-lg-4 col-md-6">
-                <div class="price-card">
-                    <div class="content">
-                        <i class="flaticon-deal"></i>
-                        <h3>Basic Package</h3>
-                        <h2><sup>$</sup>60</h2>
-                        <span>Only this week</span>
-                    </div>
-                    <ul>
-                        <li>One Listing</li>
-                        <li>90 Days Availability</li>
-                        <li>Non-Featured</li>
-                        <li>Limited Support</li>
-                    </ul>
-                    <a routerLink="/contact" class=" default-btn border-radius">Choose Professional <i class='bx bx-plus'></i></a>
+        <!-- Left Section -->
+        <div class="leftt">
+            <button class="buttonn">
+                <div class="buttonpanier">
+                    <img src="assets/img/vp/panier.svg" id="my_image">
+                    00:00
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="price-card">
-                    <div class="content">
-                        <i class="flaticon-megaphone"></i>
-                        <h3>Extended Package</h3>
-                        <h2><sup>$</sup>105</h2>
-                        <span>Only this month</span>
-                    </div>
-                    <ul>
-                        <li>Ten Listings</li>
-                        <li>Lifetime Availability</li>
-                        <li>Featured In Search Results</li>
-                        <li>24/7 Support</li>
-                    </ul>
-                    <a routerLink="/contact" class=" default-btn border-radius">Choose Professional <i class='bx bx-plus'></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                <div class="price-card">
-                    <div class="content">
-                        <i class="flaticon-diamond"></i>
-                        <h3>Professional Package</h3>
-                        <h2><sup>$</sup>134</h2>
-                        <span>Only this year</span>
-                    </div>
-                    <ul>
-                        <li>Unlimited listing</li>
-                        <li>Lifetime Availability</li>
-                        <li>Featured In Search Results</li>
-                        <li>24/7 Support</li>
-                    </ul>
-                    <a routerLink="/contact" class=" default-btn border-radius">Choose Professional <i class='bx bx-plus'></i></a>
-                </div>
-            </div>
+            </button>
         </div>
-    </div>
+
 </section>
+   <main>
+    <div class="containerr">
+       <div>
+       
+        <h3>Vote panier</h3>
+        <div>
+        <p>Sous-total
 
-<app-footer-style-two></app-footer-style-two>
+            249,99 €</p>
+        <p class="green">Économisez
+            120,00 €</p>
+        </div>
+        <img src="https://media.veepee.com/v1/media/65be0b06-5039-46d0-83a6-d9fb43470f9f" alt="" width="150px">
+       </div>
+    </div>
+<div class="container">
+    <form id="google-form">
+        <h2>Où faire la livraison?</h2>
+        <p class="haut">Vous pouvez choisir un point de retrait à la prochaine <br>étape.</p>
+        <div class="input-container">
+            <input type="text" id="nom" class="no-border"  placeholder="Numéro et rue*"required>
+            <label for="nom" ></label>
+        </div>
+        <!-- <div class="input-container">
+            <input type="email" id="email" class="no-border" placeholder="Numéro et rue*" required >
+            <label for="email">Escalier,étage,porte...</label>
+        </div>
+        <div class="input-container">
+            <input id="message"class="no-border" required>
+            <label for="email">Société</label>
+        </div> -->
+        <section style="display: flex;">
+        <div class="input-container">
+            <input type="text" id="nom"class="no-border" placeholder="code postal*" required>
+            <label for="nom"></label>
+        </div>
+        <div class="input-container">
+            <input type="text" id="nom"class="no-border" placeholder="ville*"required>
+            <label for="nom"></label>
+        </div>
+    </section>
+    <section style="display: flex;">
+        <div class="input-container">
+            <input type="text" id="nom"class="no-border" placeholder="Prénon*" required>
+            <label for="nom"></label>
+        </div>
+        <div class="input-container">
+            <input type="text" id="nom"class="no-border" placeholder="Nom*" required>
+            <label for="nom"></label>
+        </div>
+    </section>
+        <div class="input-container">
+            <input  type="text" id="nom"class="no-border wi" placeholder="Téléphone*" required>
+            <label for="nom"></label>
+            <p class="bas">Pour faciliter la livraison</p>
+        </div>
+        <button id="submit-button">Continuer</button>
+        <br>
+        <br>
+        <p class="bas">Vente-Privee.com est le responsable du traitement de vos données personnelles.
+             Les informations collectées ci-dessus sont utilisées pour la livraison de vos
+              commandes.
+              Vous pouvez à tout moment modifier ou supprimer ces données via la rubrique
+             « Mon Compte » de votre compte Membre.</p>
+             <p class="bas">Pour en savoir plus sur le traitement de vos données personnelles et pour
+                 connaître vos droits,
+                 veuillez consulter notre Politique de confidentialité.</p>
+    </form>
+</div>
+</main>
+<script src="./valider.js"></script>

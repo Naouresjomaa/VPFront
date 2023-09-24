@@ -1,8 +1,20 @@
 <app-navbar-style-one></app-navbar-style-one>
+
 <div class="Acc">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
+                      <!--search bar-->
+            <div class="row height d-flex justify-content-center align-items-center rad">
+                <div class="col-md-8">  
+                  <div class="form">
+                    <i class="fa fa-search search-icon"></i>
+                    <input type="text" class="form-control form-input " placeholder="Recherchez une marque,un produit...">
+                    <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                  </div>               
+                </div>                
+            </div>
+           <!--end search bar-->
                 <div class="banner-content banner-content-ptb text-center">
                 </div>
             </div>
@@ -25,7 +37,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="row" >
+                    <!-- <div class="row" >
                         <h4 class="mt-3">C'EST TOUT NOUVEAU <br>Elles ont ouvert aujourd'hui</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{b2.id}}" type="button" *ngFor="let b2 of brand1">
                             <img src="https://cdn.data-vp.com//64707be6565086001e9a12cd/64707be6565086001e9a12cf-1685093350997-desktop.jpeg" class="img-fluid mx-auto d-block ime" alt="" />
@@ -33,11 +45,11 @@
                                 <p class="text">{{b2.BrandName}} <br> Jusqu'à {{b2.DateExpiration | date:'longDate'}}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <br>
                     <br>
                     <div class="row" >
-                        <h4 class="mt-3">C'EST TOUT NOUVEAU <br>Elles ont ouvert aujourd'hui</h4>
+                        <h4 class="mt-3" >C'EST TOUT NOUVEAU <br>Elles ont ouvert aujourd'hui</h4>
                         <div class="col-md-6 container" routerLink="/Brand/{{b2.id}}" type="button" *ngFor="let b2 of brand2">
                             <img src="https://cdn.data-vp.com//64707be6565086001e9a12cd/64707be6565086001e9a12cf-1685093350997-desktop.jpeg" class="img-fluid mx-auto d-block ime" alt="" />
                             <div class="overlay">
@@ -48,11 +60,11 @@
                     <br>
                     <br>
                     <div class="row" >
-                        <h4 class="mt-3">ENCORE QUELQUES JOURS <br>De quoi sauter sur l'occasion</h4>
-                        <div class="col-md-6 container" routerLink="/Brand/{{b3.id}}" type="button" *ngFor="let b3 of brand3">
-                            <img src="https://media.veepee.com/v1/media/36706291-51e2-44aa-8a20-b67078c3b563" class="img-fluid mx-auto d-block ime" alt="" />
+                        <h4 class="mt-3" class="colo">ENCORE QUELQUES JOURS <br>De quoi sauter sur l'occasion</h4>
+                        <div class="col-md-6 container" routerLink="/Brand/{{b2.id}}" type="button" *ngFor="let b2 of brand3">
+                            <img src="https://cdn.data-vp.com//64707be6565086001e9a12cd/64707be6565086001e9a12cf-1685093350997-desktop.jpeg" class="img-fluid mx-auto d-block ime" alt="" />
                             <div class="overlay">
-                                <p class="text">{{b3.BrandName}} <br> Jusqu'à {{b3.DateExpiration | date:'longDate'}}</p>
+                                <p class="text">{{b2.BrandName}} <br> Jusqu'à {{b2.DateExpiration | date:'longDate'}}</p>
                             </div>
                         </div>
                     </div>

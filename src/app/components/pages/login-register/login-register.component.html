@@ -1,3 +1,6 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/boxicons/boxicons/css/boxicons.min.css">
+
 <div class="user-area">
     <div class="container-fluid mt-5">
         <div class="row align-items-center">
@@ -12,10 +15,31 @@
                             <li><a href="#"> <i class="flaticon-verify"></i>
                                     S'inscrire</a></li>
                         </ul>
+                        <div class="social-buttons">
+                            <a href="#" class="circle-btn facebook-btn">
+                                <i class='bx bxl-facebook'></i>
+                            </a>
+                            <a href="#" class="circle-btn google-btn">
+                                <i class='bx bxl-google'></i>
+                            </a>
+                        </div>
+                        
+                        <div class="separator">
+                            <span>ou</span>
+                        </div>
                         <div class="tab_content current active">
+                         
                             <div class="tabs_item current">
                                 <div class="user-all-form">
                                     <div class="contact-form">
+                                        <!-- <div class="social-buttons">
+                                            <a href="#" class="circle-btn facebook-btn">
+                                                <i class='bx bxl-facebook'></i>
+                                            </a>
+                                            <a href="#" class="circle-btn google-btn">
+                                                <i class='bx bxl-google'></i>
+                                            </a>
+                                        </div> -->
                                         <form id="contactForm"
                                             (ngSubmit)="Login()"
                                             [formGroup]="loginForm">

@@ -1,94 +1,106 @@
-<app-navbar-style-one></app-navbar-style-one>
+<app-navbar></app-navbar>
+<br><br><br><br><br><br>
 
-<div class="inner-banner inner-bg1">
+<header *ngIf="nbrpanier==0">
     <div class="container">
-        <div class="inner-title text-center">
-            <h3 *ngIf="nbrpanier!=0">Panier</h3>
-            <h3 *ngIf="nbrpanier==0">Votre panier est vide</h3>
+        <div class="card">
+            <h1>
+                Votre Panier est vide
+            </h1>
+            <p>Jetez un coup d'œil à notre fabrique rose et trouvez l'inspiration!</p>
+            <div class="butonline">
+                    <button class="cardbutton" routerLink="/">Découvrez nos offres</button>
+                
+            </div>
         </div>
     </div>
-</div>
-<section class="cart-wraps-area ptb-100" *ngIf="nbrpanier!=0">
+</header>
+
+
+<section class="shopping-cart spad" *ngIf="nbrpanier!=0">
     <div class="container">
-        <form>
-            <div class="cart-wraps">
-                <div class="cart-table table-responsive">
-                    <table class="table">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <table>
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Produit</th>
-                                <th scope="col">Prix unitaire</th>
-                                <th scope="col">Quantité</th>
-                                <th scope="col">Ajouter +/-</th>
-                                <th scope="col">Total</th>
+                                <th>Produit</th>
+                                <th>Quantité</th>
+                                <th>Totale</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody *ngFor="let p of paniers">
                             <tr>
-                                <td class="product-thumbnail">
-                                    <a><img
-                                            src="assets/img/products/product1.jpg"
-                                            alt="Image"></a>
-                                </td>
-                                <td class="product-name">
-                                    <a>{{p.Produit}}</a>
-                                </td>
-                                <td class="product-price">
-                                    <span class="unit-amount">{{p.PrixUnitaire}}&nbsp;TND</span>
-                                </td>
-                                <td class="product-quantity"> {{p.Quantite}}</td>
-                                <td class="product-quantity">
-                                    <div class="form-group">
-                                        <div class="select-box">
-                                            <select class="form-control"
-                                                (change)="GetQte($event,p)"
-                                                required>
-                                                <option value="1"></option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                        </div>
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img [src]="'http://localhost:3000/image/'+p.ProdDetails.Image" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <h6>{{p.Produit}}-{{p.ProdDetails.Genre}}</h6>
+                                        <h5>{{p.PrixUnitaire}} TND</h5>
                                     </div>
                                 </td>
-                                <td class="product-subtotal">
-                                    <span class="subtotal-amount">{{p.PrixTotale}}&nbsp;TND</span>
-                                    <a class="remove" (click)="DletePanier(p)"><i
-                                            class='bx bx-trash'></i></a>
+                                <td class="quantity__item ">
+                                    <div class="quantity ">
+                                        <div class="pro-qty-2 d-flex"><span class="fa fa-angle-left dec qtybtn"></span>
+                                            <input type="text" value="1">
+                                        <span class="fa fa-angle-right inc qtybtn"></span></div>
+                                    </div>
                                 </td>
+                                <td class="cart__price">{{p.PrixUnitaire}} TND</td>
+                                <td class="cart__close"><i class="fa fa-close"></i></td>
                             </tr>
+                          
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                </div>
-                <div class="col-lg-6">
-                    <div class="cart-totals">
-                        <ul>
-                            <li>Total <span>{{commande.PrixTotal}} TND</span></li>
-                            <li>Livraison <span>{{commande.PrixLivraison}} TND</span></li>
-                            <li>Coupon <span>- {{commande.Couppons}} TND</span></li>
-                            <li>Total <span><b>{{commande.NetaPayer}} TND</b></span></li>
-                        </ul>
-                        <a
-                            class="default-btn default-hot-toddy" type="button" (click)="PasserCommande()">Passer la commande</a>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="continue__btn">
+                            <a href="#">Continuer vos achats</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="continue__btn update__btn">
+                            <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
+                        </div>
+                    </div> -->
                 </div>
             </div>
-        </form>
+            <div class="col-lg-4">
+                <div class="cart__discount">
+                    <h6> code Promo</h6>
+                    <form action="#">
+                        <input type="text" placeholder="Coupon code">
+                        <button type="submit">Appliquer</button>
+                    </form>
+                </div>
+                <div class="cart__total">
+                    <h6>Cart total</h6>
+                    <h5>+ 8 TND de livraison</h5>
+                    <ul>
+                        <!-- <li>Subtotal <span>$ 169.50</span></li> -->
+                        <li>Total <span> 169.50 TND</span></li>
+                    </ul>
+                    <a routerLink="/shop-panier" class="primary-btn">Passer à la caisse</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
+
+
 <app-footer-style-two></app-footer-style-two>
+<script src="../shop-brand/js/jquery-3.3.1.min.js"></script>
+<script src="../shop-brand/js/bootstrap.min.js"></script>
+<script src="../shop-brand/js/jquery.nice-select.min.js"></script>
+<script src="../shop-brand/js/jquery.nicescroll.min.js"></script>
+<script src="../shop-brand/js/jquery.magnific-popup.min.js"></script>
+<script src="../shop-brand/js/jquery.countdown.min.js"></script>
+<script src="../shop-brand/js/jquery.slicknav.js"></script>
+<script src="../shop-brand/js/mixitup.min.js"></script>
+<script src="../shop-brand/js/owl.carousel.min.js"></script>
+<script src="../shop-brand/js/main.js"></script>

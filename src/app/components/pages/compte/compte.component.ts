@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import jwt_decode from "jwt-decode";
-import { ClientModel } from "src/app/model/Client.model";
 import { ClientService } from "src/app/services/client.service";
+import { ClientModel } from "src/app/services/model/Client.model";
 import Swal from "sweetalert2";
 @Component({
     selector: "app-compte",

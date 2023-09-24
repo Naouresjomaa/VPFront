@@ -40,11 +40,15 @@ button {
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    color: var(--titleColor);
+    color: #fefefe;
     line-height: 1.4;
 }
+
 h3 {
     font-size: 20px;
+}
+h4 {
+    font-size: 22px;
 }
 .d-table {
     width: 100%;
@@ -379,7 +383,7 @@ Default Btn Style
         .navbar-nav {
             .nav-item {
                 a {
-                    color: var(--titleColor);
+                    color: black !important;//var(--titleColor);
                 }
             }
         }
@@ -1062,10 +1066,10 @@ Home Banner Area
         }
     }
 }
-.banner-content-ptb {
-    padding-top: 160px !important;
-    padding-bottom: 230px !important;
-}
+// .banner-content-ptb {
+//     padding-top: 160px !important;
+//     padding-bottom: 230px !important;
+// }
 .banner-area-two {
     background-image: url();
     background-position: center center;
@@ -1225,11 +1229,13 @@ Banner Form Area
     position: relative;
     background-position: center center;
     background-size: cover;
+    
+    height: 50%;
     &::before {
         content: '';
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 50%;
         top: 0;
         left: 0;
         right: 0;
@@ -6925,3 +6931,4 @@ Animation  CSS
 /*==============================
 Animation  CSS End
 =================================*/
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';

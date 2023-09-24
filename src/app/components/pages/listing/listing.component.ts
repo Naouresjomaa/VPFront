@@ -5,9 +5,9 @@ import { ProduitService } from "src/app/services/produit.service";
 import jwt_decode from "jwt-decode";
 import { DataService } from "src/app/services/data.service";
 import { PanierService } from "src/app/services/panier.service";
-import { PanierModel } from "src/app/model/Panier.model";
 import Swal from "sweetalert2";
 import { ChangeDetectorRef } from '@angular/core';
+import { PanierModel } from "src/app/services/model/Panier.model";
 @Component({
     selector: "app-listing",
     templateUrl: "./listing.component.html",
@@ -38,14 +38,52 @@ export class ListingComponent implements OnInit {
     ) {}
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
+        this.GetBrand()
         this.GetProduitByIdBrand(this.id)
+        this.dataservice.auth.subscribe((data) => {
+            if (data[0] == false) {
+                this.Loggedin = false;
+            } else {
+                this.Loggedin = true;
+                this.Username = data[0].UserName;
+                this.Email = data[0].Email;
+                this.panier.UserName = this.Username;
+                this.panier.Email = this.Email;
+            }
+        });
     }
 GetProduitByIdBrand(id:any){
-   this.produitservice.GetProduitByIdBrand(id).subscribe(res=>{
-  console.log(res);
+   this.produitservice.getProduitByid(id).subscribe((res:any)=>{
+  console.log('ressssssssssss',res);
     this.data= res;
-    this.product=res;
+    this.product=res[0];
+    console.log('this.product',this.product)
+    this.nbrprod = this.product.length;
 })
+}
+GetBrand() {
+    this.brandservice.getBrandByid(this.id).subscribe((res) => {
+        this.data = res;
+        console.log(this.data)
+
+    //     this.produitservice
+    //         .GetProduitByBrand(
+    //             this.data[0].BrandName,
+    //             this.data[0].SousCategorie
+    //         )
+    //         .subscribe((res) => {
+    //             this.product = res;
+    //             this.nbrprod = this.product.length;
+    //             this.produitservice
+    //                 .Getparameters(
+    //                     this.data[0].Categorie,
+    //                     this.data[0].SousCategorie
+    //                 )
+    //                 .subscribe((res) => {
+    //                     this.parametres = res;
+    //                 });
+    //         });
+     });
 }
 
 
@@ -61,21 +99,21 @@ GetProduitByIdBrand(id:any){
                 this.panier.PrixTotale = (
                     this.panier.PrixUnitaire * this.panier.Quantite
                 ).toFixed(2);
-                this.produitservice
-                    .UpdateProduit(prod.id, prod)
-                    .subscribe((res) => {
-                        this.response = res;
-                        if (
-                            this.response.message ==
-                            "Produit updated succefully"
-                        ) {
+                // this.produitservice
+                //     .UpdateProduit(prod.id, prod)
+                //     .subscribe((res) => {
+                //         this.response = res;
+                //         if (
+                //             this.response.message ==
+                //             "Produit updated succefully"
+                //         ) {
                             this.panierservice
                                 .AddPanier(this.panier)
                                 .subscribe((res) => {
                                     this.response1 = res;
                                     if (
                                         this.response1.message ==
-                                        "Panier created succefully"
+                                        "Panier créé avec succès"
                                     ) {
                                         Swal.fire({
                                             position: "center",
@@ -101,36 +139,35 @@ GetProduitByIdBrand(id:any){
                                         });
                                     }
                                 });
-                        } else {
-                            Swal.fire({
-                                position: "center",
-                                title: "Quelque chose n'a pas marché !",
-                                text: "",
-                                showConfirmButton: false,
-                                timer: 3000,
-                                icon: "error",
-                            });
-                        }
-                    });
-            } else {
-                Swal.fire({
-                    position: "center",
-                    title: "Quantité produit indisponible !",
-                    text: "",
-                    showConfirmButton: false,
-                    timer: 3000,
-                    icon: "error",
-                });
-            }
-        } else {
-            Swal.fire({
-                position: "center",
-                title: "Quantité produit indisponible !",
-                text: "",
-                showConfirmButton: false,
-                timer: 3000,
-                icon: "error",
-            });
+        //                 } else {
+        //                     Swal.fire({
+        //                         position: "center",
+        //                         title: "Quelque chose n'a pas marché !",
+        //                         text: "",
+        //                         showConfirmButton: false,
+        //                         timer: 3000,
+        //                         icon: "error",
+        //                     });
+        //                 }
+        //             });
+        //     } else {
+        //         Swal.fire({
+        //             position: "center",
+        //             title: "Quantité produit indisponible !",
+        //             text: "",
+        //             showConfirmButton: false,
+        //             timer: 3000,
+        //             icon: "error",
+        //         });
+        //     }
+        // } else {
+        //     Swal.fire({
+        //         position: "center",
+        //         title: "Quantité produit indisponible !",
+        //         text: "",
+        //         showConfirmButton: false,
+        //         timer: 3000,
+        //         icon: "error",
+           // });
         }
-    }
-}
+    }}}

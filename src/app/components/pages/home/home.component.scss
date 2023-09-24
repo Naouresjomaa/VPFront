@@ -1,0 +1,806 @@
+/* Define your custom colors as variables */
+:root {
+    --main-color: rgb(237, 43, 153); /* Main color */
+    --background-color: rgba(245, 244, 250, 1); /* Background color */
+  }
+  
+  /* Global styles */
+  * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inclusive Sans", sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    height: 110vh;
+    width: 100%;
+    background-size: cover;
+    //background-image: url('../../../../assets/img/vp/home.png');
+    background-image: url('../../../../assets/img/home-three/veepee_home.jpeg');
+  }
+ 
+  @media (max-width: 768px) {
+    .header  {
+      height: 60vh;
+    }
+  }
+  
+  .headertop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+  @media (max-width: 768px) {
+    .headertop  {
+   margin: 10px;
+   width: 60%;
+    }
+  }
+  
+  .headercontainertop {
+    box-sizing: border-box;
+    align-items: center;
+    height: 10vh;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+  @media (max-width: 768px) {
+    .headercontainertop  {
+  
+   justify-content: space-between;
+   display: flex;
+  
+    }
+  }
+  
+  .logo {
+    width: 180px;
+    height: 180px;
+    margin-left: 45%;
+
+   
+   
+  }
+  @media (max-width: 768px) {
+    .logo {
+  width: 70%;
+    }
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    color: white;
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    z-index: 99999999999;
+  }
+  @media (max-width: 768px) {
+    .tooltip  {
+  flex: 0;
+  z-index: 0;
+    }
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: var(--background-color);
+    color: #0b0b0b;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-family: "Inclusive Sans";
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 12%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    line-height: 28px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    margin-left: -5px;
+  }
+  
+  .hamburger:hover + .tooltiptext,
+  .tooltiptext:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltip-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  
+  .tooltip-item:hover {
+    color: var(--main-color); /* Use the variable here */
+    fill: var(--main-color) !important;
+  }
+  
+  
+  .tooltip-item:hover path {
+    fill: var(--main-color) !important;
+  }
+  
+  .tooltiptext hr {
+    border: 1px solid #c7c7c783 !important;
+    width: 100% !important;
+    border-radius: 20px;
+    margin: 12px 0px;
+  }
+  
+  .tooltip-item img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .tooltip-item h1 {
+    font-size: 16px;
+  }
+  
+  .hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    box-sizing: content-box;
+    position: relative;
+    padding-bottom: 20px;
+    box-sizing: content-box;
+  }
+  
+  .humberger-text {
+    position: absolute;
+    bottom: 0px;
+    font-size: 12px;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.4s ease;
+  }
+  
+  .opened .bar:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .opened .bar:nth-child(2) {
+    transform: scaleX(0);
+  }
+  
+  .opened .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: 155px;
+    height: 40px;
+    font-family: "Inclusive Sans";
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .button {
+      width: 85px;
+      height: 30px;
+    }
+  }
+  .button:hover {
+    background-color: rgb(203, 53, 138) !important; /* Use the variable here */
+    color: white;
+    border: none;
+  }
+  
+  .pinkbutton {
+    background-color: var(--main-color); /* Use the variable here */
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: 155px;
+    height: 50px;
+    font-family: "Inclusive Sans";
+    border-radius: 2px;
+    border: none;
+  }
+  
+  .pinkbutton:hover {
+    background-color: rgb(203, 53, 138);
+    color: white;
+    border: none;
+  }
+  
+  .whitebutton {
+    background-color: white;
+    color: var(--main-color); /* Use the variable here */
+    border: 1px solid var(--main-color); /* Use the variable here */
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: 155px;
+    height: 50px;
+    font-family: "Inclusive Sans";
+    border-radius: 2px;
+  }
+  
+  .whitebutton:hover {
+    background-color: rgb(233, 68, 161);
+    color: white;
+    border: none;
+  }
+  
+  .left {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  @media (max-width: 768px) {
+    .left {
+      flex: 0;
+    }
+  }
+  .navbar {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  
+  
+  li {
+    list-style: none;
+    display: inline;
+    padding: 10px;
+  }
+  
+  .navbar a {
+    font-family: "Inclusive Sans";
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .titels:hover {
+    padding-bottom: 18px;
+    border-radius: 3px;
+  }
+  
+  .titleunderline {
+    padding-bottom: 18px;
+    border-radius: 3px;
+   
+  }
+  
+  .navp {
+    font-family: "Inclusive Sans";
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 12px;
+  }
+  @media (max-width: 768px) {
+   .navp {
+      display: none;
+    }}
+  
+  .navp:hover {
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--background-color);
+    border-radius: 2px;
+  }
+  
+  .veeplogo {
+    display: flex;
+    flex: 1;
+  }
+  @media (max-width: 768px) {
+    .veeplogo {
+       align-self: center;
+       margin-left: 93px;
+     }
+    }
+  
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 50px;
+  }
+  @media (max-width: 768px) {
+    .icon {
+       display: none;
+     }
+    }
+  .search {
+    display: block;
+    position: relative;
+    width: 450px;
+    transform: translateY(200px);
+    justify-content: center;
+   margin-left: 50px;
+   align-items: center;
+   height: 50px;
+  }
+  @media (max-width: 768px) {
+    .search {
+       display: none;
+     }
+    }
+  
+  .search-hidden {
+    display: none;
+    flex-direction: row-reverse;
+    padding: 2px 4px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+  }
+  
+  .search-container {
+    display: flex;
+    background-color:  rgba(255, 255, 255, 0.5); /* Use the variable here */
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 1px;
+  }
+  
+  .search-bar-hidden {
+    flex: 1;
+    border: none;
+    padding: 2px 8px;
+  }
+  
+  .search-bar {
+    border: none;
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    display: inline-flex;
+  }
+  
+  .search-button-hidden {
+    border: none;
+    background-color: transparent;
+    padding: 4px 8px;
+  }
+  
+  .search-button {
+    border: none;
+    background: rgb(237, 43, 153); /* Use the variable here */
+    cursor: pointer;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+  .search-button:hover{
+    background: rgb(238, 107, 160); 
+  }
+  .search-bar::placeholder {
+    color: rgba(0, 0, 0, 0.914);
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .logosearch-hidden {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .logosearch {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .title {
+    display: block;
+    position: relative;
+    margin-top: 80px;
+    margin-right: 1000px;
+  
+  
+  }
+  .titlecontainer{
+    display: flex;
+    justify-content: center;
+  margin-left: 25%;
+    margin-top: -40%;
+    margin-bottom: 50px; 
+   
+  }
+  
+  
+  .containertitle {
+    text-transform: uppercase;
+    color: rgb(15, 15, 15);
+    font-size: 30px;
+    position: relative;
+    width: 100%;
+  
+  }
+  
+  .containerparagraphe {
+    color: rgb(15, 15, 15);
+    font-size: 20px;
+    position: relative;
+  }
+  
+  .bodycontainer {
+    text-align: center;
+    position: relative;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+    margin-top: -50px;
+    margin-left: 250px;
+  }
+  
+  .card {
+    width: 500px;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card img {
+    display: flex;
+    display: block;
+    height: auto;
+    max-width: 904px;
+    min-width: 500px;
+  }
+  
+  .card::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .card h3 {
+    position: absolute;
+    cursor: pointer;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 0;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    opacity: 0;
+    width: 100%;
+    font-size: 16px;
+    text-align: start;
+    transition: bottom 0.3s ease-in-out;
+  }
+  
+  .card:hover h3 {
+    opacity: 1;
+    bottom: 0;
+  }
+  
+  /* .copy {
+    padding: 32px;
+    cursor: pointer;
+  } */
+  
+  h3:hover {
+    color: var(--main-color); /* Use the variable here */
+  }
+  
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* padding: 1rem; */
+    transition: transform var(--d) var(--e);
+    z-index: 1;
+  }
+  
+  /* Slideshow container */
+  .slideshow-container {
+    position: relative;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background: transparent; */
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(243, 243, 243, 0) 0%,
+      rgba(255, 255, 255, 1) 28%,
+      rgba(255, 255, 255, 1) 52%,
+      rgba(255, 255, 255, 1) 68%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    margin: -300px 0px;
+    z-index: 999;
+  }
+  
+  /* Slides */
+  .mySlides {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 20%;
+    /* display: none; */
+    padding: 80px;
+    text-align: center;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  /* The dot/bullet/indicator container */
+  .dot-container {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: rgba(241, 145, 199, 0.722);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Add a background color to the active dot/circle */
+  .active,
+  .dot:hover {
+    background-color: var(--main-color); /* Use the variable here */
+  }
+  
+  /* Add an italic font style to all quotes */
+  q {
+    font-style: italic;
+  }
+  
+  /* Add a blue color to the author */
+  .author {
+    color: cornflowerblue;
+  }
+  
+  .lastimage {
+    margin-top: 20px;
+    height: 65vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url(https://media.veepee.com/v1/media/acd55ab1-f623-4434-bf0c-b2017b56175b);
+  }
+  
+  .footerheader {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .footerheader{
+    display: none;
+    }
+  }
+  
+  .rightsidefooter {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    flex: 1;
+  }
+  
+  .leftsidefooter {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .footerbody {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  
+  .footer-section {
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    margin-right: 97px;
+  }
+  
+  .footer-section ul {
+    flex-direction: column;
+    display: flex;
+  }
+  
+  .footersocial {
+    padding-left: 30px;
+  }
+  .footersocial:hover{
+    color: rgba(232, 30, 144, 0.722);
+  }
+  
+  .footerbottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px;
+  }
+  
+  li,
+  ul {
+    text-align: left;
+  }
+  
+  .footericon {
+    margin: 5px;
+    width: 44px;
+    height: 40px;
+  }
+  
+  .footercollaborators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .collabimg {
+    max-width: 200px;
+    max-height: 70px;
+    min-height: 50px;
+    min-width: 50px;
+    padding-left: 20px;
+  }
+  
+  .dropdown {
+  display: flex;
+  align-self: flex-end;
+  }
+  
+  #country-select {
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  .flag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    font-weight: bold;
+  }
+  
+  #selected-flag {
+    width: 40px; /* Largeur des icônes de drapeau */
+    height: auto;
+  }
+  
+  .ends {
+    text-align: end;
+    margin-right: 190px;
+  }
+  
+  .endsimg {
+    max-width: 200px;
+    max-height: 100px;
+    min-height: 50px;
+    min-width: 50px;
+  }
+  
+  .hrfooter {
+    margin-top: 5px;
+    height: 5px;
+    font-weight: bold;
+    background-color: var(--main-color); /* Use the variable here */
+    border: none;
+  }
+  
+  .footer-section li:hover {
+    cursor: pointer;
+    color: var(--main-color); /* Use the variable here */
+  }
+  
+  .footer-section p:hover {
+    color: var(--main-color); /* Use the variable here */
+  }
+  
+  h1:visited {
+    color:black; /* Text color on click */
+  }

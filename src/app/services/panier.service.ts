@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
-import { PanierModel } from "../model/Panier.model";
+import { PanierModel } from "./model/Panier.model";
 @Injectable({
     providedIn: "root",
 })
@@ -14,6 +14,8 @@ export class PanierService {
             headers: headers,
         });
     }
+
+
     Getpanier(Email: any, UserName: any): Observable<any> {
         const headers = new HttpHeaders();
         return this.http.get(
