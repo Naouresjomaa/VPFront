@@ -29,15 +29,7 @@ export class NavbarComponent implements OnInit {
  
 
   ngOnInit(): void {
-    this.decodeToken()
-    this.storageService.panier$.subscribe(
-      panier => {
-        this.nbrpanier = panier;
-        // pour forcer la détection des changements
-        setTimeout(() => {this.nbrpanier = panier;
-          this.cd.detectChanges();});
-      }
-    );
+   
   
      let navContainer = this.el.nativeElement.querySelector('.headertop'); // Remplacez '.your-nav-class' par le sélecteur CSS de votre conteneur
      
@@ -113,6 +105,15 @@ export class NavbarComponent implements OnInit {
       } 
     
       }
+      this.decodeToken()
+      this.storageService.panier$.subscribe(
+        panier => {
+          this.nbrpanier = panier;
+          // pour forcer la détection des changements
+          setTimeout(() => {this.nbrpanier = panier;
+            this.cd.detectChanges();});
+        }
+      );
   }
 
 }

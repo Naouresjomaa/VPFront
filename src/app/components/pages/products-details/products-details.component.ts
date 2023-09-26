@@ -8,6 +8,8 @@ import { ProduitService } from 'src/app/services/produit.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import Swal from "sweetalert2";
 import { StorageService } from 'src/app/services/storage.service';
+import { LoginRegisterComponent } from '../login-register/login-register.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.component.html',
@@ -40,7 +42,8 @@ selectedTaille:any=''
     private panierservice: PanierService,
     private cdr: ChangeDetectorRef,
     private jwtHelper: JwtHelperService,
-    private storageService : StorageService
+    private storageService : StorageService,
+    private dialog: MatDialog
     ) { }
     decodeToken() {
       const token = localStorage.getItem('isLoggedin');
@@ -50,11 +53,12 @@ selectedTaille:any=''
       console.log(this.panier.Email,this.panier.UserName)
       console.log(decodedToken);
     }
-  ngOnInit(): void {
-  this.panier.Quantite=1;
+  ngOnInit() {
     this.id=this.route.snapshot.params.id;
-    this.decodeToken()
     this.GetProduct();
+  this.panier.Quantite=1;
+    this.decodeToken()
+    
   
   }
   GetProduct(){
@@ -76,7 +80,14 @@ modifierQuantite(valeur): void {
   }
 }
   Topanier(prod: any) {
-    if(!this.panier.taille){
+    if(!this.Email && !this.Username){
+      
+        this.dialog.open(LoginRegisterComponent, {
+          width: '400px',
+        });
+       
+      }
+    else if(!this.panier.taille){
       Swal.fire({
         position: "center",
         title: "selectionnez une taille svp !",
