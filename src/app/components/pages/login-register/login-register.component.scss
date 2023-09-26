@@ -1,7 +1,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.container{
+  width: 100vw;
+  height: 100vh;
+  margin: 50px;
+ 
+}
 .user-area {
   background-image: url("../../../../assets/img/home-three/BGg.png");
-  background-size: cover;
+  background-size: cover; border-radius: 10px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
 }
 .default-btn{
   background-color:rgb(237, 43, 153) !important
@@ -22,7 +31,14 @@
   font-size: 24px;
   transition: transform 0.3s ease;
 }
-
+.user-section .user-content img{
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: -50px
+}
+.user-section .user-all-form .contact-form{
+  margin-top: -70px;
+}
 .circle-btn:hover {
   transform: scale(1.1);
 }
