@@ -201,12 +201,12 @@
                                 <!-- <span class="label">Sale</span> -->
                                 <div class="product__item__pic set-bg" >
                                     <img [src]="'http://localhost:3000/image/'+prod.Image" alt="Description de l'image">
-                                    <ul class="product__hover">
+                                    <!-- <ul class="product__hover">
                                         <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
                                         </li>
                                         <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <br>
                                 <br>
@@ -216,7 +216,7 @@
                                 <div class="product__item__text">
                                     <div class="d-flex justify-content-between">
                                     <h6>{{prod.Produit }}-{{prod.Genre}} </h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
+                                    <a [routerLink]="'/products-details/'+prod.id" class="add-cart">+ Add To Cart</a>
                                     <br>
                                     <h5>${{prod.Prix}}</h5>
                                 </div>

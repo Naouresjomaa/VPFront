@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { BrandService } from "src/app/services/brand.service";
 import { ProduitService } from "src/app/services/produit.service";
-import jwt_decode from "jwt-decode";
+
 import { DataService } from "src/app/services/data.service";
 import { PanierService } from "src/app/services/panier.service";
 import Swal from "sweetalert2";
@@ -28,6 +28,7 @@ export class ListingComponent implements OnInit {
     panier = new PanierModel();
     response: any;
     response1: any;
+   
     constructor(
         private route: ActivatedRoute,
         private brandservice: BrandService,
@@ -36,6 +37,7 @@ export class ListingComponent implements OnInit {
         private panierservice: PanierService,
         private cdr: ChangeDetectorRef
     ) {}
+   
     ngOnInit(): void {
         this.id = this.route.snapshot.params.id;
         this.GetBrand()
@@ -96,9 +98,9 @@ GetBrand() {
                 this.panier.Produit = prod.Produit;
                 this.panier.ProdDetails = prod;
                 this.panier.PrixUnitaire = prod.Prix;
-                this.panier.PrixTotale = (
+                this.panier.PrixTotale = 
                     this.panier.PrixUnitaire * this.panier.Quantite
-                ).toFixed(2);
+                
                 // this.produitservice
                 //     .UpdateProduit(prod.id, prod)
                 //     .subscribe((res) => {

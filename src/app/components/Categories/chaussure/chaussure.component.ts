@@ -8,9 +8,15 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class ChaussureComponent implements OnInit , AfterViewInit{
   brands :any;
+  nbrpanier: any;
     constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
     ngOnInit() {
       this.getAllBrand()
+      this.getPanier()
+    }
+    getPanier(){
+      const storedPanier = localStorage.getItem('panier');
+      this.nbrpanier =  storedPanier ? JSON.parse(storedPanier) : 0;
     }
   getAllBrand(){
   this.service.GetBrands().subscribe(res=>{

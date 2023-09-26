@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ClientService } from "src/app/services/client.service";
 import Swal from "sweetalert2";
 import jwt_decode from "jwt-decode";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
@@ -14,10 +14,14 @@ export class LoginRegisterComponent implements OnInit {
     response: any;
     token: any;
     userData: any;
-    constructor(private clientservice: ClientService, private router: Router) {}
+    parrainage:any
+    constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,) {}
 
-    ngOnInit(): void {}
-
+    ngOnInit(): void {
+        this.parrainage = this.route.snapshot.queryParamMap.get('parrainage');
+       
+    }
+    
     loginForm = new FormGroup({
         Email: new FormControl("", [Validators.required, Validators.email]),
         Password: new FormControl("", Validators.required),

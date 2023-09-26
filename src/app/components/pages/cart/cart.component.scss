@@ -33,3 +33,458 @@
 .continue__btn a{
   color: rgb(237, 43, 153) !important;
 }
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&family=Lato&family=Rubik&family=Tilt+Prism&family=Ubuntu&display=swap");
+/* Define your custom colors as variables */
+:root {
+  --main-color: rgb(237, 43, 153); /* Main color */
+  --background-color: rgba(245, 244, 250, 1); /* Background color */
+}
+
+/* Global styles */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu";
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-image: url('../../../../assets/img/home-three/panier.jpg');
+}
+
+.headertopp {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+  background-color: transparent; /* Initial background color */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.headernavbar {
+  position: fixed;
+  display: block;
+  justify-content: center;
+}
+.headercontainertop {
+  box-sizing: border-box;
+  align-items: center;
+  height: 10vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color: black;
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  z-index: 99999999999;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: white;
+  color: #0b0b0b;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: "Ubuntu";
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 12%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  line-height: 28px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100%;
+  margin-left: -5px;
+}
+
+.hamburger:hover + .tooltiptext,
+.tooltiptext:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tooltip-item:hover {
+  color: var(--main-color); /* Use the variable here */
+  fill: var(--main-color) !important;
+}
+
+.tooltip-item:hover path {
+  fill: var(--main-color) !important;
+}
+
+.tooltiptext hr {
+  border: 1px solid #c7c7c783 !important;
+  width: 100% !important;
+  border-radius: 20px;
+  margin: 12px 0px;
+}
+
+.tooltip-item img {
+  width: 35px;
+  height: 35px;
+}
+
+.tooltip-item h1 {
+  font-size: 16px;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  box-sizing: content-box;
+  position: relative;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+  margin-top: 12px;
+  /* flex: 1; */
+}
+
+.humberger-text {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+}
+.icon {
+  margin-bottom: -10px;
+}
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: transform 0.4s ease;
+}
+
+.opened .bar:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.opened .bar:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.opened .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.whitebutton {
+  background-color: white;
+  color: var(--main-color); /* Use the variable here */
+  border: 1px solid var(--main-color); /* Use the variable here */
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: 155px;
+  height: 50px;
+  font-family: "Inclusive Sans";
+  border-radius: 2px;
+}
+
+.whitebutton:hover {
+  background-color: rgb(233, 68, 161);
+  color: white;
+  border: none;
+}
+
+.buttonn {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  font-size: 18px;
+  font-weight: 400;
+
+  width: 90px;
+  height: 35px;
+  font-family: "Ubuntu";
+  border-radius: 2px;
+  margin-top: 25px;
+}
+
+.buttonn:hover {
+  background-color: var(--main-color); /* Use the variable here */
+  color: white;
+  fill: white;
+  border: none;
+}
+
+.buttonn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%)
+    hue-rotate(72deg) brightness(99%) contrast(99%);
+}
+
+.butonline {
+  line-height: 50px;
+}
+
+hr {
+  width: 100vw;
+  border: 0.5px solid #b8b8b86c;
+}
+.headercontainertop {
+  box-sizing: border-box;
+  align-items: center;
+  height: 10vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.leftt {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.navbarr {
+  text-align: center;
+  /* margin-top: 20px; */
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
+.navbarr a {
+  font-family: "Ubuntu";
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+}
+.navbarr a:hover {
+  font-family: "Ubuntu";
+  color: var(--main-color);
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+.titelss:hover {
+  padding-bottom: 18px;
+  border-radius: 3px;
+}
+.titelss {
+  margin-top: 10px;
+}
+
+.titleunderlinee {
+  padding-bottom: 18px;
+  border-radius: 3px;
+}
+
+.navpp {
+  font-family: "Ubuntu";
+  color: rgba(0, 0, 0, 0.861);
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.navpp:hover {
+  color: var(--main-color);
+}
+.iconsnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.buttonpanier {
+  display: flex;
+  justify-content: center;
+}
+
+.veeplogoo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.logoo {
+  width: 150px;
+  height: 120px;
+}
+.logo {
+  width: 150px;
+  height: 120px;
+}
+.iconn {
+  width: 25px;
+  height: 25px;
+}
+.navbaritems {
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin-top: 10px; */
+  background-color: white;
+}
+
+.navlinkss {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.container {
+  display: block;
+}
+.card {
+  position: static;
+  width: 436px;
+  height: 220px;
+  border-radius: 6px;
+  padding: 15px 30px 20px;
+  margin: calc(120px + 2rem) 2rem;
+  border-bottom: none;
+  box-shadow: rgba(34, 34, 43, 0.16) 0px 3px 11px;
+  background-color: white;
+  margin-right: 700px;
+}
+
+h1 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 400;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+p {
+  display: block;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  color: rgba(44, 43, 43, 0.887);
+  margin-bottom: 30px;
+}
+.cardbutton {
+  border-radius: 2px;
+  border: 1px solid rgb(236, 0, 140);
+  outline: 0px;
+  overflow: hidden;
+  padding: 0.25rem 2rem;
+  height: 2.5rem;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 23px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  background-color: rgb(236, 0, 140);
+  color: rgb(255, 255, 255);
+}
+footer {
+  display: block;
+  background-color: white;
+}
+.foterbody {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-bottom: 16px;
+  font-family: "HK Grotesk", arial, sans-serif;
+}
+.titlefoter {
+  font-weight: 600;
+  padding: 0px 1rem;
+  color: rgba(34, 34, 43, 0.798);
+  display: block;
+}
+.footercontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: center;
+}
+.footeritem {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 1rem;
+  font-weight: 500;
+  color: rgb(70, 70, 80);
+  padding-left: 40px;
+}
+.footerp {
+  font-weight: 500;
+  color: rgba(100, 100, 105, 0.914);
+  font-size: 16px;
+}
+
+/* media queries  */
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 450px) {
+}

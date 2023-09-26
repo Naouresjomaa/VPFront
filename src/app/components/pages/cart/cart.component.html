@@ -2,11 +2,12 @@
 <br><br><br><br><br><br>
 
 <header *ngIf="nbrpanier==0">
+    <br><br><br>
     <div class="container">
         <div class="card">
-            <h1>
+            <h3>
                 Votre Panier est vide
-            </h1>
+            </h3>
             <p>Jetez un coup d'œil à notre fabrique rose et trouvez l'inspiration!</p>
             <div class="butonline">
                     <button class="cardbutton" routerLink="/">Découvrez nos offres</button>
@@ -31,7 +32,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody *ngFor="let p of paniers">
+                        <tbody *ngFor="let p of paniers , let i = index">
                             <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
@@ -39,18 +40,19 @@
                                     </div>
                                     <div class="product__cart__item__text">
                                         <h6>{{p.Produit}}-{{p.ProdDetails.Genre}}</h6>
-                                        <h5>{{p.PrixUnitaire}} TND</h5>
+                                        <h5>{{p.taille}} </h5>
                                     </div>
                                 </td>
                                 <td class="quantity__item ">
                                     <div class="quantity ">
-                                        <div class="pro-qty-2 d-flex"><span class="fa fa-angle-left dec qtybtn"></span>
-                                            <input type="text" value="1">
-                                        <span class="fa fa-angle-right inc qtybtn"></span></div>
+                                        <div class="pro-qty-2 d-flex"><button style="border: none;" (click)="modifierQuantite('-1',i)"><span class="fa fa-angle-left dec qtybtn"></span></button>
+                                            <input type="text"  [(ngModel)]="p.Quantite"   [ngModelOptions]="{standalone:true}" >
+                                            <button style="border: none;"(click)="modifierQuantite('1',i)"><span class="fa fa-angle-right inc qtybtn"></span></button></div>
                                     </div>
                                 </td>
-                                <td class="cart__price">{{p.PrixUnitaire}} TND</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                            
+                                <td class="cart__price">{{p.PrixTotale}} TND</td>
+                                <td class="cart__close"><i class="fa fa-close" (click)="DletePanier(p.id)"></i></td>
                             </tr>
                           
                         </tbody>
@@ -82,9 +84,9 @@
                     <h5>+ 8 TND de livraison</h5>
                     <ul>
                         <!-- <li>Subtotal <span>$ 169.50</span></li> -->
-                        <li>Total <span> 169.50 TND</span></li>
+                        <li>Total <span> {{prixTotale}} TND</span></li>
                     </ul>
-                    <a routerLink="/shop-panier" class="primary-btn">Passer à la caisse</a>
+                    <button style="border: none;" (click)="passerCaisse()"><a  class="primary-btn">Passer à la caisse</a></button>
                 </div>
             </div>
         </div>

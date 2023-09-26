@@ -40,19 +40,19 @@
               
                
                </div>
-               <div class="quantity ">
+               <div class="quantity "> 
                 <p>{{produit.DetailsP}}</p>
                 <div class="pname">Les Tailles Disponibles</div>
                 <div class="sizes" >
                     <div *ngFor="let b of produit.Taille">
-                    <div class="size-box">{{b}}</div>
+                    <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
                 </div>
                 </div>
-                <div class="pname">Choisir La Quantité</div>
+                <div *ngIf="produit" class="pname">Choisir La Quantité</div>
                 <div class="quantity-selector">
-                    <button class="quantity-change" id="decrement">-</button>
-                    <input  id="quantity-input" value="1" style="text-align: center">
-                    <button class="quantity-change" id="increment">+</button>
+                    <button (click)="modifierQuantite('-1')" class="quantity-change" id="decrement">-</button>
+                    <input [(ngModel)]="panier.Quantite" id="quantity-input" style="text-align: center">
+                    <button (click)="modifierQuantite('1')" class="quantity-change" id="increment">+</button>
                 </div>
                 
             </div>

@@ -1,0 +1,647 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&family=Lato&family=Rubik&family=Tilt+Prism&family=Ubuntu&display=swap");
+/* Define your custom colors as variables */
+:root {
+  --main-color: rgb(237, 43, 153); /* Main color */
+  --background-color: rgba(245, 244, 250, 1); /* Background color */
+}
+
+/* Global styles */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu";
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    height: 110vh;
+    width: 100%;
+    background-size: cover;
+    //background-image: url('../../../../assets/img/vp/home.png');
+    background-image: url('../../../../assets/img/home-three/veepee_home.jpeg');
+}
+
+.headertopp {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+  background-color: transparent; /* Initial background color */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.headernavbar {
+  position: fixed;
+  display: block;
+  justify-content: center;
+}
+.headercontainertop {
+  box-sizing: border-box;
+  align-items: center;
+  height: 10vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color: black;
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  z-index: 99999999999;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: white;
+  color: #0b0b0b;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: "Ubuntu";
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 12%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  line-height: 28px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100%;
+  margin-left: -5px;
+}
+
+.hamburger:hover + .tooltiptext,
+.tooltiptext:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tooltip-item:hover {
+  color: var(--main-color); /* Use the variable here */
+  fill: var(--main-color) !important;
+}
+
+.tooltip-item:hover path {
+  fill: var(--main-color) !important;
+}
+
+.tooltiptext hr {
+  border: 1px solid #c7c7c783 !important;
+  width: 100% !important;
+  border-radius: 20px;
+  margin: 12px 0px;
+}
+
+.tooltip-item img {
+  width: 35px;
+  height: 35px;
+}
+
+.tooltip-item h1 {
+  color: #0b0b0b;
+  font-size: 16px;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  box-sizing: content-box;
+  position: relative;
+  padding-bottom: 20px;
+  box-sizing: content-box;
+  margin-top: 12px;
+}
+
+.humberger-text {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: transform 0.4s ease;
+}
+
+.opened .bar:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.opened .bar:nth-child(2) {
+  transform: scaleX(0);
+}
+
+.opened .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.buttonn {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  font-size: 18px;
+  font-weight: 400;
+
+  width: 90px;
+  height: 35px;
+  font-family: "Ubuntu";
+  border-radius: 2px;
+  margin-top: 25px;
+}
+
+.buttonn:hover {
+  background-color: var(--main-color); /* Use the variable here */
+  color: white;
+  fill: white;
+  border: none;
+}
+
+.buttonn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%)
+    hue-rotate(72deg) brightness(99%) contrast(99%);
+}
+
+.butonline {
+  line-height: 50px;
+}
+
+hr {
+  width: 100vw;
+  border: 0.5px solid #b8b8b86c;
+}
+.headercontainertop {
+  box-sizing: border-box;
+  align-items: center;
+  height: 10vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.leftt {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  margin-top: -20px;
+}
+
+.navbarr {
+  text-align: center;
+  /* margin-top: 20px; */
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
+.navbarr a {
+  font-family: "Ubuntu";
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+}
+.navbarr a:hover {
+  font-family: "Ubuntu";
+  color: var(--main-color);
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+}
+
+.titelss:hover {
+  padding-bottom: 18px;
+  border-radius: 3px;
+}
+.titelss {
+  margin-top: 10px;
+}
+
+.titleunderlinee {
+  padding-bottom: 18px;
+  border-radius: 3px;
+}
+
+.navpp {
+  font-family: "Ubuntu";
+  color: rgba(0, 0, 0, 0.861);
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.navpp:hover {
+  color: var(--main-color);
+}
+.iconsnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.buttonpanier {
+  display: flex;
+  justify-content: center;
+}
+
+.veeplogoo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.logoo {
+  width: 150px;
+  height: 120px;
+}
+.logo {
+  width: 150px;
+  height: 120px;
+}
+.iconn {
+  width: 25px;
+  height: 25px;
+}
+.navbaritems {
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin-top: 10px; */
+  background-color: white;
+}
+
+.navlinkss {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.container {
+  display: block;
+}
+footer {
+  background-color: rgb(247, 247, 247);
+  padding: 10px;
+}
+.footerheader {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .footerheader {
+    display: none;
+  }
+}
+
+.rightsidefooter {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.leftsidefooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.footerbody {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.footer-section {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-section h3 {
+  margin-right: 97px;
+}
+
+.footer-section ul {
+  flex-direction: column;
+  display: flex;
+}
+
+.footersocial {
+}
+.footersocial:hover {
+  color: rgba(232, 30, 144, 0.722);
+}
+
+.footerbottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px;
+}
+
+li,
+ul {
+  text-align: left;
+}
+
+.footericon {
+  margin: 5px;
+  width: 44px;
+  height: 40px;
+}
+
+.footercollaborators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.collabimg {
+  max-width: 200px;
+  max-height: 70px;
+  min-height: 50px;
+  min-width: 50px;
+  padding-left: 20px;
+}
+
+.dropdown {
+  display: flex;
+  align-self: flex-end;
+}
+
+#country-select {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+#selected-flag {
+  width: 40px; /* Largeur des icônes de drapeau */
+  height: auto;
+}
+
+.ends {
+  text-align: end;
+  margin-right: 190px;
+}
+
+.endsimg {
+  max-width: 200px;
+  max-height: 100px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+.hrfooter {
+  margin-top: 5px;
+  height: 5px;
+  font-weight: bold;
+  background-color: var(--main-color); /* Use the variable here */
+  border: none;
+}
+
+.footer-section li:hover {
+  cursor: pointer;
+  color: var(--main-color); /* Use the variable here */
+}
+
+.footer-section p:hover {
+  color: var(--main-color); /* Use the variable here */
+}
+
+h1:visited {
+  color: #0b0b0b;
+  color: black; /* Text color on click */
+}
+.footerfirst {
+  margin: 50px;
+  margin-top: 50px;
+  line-height: 25px;
+}
+h4 {
+  margin-top: 50px;
+  font-size: 14px;
+}
+.footerfirstp {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 5px;
+}
+
+.container {
+  display: block;
+  justify-content: center;
+  align-self: center;
+}
+.card {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  width: 500px;
+  height: 338px;
+  border-radius: 6px;
+  padding: 15px 30px 20px;
+  align-self: center;
+  margin-top: -30ch;
+  margin-left: 30%;
+  margin-right: 70%;
+  margin-bottom: 30px;
+  border-bottom: none;
+  box-shadow: rgba(34, 34, 43, 0.16) 0px 3px 11px;
+  background-color: white;
+  margin-right: 700px;
+}
+.cardcontainer {
+  width: 400px;
+  text-align: center;
+}
+
+h1 {
+  color: #0b0b0b;
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 400;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgba(44, 43, 43, 0.887);
+}
+.cardbutton {
+  border-radius: 2px;
+  border: 1px solid rgb(236, 0, 140);
+  outline: 0px;
+  overflow: hidden;
+  padding: 0.25rem 2rem;
+  height: 2.5rem;
+  font-family: "Ubuntu";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 23px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+  background-color: rgb(236, 0, 140);
+  color: rgb(255, 255, 255);
+}
+
+.containerr {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+.containerblock {
+  display: block;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.containerbody {
+  display: flex;
+}
+.containermenue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+}
+.iconfooters {
+  width: 70px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+.containerfooter {
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.ppp {
+  color: rgba(40, 39, 39, 0.78);
+  text-align: center;
+}
+.titre {
+  color: rgb(70, 70, 80);
+}
+.socialmedia {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  /* flex-direction: row; */
+}
+
+/* Styling for the input and label */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px;
+}
+label {
+  position: relative;
+  font-size: 12px;
+  margin-bottom: -12px;
+  background-color: white;
+  text-align: left;
+  margin-left: 25px;
+  color: rgba(72, 73, 73, 0.842);
+}
+label:hover {
+  color: var(--main-color);
+}
+
+input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid rgba(201, 198, 198, 0.499);
+  border-radius: 5px;
+  animation: slideIn 0.5s ease;
+  position: relative;
+
+  background-color: transparent;
+}
+.inputbutton {
+  position: relative;
+  border: none;
+  margin-top: -28px;
+  background-color: white;
+  align-self: flex-end;
+  width: 55px;
+  height: 25px;
+  margin-right: 10px;
+  font-weight: 700;
+}

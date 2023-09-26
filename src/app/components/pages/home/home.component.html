@@ -62,13 +62,28 @@
         </div>
 
         <!-- Left Section -->
-        <div class="left">
-            <div>
+        <div class="left" *ngIf="affichage">
+            <!-- <div>
                 <img src="assets/img/vp/question.png" class="icon" />
                 <p class="navp">Qui sommes-nous?</p>
-            </div>
-            <button class="button">S'identifier</button>
+            </div> -->
+            <div >
+            <button class="button" routerLink="/login">S'identifier</button>
         </div>
+        
+        </div>
+       
+            <div class="left d-flex " *ngIf="!affichage">
+                <div class="d-flex">
+                    <a routerLink="/parrainage"><img src="assets/img/vp/parrainage.svg" id="my_image" class="icon" />
+                    </a><p class="navp">          Parrainage</p>
+                </div>
+                <div class="cart-container">
+                    <a routerLink="/Panier"><img class="img" src="assets/img/vp/panier.svg" id="my_image">
+                    <span class="cart-badge">{{nbrpanier}}</span> </a><!-- This is the label for the cart count -->
+                </div>
+            </div>  
+        
     </div>
 
     <!-- Navigation Links -->

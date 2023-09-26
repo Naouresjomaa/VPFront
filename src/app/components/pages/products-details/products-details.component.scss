@@ -878,6 +878,9 @@ a:visited{
 .size-box:hover {
     background-color: #e0e0e0; /* Darker gray on hover */
 }
+.size-box:active, .size-box:focus {
+  background-color:#8a8a8a;; /* Red when selected */
+}
 .quantity-selector {
   display: flex;
   align-items: center;

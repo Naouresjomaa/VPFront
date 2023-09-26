@@ -9,9 +9,23 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class HomeComponent implements OnInit ,  AfterViewInit{
 brands :any;
+affichage = true;
+  nbrpanier: any;
   constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
   ngOnInit() {
     this.getAllBrand()
+    this.decodeToken()
+    this.getPanier()
+  }
+  getPanier(){
+    const storedPanier = localStorage.getItem('panier');
+    this.nbrpanier =  storedPanier ? JSON.parse(storedPanier) : 0;
+  }
+  decodeToken() {
+    const token = localStorage.getItem('isLoggedin');
+   if(token && token.length > 0){
+    this.affichage = false
+   }
   }
 getAllBrand(){
 this.service.GetBrands().subscribe(res=>{

@@ -1,19 +1,43 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
-
+import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { PanierService } from 'src/app/services/panier.service';
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
-
+  Email: any;
+  Username: any;
  
+  paniers: any;
+  nbrpanier: number=0;
+  constructor(private storageService: StorageService ,private el: ElementRef,  private cd: ChangeDetectorRef,private jwtHelper: JwtHelperService) { }
+  decodeToken() {
+    const token = localStorage.getItem('isLoggedin');
+    this.nbrpanier = Number(localStorage.getItem('panier') || '0');
+    const decodedToken = this.jwtHelper.decodeToken(token);
+    this.Email=decodedToken.Email
+    this.Username=decodedToken.UserName
+    console.log(decodedToken);
+  }
+
+  getTotal(paniers: any) {
+    throw new Error('Method not implemented.');
+  }
  
 
   ngOnInit(): void {
-    
-     
+    this.decodeToken()
+    this.storageService.panier$.subscribe(
+      panier => {
+        this.nbrpanier = panier;
+        // pour forcer la détection des changements
+        setTimeout(() => {this.nbrpanier = panier;
+          this.cd.detectChanges();});
+      }
+    );
   
      let navContainer = this.el.nativeElement.querySelector('.headertop'); // Remplacez '.your-nav-class' par le sélecteur CSS de votre conteneur
      

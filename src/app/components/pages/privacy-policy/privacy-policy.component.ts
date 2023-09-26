@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, CanActivate } from '@angular/router';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./privacy-policy.component.scss']
 })
 export class PrivacyPolicyComponent implements OnInit {
+  payment_id: any;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.payment_id= this.route.snapshot.queryParamMap.get('payment_id');
   }
-
+ 
 }

@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { BrandService } from 'src/app/services/brand.service';
 import { DataService } from 'src/app/services/data.service';
 import { PanierModel } from 'src/app/services/model/Panier.model';
 import { PanierService } from 'src/app/services/panier.service';
 import { ProduitService } from 'src/app/services/produit.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import Swal from "sweetalert2";
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.component.html',
@@ -28,6 +29,9 @@ selectedTaille:any=''
     panier = new PanierModel();
     response: any;
     response1: any;
+  quantite: any;
+  valeur = localStorage.getItem('isLoggedin');
+  paniercount: any=0;
   constructor(
     private route: ActivatedRoute,
     private brandservice: BrandService,
@@ -35,22 +39,21 @@ selectedTaille:any=''
     private dataservice: DataService,
     private panierservice: PanierService,
     private cdr: ChangeDetectorRef,
+    private jwtHelper: JwtHelperService,
+    private storageService : StorageService
     ) { }
-
+    decodeToken() {
+      const token = localStorage.getItem('isLoggedin');
+      const decodedToken = this.jwtHelper.decodeToken(token);
+      this.panier.Email=decodedToken.Email
+      this.panier.UserName=decodedToken.UserName
+      console.log(this.panier.Email,this.panier.UserName)
+      console.log(decodedToken);
+    }
   ngOnInit(): void {
-    this.dataservice.auth.subscribe((data) => {
-      console.log('dataaaaaaaaaaaaaaaaaaaaa',data[0])
-      if (data[0] == false) {
-          this.Loggedin = false;
-      } else {
-          this.Loggedin = true;
-          this.Username = data[0].UserName;
-          this.Email = data[0].Email;
-          this.panier.UserName = this.Username;
-          this.panier.Email = this.Email;
-      }
-  });
+  this.panier.Quantite=1;
     this.id=this.route.snapshot.params.id;
+    this.decodeToken()
     this.GetProduct();
   
   }
@@ -61,92 +64,74 @@ selectedTaille:any=''
     })
   }
   selectTaille(taille: string) {
-    this.selectedTaille = taille;
-    console.log('this.selectedTaille',this.selectedTaille)
+    this.panier.taille = taille;
+    console.log('this.selectedTaille',this.panier.taille)
+}
+modifierQuantite(valeur): void {
+  if(valeur == '1'){
+    this.panier.Quantite += 1;
+  }
+  if(valeur == '-1'){
+    this.panier.Quantite -= 1;
+  }
 }
   Topanier(prod: any) {
-    this.panier.UserName = 'Naoures';
-    this.panier.Email = 'naouresjomaa@gmail.com';
-    this.panier.Quantite = 1;
-    if (true) {
-        if (true) {
-            //prod.QteDsStock -= this.panier.Quantite;
-            this.panier.Produit = prod.Produit;
-            this.panier.ProdDetails = prod;
-            this.panier.PrixUnitaire = prod.Prix;
-            this.panier.PrixTotale = (
-                this.panier.PrixUnitaire * this.panier.Quantite
-            ).toFixed(2);
-            // this.produitservice
-            //     .UpdateProduit(prod.id, prod)
-            //     .subscribe((res) => {
-            //         this.response = res;
-            //         if (
-            //             this.response.message ==
-            //             "Produit updated succefully"
-            //         ) {
-                        this.panierservice
-                            .AddPanier(this.panier)
-                            .subscribe((res) => {
-                                this.response1 = res;
-                                if (
-                                    this.response1.message ==
-                                    "Panier créé avec succès"
-                                ) {
-                                    Swal.fire({
-                                        position: "center",
-                                        title: "Produit ajouté au panier",
-                                        text: "",
-                                        showConfirmButton: false,
-                                        timer: 3000,
-                                        icon: "success",
-                                    });
-                                    this.cdr.detectChanges();
-                                    this.panier.Produit = "";
-                                    this.panier.ProdDetails = [];
-                                    this.panier.PrixTotale = 0;
-                                    this.panier.PrixUnitaire = 0;
-                                } else {
-                                    Swal.fire({
-                                        position: "center",
-                                        title: "Quelque chose n'a pas marché !",
-                                        text: "",
-                                        showConfirmButton: false,
-                                        timer: 3000,
-                                        icon: "error",
-                                    });
-                                }
-                            });
-    //                 } else {
-    //                     Swal.fire({
-    //                         position: "center",
-    //                         title: "Quelque chose n'a pas marché !",
-    //                         text: "",
-    //                         showConfirmButton: false,
-    //                         timer: 3000,
-    //                         icon: "error",
-    //                     });
-    //                 }
-    //             });
-    //     } else {
-    //         Swal.fire({
-    //             position: "center",
-    //             title: "Quantité produit indisponible !",
-    //             text: "",
-    //             showConfirmButton: false,
-    //             timer: 3000,
-    //             icon: "error",
-    //         });
-    //     }
-    // } else {
-    //     Swal.fire({
-    //         position: "center",
-    //         title: "Quantité produit indisponible !",
-    //         text: "",
-    //         showConfirmButton: false,
-    //         timer: 3000,
-    //         icon: "error",
-       // });
+    if(!this.panier.taille){
+      Swal.fire({
+        position: "center",
+        title: "selectionnez une taille svp !",
+        text: "",
+        showConfirmButton: false,
+        timer: 3000,
+        icon: "error",
+    });
     }
+    else{if (true) {
+      if (true) {
+          this.panier.Produit = prod.Produit;
+          this.panier.ProdDetails = prod;
+          this.panier.PrixUnitaire = prod.PrixR;
+          this.panier.PrixTotale = 
+              this.panier.PrixUnitaire * this.panier.Quantite
+    
+                      this.panierservice
+                          .AddPanier(this.panier)
+                          .subscribe((res) => {
+                              this.response1 = res;
+                              if (
+                                  this.response1.message ==
+                                  "Panier créé avec succès"
+                              ) {
+                                this.paniercount = Number(localStorage.getItem('panier') || '0');
+                                this.paniercount+=1;
+                                this.storageService.setPanier(this.paniercount)
+                                //localStorage.setItem('panier', this.paniercount.toString());
+                                  Swal.fire({
+                                      position: "center",
+                                      title: "Produit ajouté au panier",
+                                      text: "",
+                                      showConfirmButton: false,
+                                      timer: 3000,
+                                      icon: "success",
+                                  });
+                                  this.cdr.detectChanges();
+                                  this.panier.Produit = "";
+                                  this.panier.ProdDetails = [];
+                                  this.panier.PrixTotale = 0;
+                                  this.panier.PrixUnitaire = 0;
+                              } else {
+                                  Swal.fire({
+                                      position: "center",
+                                      title: "Quelque chose n'a pas marché !",
+                                      text: "",
+                                      showConfirmButton: false,
+                                      timer: 3000,
+                                      icon: "error",
+                                  });
+                              }
+                          });
+
+  }
 }}
+    }
 }

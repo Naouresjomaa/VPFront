@@ -48,10 +48,16 @@ export class CommandeService {
             }
         );
     }
-    sendOrderEmail() {
+    sendOrderEmail(data) {
         const headers = new HttpHeaders();
-        return this.http.post(environment.apiurl + "/send-email",{
+        return this.http.post(environment.apiurl + "/send-email",data,{
             headers: headers,
         });
+    }
+    paiementenligne(){
+        const headers = new HttpHeaders();
+        return this.http.post(environment.apiurl + "/paiement",{
+            headers: headers,
+        });   
     }
 }

@@ -1,13 +1,8 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .user-area {
-    background-image: url("../../../../assets/img/home-three/BGg.png");
-    background-size: cover;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
-  }
+  background-image: url("../../../../assets/img/home-three/BGg.png");
+  background-size: cover;
+}
 .default-btn{
   background-color:rgb(237, 43, 153) !important
 }
@@ -74,4 +69,21 @@
 
 .separator span::after {
   right: -12%; /* Closer to 'ou' */
+}
+.dialog-container {
+  width: 800px;
+    height: 600px;
+  overflow: hidden; /* Pour permettre le défilement si le contenu dépasse */
+}
+.mat-dialog-container {
+  padding: 20px; /* Ajoutez du rembourrage si nécessaire */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* Ajoutez une ombre pour donner de la profondeur */
+}
+.dialog-content {
+  transform: scale(0.8);  /* Réduit le contenu à 80% de sa taille d'origine */
+  transform-origin: top left;  /* Le point d'origine de la transformation */
+}
+.some-content-class {
+  width: 100%;   // Prend toute la largeur disponible de son parent.
+  height: 100%;  // Prend toute la hauteur disponible de son parent.
 }

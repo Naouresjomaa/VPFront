@@ -45,7 +45,11 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { ShopPanierComponent } from './components/pages/shop-panier/shop-panier.component';
 import { ChaussureComponent } from './components/Categories/chaussure/chaussure.component';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+ import { MatDialogModule } from '@angular/material/dialog';
+ import { JwtModule } from '@auth0/angular-jwt';
+ export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +102,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
 
   ],
   providers: [],

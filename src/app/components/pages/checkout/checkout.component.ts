@@ -63,31 +63,7 @@ export class CheckoutComponent implements OnInit {
                 icon: "error",
             });
         } else {
-            this.commandeservice.UpdateCommande(c.id, c).subscribe((res) => {
-                this.response = res;
-                if (this.response.message == "Commande mise à jour avec succès") {
-                    Swal.fire({
-                        title: "Vous avez passé votre commande",
-                        text: "",
-                        imageUrl:
-                            "https://us.123rf.com/450wm/gulzarkarimn/gulzarkarimn2305/gulzarkarimn230501954/204599500-flamingo-wearing-sunglasses-on-blue-background-3d-illustration.jpg?ver=6",
-                        imageWidth: 400,
-                        imageHeight: 200,
-                        timer: 3000,
-                        showConfirmButton: false,
-                    });
-                    this.router.navigate(["/Commande"]);
-                } else {
-                    Swal.fire({
-                        position: "center",
-                        title: "Quelque chose n'a pas marché !",
-                        text: "",
-                        showConfirmButton: false,
-                        timer: 3000,
-                        icon: "error",
-                    });
-                }
-            });
+          
         }
     }
 }

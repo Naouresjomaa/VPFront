@@ -12,15 +12,21 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Prénom<span>*</span></p>
-                                        <input type="text">
+                                        <input [(ngModel)]="commande.UserName" [ngModelOptions]="{standalone: true}"  class="text2">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input [(ngModel)]="commande.Email" [ngModelOptions]="{standalone: true}" >
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6">
+                                    <div class="checkout__input">
                                         <p>Nom<span>*</span></p>
                                         <input type="text">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- <div class="checkout__input">
                                 <p><span>*</span></p>
@@ -28,56 +34,47 @@
                             </div> -->
                             <div class="checkout__input">
                                 <p>Addresse<span>*</span></p>
-                                <input type="text"  class="checkout__input__add">
+                                <input   [(ngModel)]="commande.Adresse" [ngModelOptions]="{standalone: true}" type="text"  class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
                                 <p>Ville<span>*</span></p>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="commande.Gouvernerat" [ngModelOptions]="{standalone: true}">
                             </div>
-                            <div class="checkout__input">
-                                <p>Country/State<span>*</span></p>
-                                <input type="text">
-                            </div>
+                          
                             <div class="checkout__input">
                                 <p>Code Postal<span>*</span></p>
-                                <input type="text">
+                                <input type="text" [(ngModel)]="commande.CodePostal" [ngModelOptions]="{standalone: true}">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Téléphone<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text"  [(ngModel)]="commande.Telephone" [ngModelOptions]="{standalone: true}">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Email<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
+                              
                             </div>
                          
                           
                             <div class="checkout__input">
-                                <p>Notes d'ordre<span>*</span></p>
-                                <input type="text"
+                                <p>Notes d'ordre<span></span></p>
+                                <input type="text" [(ngModel)]="commande.Message" [ngModelOptions]="{standalone: true}"
                                 placeholder="Notes d'ordre">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
                                 <h4 class="order__title">VOTRE COMMANDE</h4>
-                                <div class="checkout__order__products">Article <span>Totale</span></div>
-                                <ul class="checkout__total__products">
-                                    <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
+                                <div class="checkout__order__products">Article <span></span></div>
+                                <ul class="checkout__total__products" *ngFor="let p of paniers , let i=index">
+                                    <li>{{i+1}}. {{p.Produit}}-{{p.ProdDetails.Genre}}-{{p.taille}} <span></span></li>
                                     <br>
-                                    <li>02. German chocolate <span>$ 170.0</span></li><br>
-                                    <li>03. Sweet autumn <span>$ 170.0</span></li><br>
-                                    <li>04. Cluten free mini dozen <span>$ 110.0</span></li><br>
+                                    
+                                    
                                 </ul>
                                 <ul class="checkout__total__all">
                                     
-                                    <li>Totale <span >$750.99</span></li>
+                                    <li>Totale + livraison <span >{{prixTotale}}TND</span></li>
                                 </ul>
                                
                                 
@@ -97,7 +94,7 @@
                                     </label>
                                 </div>
                             
-                                <button type="submit" class="site-btn">PASSER LA COMMANDE</button>
+                                <button type="submit" class="site-btn" (click)="Order(commande)">PASSER LA COMMANDE</button>
                             </div>
                         </div>
                     </div>

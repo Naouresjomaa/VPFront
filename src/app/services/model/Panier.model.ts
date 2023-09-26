@@ -4,7 +4,8 @@ export class PanierModel {
     ProdDetails: any;
     PrixUnitaire: any;
     Quantite: any;
-    PrixTotale: any;
+    PrixTotale: Number;
     UserName: any;
     Email: any;
+    taille:any;
 }
