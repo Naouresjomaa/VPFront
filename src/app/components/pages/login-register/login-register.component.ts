@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import jwt_decode from "jwt-decode";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
     selector: "app-login-register",
@@ -15,13 +16,16 @@ export class LoginRegisterComponent implements OnInit {
     token: any;
     userData: any;
     parrainage:any
-    constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,) {}
+    constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,
+        public dialogRef: MatDialogRef<LoginRegisterComponent>) {}
 
     ngOnInit(): void {
         this.parrainage = this.route.snapshot.queryParamMap.get('parrainage');
        
     }
-    
+    close(): void {
+        this.dialogRef.close();
+      }
     loginForm = new FormGroup({
         Email: new FormControl("", [Validators.required, Validators.email]),
         Password: new FormControl("", Validators.required),
@@ -45,6 +49,8 @@ export class LoginRegisterComponent implements OnInit {
                 .subscribe((res) => {
                     this.response = res;
                     if (this.response.message == "Vous êtes connecté") {
+                        this.close()
+                        
                         Swal.fire({
                             position: "top-end",
                             title: "Bienvenue à VentePrivilegiée",
