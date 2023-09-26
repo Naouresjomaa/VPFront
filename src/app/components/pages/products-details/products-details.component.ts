@@ -49,7 +49,9 @@ selectedTaille:any=''
       const token = localStorage.getItem('isLoggedin');
       const decodedToken = this.jwtHelper.decodeToken(token);
       this.panier.Email=decodedToken.Email
+      this.Email = decodedToken.Email
       this.panier.UserName=decodedToken.UserName
+      this.Username=decodedToken.UserName
       console.log(this.panier.Email,this.panier.UserName)
       console.log(decodedToken);
     }
@@ -83,7 +85,7 @@ modifierQuantite(valeur): void {
     if(!this.Email && !this.Username){
       
         this.dialog.open(LoginRegisterComponent, {
-          width: '400px',
+          width: '700px',height :'700px'
         });
        
       }

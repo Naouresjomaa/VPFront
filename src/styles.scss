@@ -6932,3 +6932,24 @@ Animation  CSS
 Animation  CSS End
 =================================*/
  @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* Rendre le fond transparent */
+.mat-dialog-container {
+    background: transparent;
+  }
+  
+  /* Supprimer la barre de défilement */
+  .mat-dialog-container::-webkit-scrollbar {
+    display: none;
+  }
+  /* Rendre l'arrière-plan flou */
+.mat-dialog-container::backdrop {
+    backdrop-filter: blur(5px); /* Ajustez la valeur pour le flou souhaité */
+    background-color: rgba(0, 0, 0, 0.5); /* Ajustez la couleur et l'opacité souhaitées */
+  }
+  
+  /* Supprimer les bordures et l'ombre de la carte */
+  .mat-dialog-container {
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+  }
