@@ -24,7 +24,23 @@ body {
   background-color: transparent; /* Initial background color */
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
-
+.soldee{
+  width: 200px;
+  height: 100px;
+  background-color: #f6f5f5d6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 3px 3px rgb(247, 201, 227), -1em 0 .4em rgba(230, 220, 225, 0.877);
+  align-self: flex-end;
+ 
+}
+.soldee h2{
+  font-size: 20px;
+}
+h3{
+  font-size: 20px;
+  color: #4e4c4ce3;
+}
 .headernavbar {
   position: fixed;
   display: block;
