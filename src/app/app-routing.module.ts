@@ -40,7 +40,7 @@ const routes: Routes = [
     { path: "Gastronomie", component: GastronomieComponent,   },
     { path: "Loisir", component: LoisirComponent ,  },
     { path: "Sport", component: SportComponent ,  },
-    { path: "Compte", component: CompteComponent , canActivate: [AuthGuard] },
+    { path: "Compte", component: CompteComponent  },
     { path: "Brand/:id", component: ListingComponent ,  canActivate: [AuthGuard]},
     { path: "pricing", component: PricingComponent , canActivate: [AuthGuard] },
     { path: "Panier", component: CartComponent ,  canActivate: [AuthGuard]},

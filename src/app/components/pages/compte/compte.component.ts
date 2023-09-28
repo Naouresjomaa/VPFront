@@ -29,6 +29,7 @@ export class CompteComponent implements OnInit {
         this.clientservice.getClientByid(this.userData.id).subscribe((res) => {
             this.data = res;
             this.client = this.data[0];
+            console.log('this.client',this.client)
         });
     }
     UpdateClient() {
