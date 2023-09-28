@@ -3,29 +3,34 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginRegisterComponent } from './components/pages/login-register/login-register.component';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
   isUserLoggedIn = false ;
-  constructor(private dialog: MatDialog) {}
+  Email
+  Username
+  constructor(private dialog: MatDialog, private jwtHelper: JwtHelperService,) {}
   decodeToken() {
-    let token = localStorage.getItem('isLoggedin');
-   if(token && token.length > 0){
-    this.isUserLoggedIn = true
-   }
+    const token = localStorage.getItem('isLoggedin');
+    const decodedToken = this.jwtHelper.decodeToken(token);
+    this.Email = decodedToken.Email
+    this.Username=decodedToken.UserName
+    console.log(decodedToken);
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const isUserLoggedIn = false;
-
-    if (!this.isUserLoggedIn) {
+      const token = localStorage.getItem('isLoggedin');
+     if(!token){
       this.dialog.open(LoginRegisterComponent, {
-        width: '400px',
-      });
-      return false; 
+        width: '700px',height :'700px'
+      }
+      );
+      return false
+     
     }
     return true; 
   }

@@ -43,6 +43,12 @@ export class LoginRegisterComponent implements OnInit {
     });
 
     Login() {
+        this.route.fragment.subscribe(fragment => {
+            if (fragment) {
+              const element = document.querySelector('#' + fragment);
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
         if (this.loginForm.valid) {
             this.clientservice
                 .LoginAuth(this.loginForm.value)

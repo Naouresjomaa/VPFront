@@ -1,6 +1,8 @@
 import { OnInit } from '@angular/core';
 import { Component, Renderer2, ElementRef, HostListener, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { BrandService } from 'src/app/services/brand.service';
+import { LoginRegisterComponent } from '../login-register/login-register.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,8 @@ export class HomeComponent implements OnInit ,  AfterViewInit{
 brands :any;
 affichage = true;
   nbrpanier: any;
-  constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2,
+    private dialog: MatDialog) { }
   ngOnInit() {
     this.getAllBrand()
     this.decodeToken()
@@ -32,6 +35,11 @@ this.service.GetBrands().subscribe(res=>{
   console.log('resssssssssssssssssss',res)
   this.brands=res;
 })
+}
+identifier(){
+    this.dialog.open(LoginRegisterComponent, {
+      width: '700px',height :'700px'
+    });
 }
   private slideIndex: number = 1;
   @HostListener('window:scroll', ['$event'])

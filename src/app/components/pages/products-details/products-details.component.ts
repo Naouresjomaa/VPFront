@@ -58,10 +58,8 @@ selectedTaille:any=''
   ngOnInit() {
     this.id=this.route.snapshot.params.id;
     this.GetProduct();
-  this.panier.Quantite=1;
+    this.panier.Quantite=1;
     this.decodeToken()
-    
-  
   }
   GetProduct(){
     this.produitservice.getProduitByid(this.id).subscribe((res:any)=>{
