@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&family=Lato&family=Rubik&family=Tilt+Prism&family=Ubuntu&display=swap");
-/* Define your custom colors as variables */
+
 :root {
-  --main-color: rgb(237, 43, 153); /* Main color */
-  --background-color: rgba(245, 244, 250, 1); /* Background color */
+  --main-color: rgb(237, 43, 153);
+  --background-color: rgba(245, 244, 250, 1);
 }
 
 /* Global styles */
@@ -16,6 +16,9 @@
 body {
   font-family: "Ubuntu";
 }
+
+
+
 
 
 
@@ -454,15 +457,16 @@ input[type=text] {
 
 
 main{
-  width: 100%;
-
-  margin: 50px 50px 50px
+  width: 100vw;
+  margin: auto;
+ 
 }
 .flex-box{
     display: flex;
-    width: 100%;
-   align-self: center;
-   margin-left: 100px;
+  
+    width: 100vw;
+   margin: auto;
+  
    
 }
 .flex-boxx{
@@ -912,10 +916,17 @@ a:visited{
 
 
 
-
-
-
-
+@media (max-width:1119px) {
+    .flex-box{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:662px) {
+  .price{
+  display: block;
+  flex-direction: column;
+  }
+}
 
 
 
