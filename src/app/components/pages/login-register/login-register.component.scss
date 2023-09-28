@@ -1,105 +1,73 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-.container{
-  width: 100vw;
-  height: 100vh;
-  margin: 50px;
- 
-}
 .user-area {
   background-image: url("../../../../assets/img/home-three/BGg.png");
-  background-size: cover; border-radius: 10px;
-  width: 500px;
-  height: 500px;
-  margin: auto;
+  background-size: cover;
+  height: 100%;
+ 
 }
 .default-btn{
-  background-color:rgb(237, 43, 153) !important
+background-color:rgb(237, 43, 153) !important
 }
-  .ChampError{
-    color: rgb(219, 1, 1);
-  }
+.ChampError{
+  color: rgb(219, 1, 1);
+}
 /* Styles for the buttons */
 .circle-btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 20px 40px; /* Space between the buttons */
-  text-decoration: none;
-  font-size: 24px;
-  transition: transform 0.3s ease;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin: 20px 40px; /* Space between the buttons */
+text-decoration: none;
+font-size: 24px;
+transition: transform 0.3s ease;
 }
-.user-section .user-content img{
-  width: 150px;
-  margin-top: 10px;
-  margin-bottom: -50px
-}
-.user-section .user-all-form .contact-form{
-  margin-top: -70px;
-}
+
 .circle-btn:hover {
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 
 .facebook-btn {
-  background-color: #1877F2;
-  color: #fff;
+background-color: #1877F2;
+color: #fff;
 }
 
 .google-btn {
-  background-color: #DB4437;
-  color: #fff;
+background-color: #DB4437;
+color: #fff;
 }
 
 /* Separator styles */
 .separator {
-  position: relative;
-  text-align: center;
-  margin: 20px 0; 
-  overflow: visible;
+position: relative;
+text-align: center;
+margin: 20px 0; 
+overflow: visible;
 }
 
 .separator span {
-  color: #fff; 
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  padding: 0 5%; /* Padding around 'ou' */
+color: #fff; 
+position: relative;
+z-index: 1;
+display: inline-block;
+padding: 0 5%; /* Padding around 'ou' */
 }
 
 .separator span::before,
 .separator span::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  height: 1px;
-  width: 50%; /* Longer line */
-  background-color: #fff;
+content: '';
+position: absolute;
+top: 50%;
+height: 1px;
+width: 50%; /* Longer line */
+background-color: #fff;
 }
 
 .separator span::before {
-  left: -12%; /* Closer to 'ou' */
+left: -12%; /* Closer to 'ou' */
 }
 
 .separator span::after {
-  right: -12%; /* Closer to 'ou' */
-}
-.dialog-container {
-  width: 800px;
-    height: 600px;
-  overflow: hidden; /* Pour permettre le défilement si le contenu dépasse */
-}
-.mat-dialog-container {
-  padding: 20px; /* Ajoutez du rembourrage si nécessaire */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* Ajoutez une ombre pour donner de la profondeur */
-}
-.dialog-content {
-  transform: scale(0.8);  /* Réduit le contenu à 80% de sa taille d'origine */
-  transform-origin: top left;  /* Le point d'origine de la transformation */
-}
-.some-content-class {
-  width: 100%;   // Prend toute la largeur disponible de son parent.
-  height: 100%;  // Prend toute la hauteur disponible de son parent.
+right: -12%; /* Closer to 'ou' */
 }
