@@ -1,7 +1,9 @@
  <!-- Header Section -->
  <section class="headertop" id="headertop">
     <div class="headercontainertop">
+
         <!-- Hamburger Menu -->
+
         <div class="tooltip t">
             <div class="hamburger">
                 <div class="bar"></div>
@@ -11,48 +13,59 @@
             </div>
 
             <!-- Tooltip for Menu -->
+
             <span class="tooltiptext">
                 <h2>Bien le bonjour</h2>
-                <p>Déja membre Veepee?</p>
                 <button class="whitebutton">S'identifier</button>
+
+
                 <hr />
+
+
 
                 <!-- Menu Items -->
                 <div class="tooltip-item">
-                    <img src="assets/img/vp/home.svg" />
+                   
                     <h1>Accueil</h1>
                 </div>
-                <hr>
+               
+              
                 <div class="tooltip-item">
-                    <img src="assets/img/vp/avatar.svg">
+                    
+                   <h1>Mode</h1>
+                </div>
+                <div class="tooltip-item">
+                    
+                     <h1>Chaussures</h1>
+                </div>
+                <div class="tooltip-item">
+                  
+                    <h1>Maison</h1>
+                </div>
+
+                <!-- <hr> -->
+
+                <div class="tooltip-item">
+                    <h1>Voyage</h1>
+                </div>
+
+                <div class="tooltip-item">
+                    <h1>Beauté</h1>
+                </div>
+
+                <div class="tooltip-item">
+                    <h1>Sport</h1>
+                </div>
+
+                <hr>
+
+                <div class="tooltip-item">
                     <h1>Mon compte</h1>
-                </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/cadeau.svg">
-                  <a href="payement.html" > <h1>Mes commandes</h1></a>
-                </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/alert.svg">
-                     <h1>Mes communications</h1>
-                </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/chat.svg">
-                    <h1>Le Club</h1>
-                </div>
-
-                <hr>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/help.svg">
-                    <h1>Aide et contact</h1>
-                </div>
-
-                <hr>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/mobile.svg">
-                    <h1>VPMobile</h1>
                 </div>
 
                 <!-- Add more menu items here -->
+
+
             </span>
         </div>
 
@@ -61,6 +74,7 @@
             <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo" id="butterfly" />
         </div>
 
+
         <!-- Left Section -->
         <div class="left" *ngIf="affichage">
             <div>
@@ -68,7 +82,9 @@
                 <p class="navp">Qui sommes-nous?</p>
             </div>
             <div >
+                
             <button class="button" routerLink="/login">S'identifier</button>
+
         </div>
         
         </div>
@@ -76,7 +92,8 @@
             <div class="left d-flex " *ngIf="!affichage">
                 <div class="d-flex">
                     <a routerLink="/parrainage"><img src="assets/img/vp/parrainage.svg" id="my_image" class="icon" />
-                    </a><p class="navp">          Parrainage</p>
+                    </a>
+                    <p class="navp">Parrainage</p>
                 </div>
                 <div class="cart-container">
                     <a routerLink="/Panier"><img class="img" src="assets/img/vp/panier.svg" id="my_image">
@@ -100,10 +117,12 @@
                 <li><a routerLink="/Enfant" class="titels"> Enfant</a></li>
                 <li><a routerLink="/Gastronomie" class="titels"> Gastronomie</a></li>
                 <li><a routerLink="/Loisir" class="titels">Loisir</a></li>
+                <li><img src="assets/img/utilisateur (2).png" alt="Logo" class="logosearch" /></li>
             </ul>
         </div>
     </nav>
 </section>
+
 
 <!-- Header -->
 <header>
@@ -116,17 +135,19 @@
             </button>
         </div>
     </div>
-
-    
 </header>
+
 <section class="titlecontainer">
     <div class="title">
       <h1 class="containertitle">ça va vous plaire</h1>
       <p class="containerparagraphe">Coup de foudre inévitale</p>
     </div>
 </section>
+
 <!-- Container for Body Content -->
+
 <div class="bodycontainer">
+    
     <!-- Main Content -->
     <main class="page-content">
         <div *ngFor="let brand of brands">
@@ -138,6 +159,7 @@
             </div>
         </div>
      </div>
+
         <!-- <div class="card">
             <div class="content">
                 <img src="https://media.veepee.com/v1/media/05b570bd-1bab-418d-90ac-031aa353917f" />
@@ -182,10 +204,6 @@
         </div> -->
         
     </main>
-
-
-
-    
 </div>
 
 
@@ -194,4 +212,8 @@
 <!-- JavaScript Scripts -->
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 <script src="./script.js"></script>
+
+
+<!---------footer-------->
+
 <app-footer-style-two></app-footer-style-two>
