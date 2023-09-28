@@ -1,27 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inclusive+Sans&family=Lato&family=Rubik&family=Tilt+Prism&family=Ubuntu&display=swap");
 /* Define your custom colors as variables */
-.d-flex > *:not(:last-child) {
-  margin-right: 15px;  /* You can adjust this value as needed */
-}
-.cart-container {
-  position: relative;
-}
-#my_image {
-  width: 45px;  /* Adjust this as needed */
-  height: 45px; /* Adjust this as needed */
-  cursor: pointer;
-}
-.cart-badge {
-  position: absolute;
-  top: -5px;           /* Adjust as needed to move badge vertically */
-  right: -5px;         /* Adjust as needed to move badge horizontally */
-  background-color: rgb(237, 43, 153);
-  color: white;
-  border-radius: 50%;  /* Makes the badge circular */
-  padding: 2px 8px;    /* Adjust as needed for padding */
-  font-size: 15px;     /* Adjust as needed for font size */
-  font-weight: bold;
-  line-height: normal;
-}
 :root {
   --main-color: rgb(237, 43, 153); /* Main color */
   --background-color: rgba(245, 244, 250, 1); /* Background color */
@@ -36,7 +14,7 @@
 }
 
 body {
-  font-family: "Inclusive Sans", sans-serif;
+  font-family: "Ubuntu";
 }
 
 /* Header styles */
@@ -45,13 +23,13 @@ header {
   justify-content: center;
   top: 0;
   height: 110vh;
+  max-height: 700px;
   width: 100%;
   background-size: cover;
-  //background-image: url('../../../../assets/img/vp/home.png');
-  background-image: url('../../../../assets/img/home-three/veepee_home.jpeg');
+  background-image: url(https://media.veepee.com/v1/media/1d4d7309-a2b3-458c-8898-11de44335a12);
 }
 @media (max-width: 768px) {
-  .header  {
+  .header {
     height: 60vh;
   }
 }
@@ -65,9 +43,9 @@ header {
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 @media (max-width: 768px) {
-  .headertop  {
- margin: 10px;
- width: 60%;
+  .headertop {
+    margin: 10px;
+    width: 60%;
   }
 }
 
@@ -80,47 +58,34 @@ header {
   justify-content: space-between;
   padding: 12px 20px;
 }
-@media (max-width: 768px) {
-  .headercontainertop  {
-
- justify-content: space-between;
- display: flex;
-
-  }
-}
 
 .logo {
-  width: 180px;
-  height: 180px;
-  margin-left: 45%;
+  width: 150px;
 
- 
- 
+  height: 150px;
+  align-self: center;
+  /* margin-left: 150px; */
 }
-@media (max-width: 768px) {
-  .logo {
-width: 70%;
-  }
-}
+
 .tooltip {
   position: relative;
   display: inline-block;
-  color: white;
+  color: rgb(13, 13, 13);
   flex: 1;
   display: flex;
   gap: 20px;
   z-index: 99999999999;
 }
 @media (max-width: 768px) {
-  .tooltip  {
-flex: 0;
-z-index: 0;
+  .tooltip {
+    flex: 0;
+    z-index: 0;
   }
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: var(--background-color);
+  background-color:  rgba(197, 197, 200, 0.768);
   color: #0b0b0b;
   text-align: center;
   padding: 5px 0;
@@ -128,9 +93,9 @@ z-index: 0;
   font-family: "Inclusive Sans";
   position: absolute;
   z-index: 1;
-  top: 100%;
-  left: 12%;
-  margin-left: -60px;
+  top: 130%;
+  left: 0;
+  /* margin-left: -60px; */
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -164,15 +129,13 @@ z-index: 0;
   cursor: pointer;
 }
 
-
 .tooltip-item:hover {
-  color: var(--main-color); /* Use the variable here */
-  fill: var(--main-color) !important;
+  color:rgb(237, 43, 153); /* Use the variable here */
+  fill:rgb(237, 43, 153) !important;
 }
 
-
 .tooltip-item:hover path {
-  fill: var(--main-color) !important;
+  fill:rgb(237, 43, 153) !important;
 }
 
 .tooltiptext hr {
@@ -189,6 +152,11 @@ z-index: 0;
 
 .tooltip-item h1 {
   font-size: 16px;
+  white-space: nowrap;
+}
+
+.tooltip-item a {
+  color: #0b0b0b !important;
 }
 
 .hamburger {
@@ -213,8 +181,9 @@ z-index: 0;
 .bar {
   width: 100%;
   height: 3px;
-  background-color: white;
+  background-color: rgb(15, 15, 15);
   transition: transform 0.4s ease;
+  color: #0b0b0b;
 }
 
 .opened .bar:first-child {
@@ -231,19 +200,15 @@ z-index: 0;
 
 .button {
   background-color: transparent;
-  color: rgb(237, 43, 153)!important;
+  color: rgb(21, 20, 20);
   border: 1px solid white;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  width: 130px;
+  width: 155px;
   height: 40px;
   font-family: "Inclusive Sans";
   border-radius: 2px;
-}
-
-img:hover{
-  color : white !important
 }
 @media (max-width: 768px) {
   .button {
@@ -252,13 +217,13 @@ img:hover{
   }
 }
 .button:hover {
-  background-color: rgb(236, 62, 161) !important; /* Use the variable here */
-  color: white !important;
+  background-color:rgb(237, 43, 153); /* Use the variable here */
+  color: white;
   border: none;
 }
 
 .pinkbutton {
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -278,8 +243,8 @@ img:hover{
 
 .whitebutton {
   background-color: white;
-  color: var(--main-color); /* Use the variable here */
-  border: 1px solid var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
+  border: 1px solidrgb(237, 43, 153); /* Use the variable here */
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -299,7 +264,6 @@ img:hover{
   display: flex;
   flex: 1;
   justify-content: flex-end;
- 
 }
 @media (max-width: 768px) {
   .left {
@@ -317,7 +281,14 @@ img:hover{
   padding: 20px;
 }
 
+.navlinks > ul {
+  display: flex;
+  justify-content: center;
+  width: 95vw;
+  gap: 22px;
+  flex-wrap: nowrap;
 
+}
 
 li {
   list-style: none;
@@ -331,17 +302,18 @@ li {
   text-decoration: none;
   text-align: center;
   font-size: 18px;
+  white-space: nowrap;
+}
+.navbar a:active {
+  color:rgb(233, 68, 161);
 }
 
 .titels:hover {
   padding-bottom: 18px;
-  border-radius: 3px;
 }
 
 .titleunderline {
   padding-bottom: 18px;
-  border-radius: 3px;
- 
 }
 
 .navp {
@@ -352,26 +324,22 @@ li {
   margin-right: 12px;
 }
 @media (max-width: 768px) {
- .navp {
+  .navp {
     display: none;
-  }}
+  }
+}
 
 .navp:hover {
   padding-bottom: 2px;
-  border-bottom: 2px solid var(--background-color);
+  border-bottom: 2px solid  rgba(245, 244, 250, 1);
   border-radius: 2px;
 }
 
 .veeplogo {
   display: flex;
   flex: 1;
+  justify-content: center;
 }
-@media (max-width: 768px) {
-  .veeplogo {
-     align-self: center;
-     margin-left: 93px;
-   }
-  }
 
 .icon {
   width: 25px;
@@ -380,24 +348,26 @@ li {
 }
 @media (max-width: 768px) {
   .icon {
-     display: none;
-   }
+    display: none;
   }
+}
 .search {
   display: block;
   position: relative;
   width: 450px;
-  transform: translateY(200px);
+  transform: translateY(250px);
   justify-content: center;
- margin-left: 50px;
- align-items: center;
- height: 50px;
+  margin-left: 50px;
+  align-items: center;
+  height: 50px;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 770px) {
   .search {
-     display: none;
-   }
+    margin-top: 20px;
+    margin-right: 20px;
+    /* display: none; 
   }
+} */
 
 .search-hidden {
   display: none;
@@ -411,7 +381,7 @@ li {
 
 .search-container {
   display: flex;
-  background-color:  rgba(255, 255, 255, 0.5); /* Use the variable here */
+  background-color: rgba(249, 245, 247, 0.786); /* Use the variable here */
   padding: 10px;
   width: 100%;
   height: 50px;
@@ -442,17 +412,14 @@ li {
 
 .search-button {
   border: none;
-  background: rgb(237, 43, 153); /* Use the variable here */
+  background:rgb(237, 43, 153); /* Use the variable here */
   cursor: pointer;
-  padding: 8px 14px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  align-self: center;
 }
-.search-button:hover{
-  background: rgb(238, 107, 160); 
-}
+
 .search-bar::placeholder {
   color: rgba(0, 0, 0, 0.914);
   font-weight: 500;
@@ -465,39 +432,86 @@ li {
 }
 
 .logosearch {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 35px;
+ color: rgb(224, 59, 130);
+ margin-top: -5px;
 }
+.menu {
+  background-color: transparent;
+  color: rgb(190, 29, 88);
+  font-family: Arial, sans-serif;
+}
+
+.menu ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.menu li {
+  padding: 15px;
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(190, 29, 88);
+}
+
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 150px;
+  z-index: 1;
+  margin-top: 22px;
+  border-radius: 10px;
+}
+
+.menu .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu .dropdown-content li {
+  padding: 10px;
+}
+
+.menu .dropdown-content a {
+  color: rgb(190, 29, 88);
+  text-decoration: none;
+}
+
+.menu .dropdown-content a:hover {
+  background-color: #e3d4dc78;
+}
+
 
 .title {
   display: block;
   position: relative;
   margin-top: 80px;
-  margin-right: 1000px;
-
-
+  /* margin-left: 10%; */
 }
-.titlecontainer{
+.titlecontainer {
   display: flex;
-  justify-content: center;
-margin-left: 25%;
-  margin-top: -40%;
-  margin-bottom: 50px; 
- 
+  margin-top: -35%;
+  margin-bottom: 50px;
+  padding: 50px 15%;
+  margin-left: 155px;
 }
-
 
 .containertitle {
   text-transform: uppercase;
-  color: rgb(15, 15, 15);
+  color: white;
   font-size: 30px;
   position: relative;
   width: 100%;
-
 }
 
 .containerparagraphe {
-  color: rgb(15, 15, 15);
+  color: white;
   font-size: 20px;
   position: relative;
 }
@@ -518,14 +532,30 @@ margin-left: 25%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80vw;
+  width: 1500px;
   margin-top: -50px;
-  margin-left: 250px;
+
+  margin-inline: auto;
+  gap: 10px;
+}
+@media (max-width: 770px) {
+  .page-content {
+    gap: 0px;
+    width: 100%;
+    /* margin-top: -50px; */
+    margin-left: 0px;
+  }
+  .card {
+    width: 100% !important;
+  }
+  .card img {
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
 
 .card {
   width: 500px;
-  margin: 10px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -563,8 +593,8 @@ margin-left: 25%;
   transform: translate(-50%, 0%);
   margin: 0;
   padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
+  background-color: #fdfbfb;
+  color: rgb(9, 8, 8);
   opacity: 0;
   width: 100%;
   font-size: 16px;
@@ -583,7 +613,7 @@ margin-left: 25%;
 } */
 
 h3:hover {
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 .content {
@@ -666,7 +696,7 @@ h3:hover {
 /* Add a background color to the active dot/circle */
 .active,
 .dot:hover {
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 /* Add an italic font style to all quotes */
@@ -687,17 +717,18 @@ q {
   background-image: url(https://media.veepee.com/v1/media/acd55ab1-f623-4434-bf0c-b2017b56175b);
 }
 
+/*footer*/
+h3 {
+  color:rgb(237, 43, 153);
+}
+footer {
+  margin-top: 100px;
+}
 .footerheader {
   display: flex;
   justify-content: space-between;
   flex: 1;
   padding: 20px;
-}
-
-@media (max-width: 768px) {
-  .footerheader{
-  display: none;
-  }
 }
 
 .rightsidefooter {
@@ -706,7 +737,11 @@ q {
   padding: 10px;
   flex: 1;
 }
-
+li {
+  list-style: none;
+  display: inline;
+  padding: 10px 0px;
+}
 .leftsidefooter {
   display: flex;
   justify-content: flex-end;
@@ -725,22 +760,21 @@ q {
   flex-direction: column;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: left;
 }
 
-.footer-section h3 {
-  margin-right: 97px;
-}
+
 
 .footer-section ul {
   flex-direction: column;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footersocial {
   padding-left: 30px;
 }
-.footersocial:hover{
+.footersocial:hover {
   color: rgba(232, 30, 144, 0.722);
 }
 
@@ -769,16 +803,19 @@ ul {
 }
 
 .collabimg {
-  max-width: 200px;
+  /* max-width: 150px;
   max-height: 70px;
   min-height: 50px;
-  min-width: 50px;
+  min-width: 50px; */
+  /* width: 100px; */
+  height: 50px;
+  aspect-ratio: 4/2;
   padding-left: 20px;
 }
 
 .dropdown {
-display: flex;
-align-self: flex-end;
+  display: flex;
+  align-self: flex-end;
 }
 
 #country-select {
@@ -801,11 +838,13 @@ align-self: flex-end;
 
 .ends {
   text-align: end;
-  margin-right: 190px;
+  display: flex;
+  gap: 20px;
+  /* margin-right: 190px; */
 }
 
 .endsimg {
-  max-width: 200px;
+  max-width: 150px;
   max-height: 100px;
   min-height: 50px;
   min-width: 50px;
@@ -815,19 +854,265 @@ align-self: flex-end;
   margin-top: 5px;
   height: 5px;
   font-weight: bold;
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
   border: none;
 }
 
 .footer-section li:hover {
   cursor: pointer;
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 .footer-section p:hover {
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 h1:visited {
-  color:black; /* Text color on click */
+  color: black; /* Text color on click */
 }
+.titlecontainer {
+  margin-top: -378px;
+  margin-left: 155px;
+}
+.left d-flex{
+  margin: 10px;
+}
+.icon{
+  width: 50px;
+  height: 35px;
+}
+.navp{
+  margin-top: 10px;
+  font-weight: 700;
+}
+#my_image{
+  width: 40px;
+  height: 35px;
+}
+.cart-badge{
+
+  border-radius: 100%;
+padding: 5px;
+  color: white;
+  margin-left: -16px;
+  margin-top: 5px;
+  background-color: rgb(212, 48, 100);
+  position: relative;
+ 
+}
+/************************responsive*********************************/
+
+/*tablette responsive*/
+
+@media (max-width: 1000px) and (min-width: 770px) {
+  .footerheader {
+    display: none;
+  }
+  nav {
+    display: none;
+      }
+  .headertop {
+    padding-top: 10px;
+  }
+
+  .navlinks > ul {
+    display: flex;
+    justify-content: flex-start;
+    width: 95vw;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
+
+  .titlecontainer {
+    /* display: none; */
+    padding: 30px 20px;
+    background: unset;
+  }
+
+  .containertitle {
+    color: rgb(255, 255, 255);
+  }
+  .title {
+    margin-top: 0px;
+  }
+  .containerparagraphe {
+    color: rgb(255, 255, 255);
+  }
+
+  header {
+    height: 78vh;
+  }
+
+  .search {
+    transform: translateY(150px);
+    width: 90%;
+    margin: 0px;
+  }
+
+  .mySlides {
+    height: 10%;
+    padding: 0px;
+  }
+
+  /* li,
+  ul {
+    text-align: center;
+    margin-top: 5px;
+  } */
+  /* .navp{
+    margin-left: 10px;
+    margin: 0px;
+  } */
+  .dot-container {
+    margin-top: 10px;
+  }
+}
+
+/***************************************************************/
+
+/*mobile responsive*/
+@media (max-width: 770px) {
+  .navbar {
+display: none;
+  }
+  nav {
+    display: none;
+      }
+  .veeplogo {
+  }
+
+  .logo {
+    transform: translateX(20px);
+    width: 80px;
+    height: auto;
+  }
+
+  .button {
+    /* width: 90px; */
+    font-size: 12px;
+  }
+
+  .navlinks > ul {
+    display: flex;
+    justify-content: flex-start;
+    width: 95vw;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+  }
+
+  .navlinks a {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .headertop {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .headercontainertop {
+    padding: 8px;
+  }
+
+  .hamburger {
+    padding-bottom: 0px;
+    transform: translateX(10px);
+  }
+
+  .humberger-text {
+    display: none;
+  }
+
+  .tooltip .tooltiptext {
+    padding: 16px;
+  }
+
+  .tooltiptext hr {
+    margin: 0px;
+  }
+
+  .search {
+    transform: translateY(150px);
+    width: 90%;
+    margin: 0px;
+  }
+
+  .whitebutton {
+    width: unset;
+    height: unset;
+    padding: 8px;
+    margin: 4px 0px;
+  }
+  .dot-container {
+    margin-top: 20px;
+  }
+
+  .titlecontainer {
+    // padding: 30px 20px;
+    margin-left: 0px;
+    width: 100vw;
+    
+    background: linear-gradient(
+      0deg,
+      rgb(243, 243, 243) 0%,
+      rgb(255, 255, 255) 50%,
+      /* rgba(255, 255, 255, 1) 52%, */ rgba(255, 255, 255, 1) 50%,
+      rgba(255, 254, 254, 0) 100%
+    );
+  }
+
+  .containertitle {
+    color: rgb(70, 70, 80);
+  }
+  .title {
+    margin-top: 0px;
+  }
+  .containerparagraphe {
+    color: rgb(70, 70, 80);
+  }
+
+  header {
+    background-position: center;
+    height: 90vh;
+  }
+
+  .card img {
+    max-width: unset;
+    min-width: unset;
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+  }
+
+  .mySlides {
+    height: 10%;
+    padding: 0px;
+  }
+
+  .footerheader {
+    display: none;
+  }
+  .footerbody {
+    padding: 0 20 0 20;
+    display: flex;
+    font-size: 18px;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+}
+
+
+
+
+@media (max-width: 990px) {
+  .navbar {
+display: none;
+  }
+  nav {
+    display: none;
+      }
+  }
