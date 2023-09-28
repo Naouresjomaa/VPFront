@@ -85,7 +85,7 @@ header {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: var(--background-color);
+  background-color:  rgba(245, 244, 250, 1);
   color: #0b0b0b;
   text-align: center;
   padding: 5px 0;
@@ -130,12 +130,12 @@ header {
 }
 
 .tooltip-item:hover {
-  color: var(--main-color); /* Use the variable here */
-  fill: var(--main-color) !important;
+  color:rgb(237, 43, 153); /* Use the variable here */
+  fill:rgb(237, 43, 153) !important;
 }
 
 .tooltip-item:hover path {
-  fill: var(--main-color) !important;
+  fill:rgb(237, 43, 153) !important;
 }
 
 .tooltiptext hr {
@@ -216,13 +216,13 @@ header {
   }
 }
 .button:hover {
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
   color: white;
   border: none;
 }
 
 .pinkbutton {
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -242,8 +242,8 @@ header {
 
 .whitebutton {
   background-color: white;
-  color: var(--main-color); /* Use the variable here */
-  border: 1px solid var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
+  border: 1px solidrgb(237, 43, 153); /* Use the variable here */
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -330,7 +330,7 @@ li {
 
 .navp:hover {
   padding-bottom: 2px;
-  border-bottom: 2px solid var(--background-color);
+  border-bottom: 2px solid  rgba(245, 244, 250, 1);
   border-radius: 2px;
 }
 
@@ -411,7 +411,7 @@ li {
 
 .search-button {
   border: none;
-  background: var(--main-color); /* Use the variable here */
+  background:rgb(237, 43, 153); /* Use the variable here */
   cursor: pointer;
   padding: 10px 16px;
   display: flex;
@@ -446,6 +446,7 @@ li {
   margin-top: -35%;
   margin-bottom: 50px;
   padding: 50px 15%;
+  margin-left: 109px;
 }
 
 .containertitle {
@@ -559,7 +560,7 @@ li {
 } */
 
 h3:hover {
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 .content {
@@ -642,7 +643,7 @@ h3:hover {
 /* Add a background color to the active dot/circle */
 .active,
 .dot:hover {
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 /* Add an italic font style to all quotes */
@@ -665,7 +666,7 @@ q {
 
 /*footer*/
 h3 {
-  color: var(--main-color);
+  color:rgb(237, 43, 153);
 }
 footer {
   margin-top: 100px;
@@ -800,17 +801,17 @@ ul {
   margin-top: 5px;
   height: 5px;
   font-weight: bold;
-  background-color: var(--main-color); /* Use the variable here */
+  background-color:rgb(237, 43, 153); /* Use the variable here */
   border: none;
 }
 
 .footer-section li:hover {
   cursor: pointer;
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 .footer-section p:hover {
-  color: var(--main-color); /* Use the variable here */
+  color:rgb(237, 43, 153); /* Use the variable here */
 }
 
 h1:visited {
