@@ -907,6 +907,9 @@ padding: 5px;
   .footerheader {
     display: none;
   }
+  nav {
+    display: none;
+      }
   .headertop {
     padding-top: 10px;
   }
@@ -970,12 +973,11 @@ padding: 5px;
 /*mobile responsive*/
 @media (max-width: 770px) {
   .navbar {
-    width: 100%;
-    margin: 0;
-    padding: 8px;
-    text-align: center;
+display: none;
   }
-
+  nav {
+    display: none;
+      }
   .veeplogo {
   }
 
@@ -1100,3 +1102,13 @@ padding: 5px;
 }
 
 
+
+
+@media (max-width: 990px) {
+  .navbar {
+display: none;
+  }
+  nav {
+    display: none;
+      }
+  }
