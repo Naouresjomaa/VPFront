@@ -497,3 +497,6 @@ function initializeCarousel() {
     franceOption.image +
     '" alt="FR" style="width: 16px; height: 11px; margin-right: 5px;">' +
     franceOption.text;
+
+    //icon
+    
