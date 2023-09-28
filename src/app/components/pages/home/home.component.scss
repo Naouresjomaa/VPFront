@@ -462,10 +462,11 @@ li {
 .menu .dropdown-content {
   display: none;
   position: absolute;
-  background-color: transparent;
-  min-width: 120px;
+  background-color: white;
+  width: 150px;
   z-index: 1;
   margin-top: 22px;
+  border-radius: 10px;
 }
 
 .menu .dropdown:hover .dropdown-content {
@@ -482,7 +483,7 @@ li {
 }
 
 .menu .dropdown-content a:hover {
-  background-color: #b5b2b278;
+  background-color: #e3d4dc78;
 }
 
 
