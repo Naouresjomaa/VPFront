@@ -5,6 +5,7 @@ import jwt_decode from "jwt-decode";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
+import { AuthServiceService } from "src/app/services/auth-service.service";
 
 @Component({
     selector: "app-login-register",
@@ -17,7 +18,8 @@ export class LoginRegisterComponent implements OnInit {
     userData: any;
     parrainage:any
     constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,
-        public dialogRef: MatDialogRef<LoginRegisterComponent>) {}
+        public dialogRef: MatDialogRef<LoginRegisterComponent>,
+        private authService: AuthServiceService) {}
 
     ngOnInit(): void {
         this.parrainage = this.route.snapshot.queryParamMap.get('parrainage');
@@ -41,7 +43,13 @@ export class LoginRegisterComponent implements OnInit {
             Validators.pattern(/^(?=.*[!@#$%^&*])/),
         ]),
     });
-
+    onFacebookLogin() {
+      this.authService.loginWithFacebook();
+    }
+  
+    onGoogleLogin() {
+      this.authService.loginWithGoogle();
+    }
     Login() {
         this.route.fragment.subscribe(fragment => {
             if (fragment) {

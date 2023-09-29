@@ -85,7 +85,7 @@ header {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color:  rgba(197, 197, 200, 0.768);
+  background-color:  rgba(245, 244, 250, 1);
   color: #0b0b0b;
   text-align: center;
   padding: 5px 0;
@@ -200,7 +200,7 @@ header {
 
 .button {
   background-color: transparent;
-  color: rgb(21, 20, 20);
+  color: white;
   border: 1px solid white;
   font-size: 16px;
   font-weight: 700;
@@ -908,9 +908,6 @@ padding: 5px;
   .footerheader {
     display: none;
   }
-  nav {
-    display: none;
-      }
   .headertop {
     padding-top: 10px;
   }
@@ -974,11 +971,12 @@ padding: 5px;
 /*mobile responsive*/
 @media (max-width: 770px) {
   .navbar {
-display: none;
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
   }
-  nav {
-    display: none;
-      }
+
   .veeplogo {
   }
 
@@ -1051,15 +1049,12 @@ display: none;
   }
 
   .titlecontainer {
-    // padding: 30px 20px;
-    margin-left: 0px;
-    width: 100vw;
-    
+    padding: 30px 20px;
     background: linear-gradient(
       0deg,
       rgb(243, 243, 243) 0%,
       rgb(255, 255, 255) 50%,
-      /* rgba(255, 255, 255, 1) 52%, */ rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 1) 50%,
       rgba(255, 254, 254, 0) 100%
     );
   }
@@ -1106,13 +1101,3 @@ display: none;
 }
 
 
-
-
-@media (max-width: 990px) {
-  .navbar {
-display: none;
-  }
-  nav {
-    display: none;
-      }
-  }

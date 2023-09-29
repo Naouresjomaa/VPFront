@@ -32,6 +32,12 @@ export class CommandeService {
             headers: headers,
         });
     }
+    GetCommandeByidP(id: any) {
+        const headers = new HttpHeaders();
+        return this.http.get(environment.apiurl + "/CommandeIdP/" + id, {
+            headers: headers,
+        });
+    }
     CreateCommande(data: CommandeModel): Observable<any> {
         const headers = new HttpHeaders();
         return this.http.post(environment.apiurl + "/CreateCommande", data, {
@@ -54,9 +60,9 @@ export class CommandeService {
             headers: headers,
         });
     }
-    paiementenligne(){
+    paiementenligne(commande){
         const headers = new HttpHeaders();
-        return this.http.post(environment.apiurl + "/paiement",{
+        return this.http.post(environment.apiurl + "/paiement",commande,{
             headers: headers,
         });   
     }

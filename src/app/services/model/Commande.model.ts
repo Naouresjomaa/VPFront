@@ -4,7 +4,7 @@ export class CommandeModel {
     UserName: any;
     Email: any;
     Date: any;
-    Heure: any;
+   
     NomClient: any;
     Adresse: any;
     Gouvernerat: any;

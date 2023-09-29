@@ -17,14 +17,15 @@ import Swal from "sweetalert2";
 })
 export class ShopPanierComponent implements OnInit {
   payment =false;
-paypal=false;
+  Date = new Date()
+  paypal=false;
   commande : CommandeModel = {
  
     RefCommande:'',
     UserName: '',
     Email: '',
-    Date: '',
-    Heure: '',
+    Date: this.Date,
+   
     NomClient: '',
     Adresse: '',
     Gouvernerat:'',
@@ -129,7 +130,7 @@ getTotal(pan) {
   }
   this.commande.RefCommande=resultat+'-2023'
 }
-Order(c: CommandeModel) {
+async Order(c: CommandeModel) {
   this.commandeType()
   console.log(this.commande.TypePaiement)
   c.Statut = "Commandéé";
@@ -165,43 +166,43 @@ Order(c: CommandeModel) {
   }
   else{
     if(this.commande.TypePaiement=='Paiement à la livraison'){
-      this.paiementLivraison()
+      await this.paiementLivraison(c)
 
     }
     else if(this.commande.TypePaiement=='Paiement en ligne'){
-this.paiementenligne()
+          this.paiementenligne(c)
     }
-    //this.userService.UpdateClient(this.client.id,this.client)
 
   }
 } 
-  paiementenligne() {
-    this.commandeService.paiementenligne().subscribe((res:any)=>{
+  paiementenligne(c :CommandeModel) {
+    this.commandeService.paiementenligne(c).subscribe((res:any)=>{
       console.log(res)
     let link = res.data.result.link
     console.log(link)
     for(let x of this.paniers){
       this.panierservice.Removepanier(x.id).subscribe(res=>console.log(res))
-  
-      
     }
-    // this.commandeService.sendOrderEmail(this.commande).subscribe((res:any)=>
-    // {if(res){
-      
-    // }})
+  
     this.storageService.setPanier(0)
     window.open(link, '_blank');
   
     
     }  )}
-paiementLivraison(){
- 
-  this.storageService.setPanier( 0)
-  this.commandeService.sendOrderEmail(this.commande).subscribe((res:any)=>
-  {if(res){
-     
-  }})
 
-  this.router.navigate(['/success']);
+async paiementLivraison(c: CommandeModel) {
+  try {
+    
+    const createCommandeResponse: any = await this.commandeService.CreateCommande(c).toPromise();
+    if (createCommandeResponse) {
+      const createCommandeResponse2: any  = await this.panierservice.RemoveAllpanier(this.Email, this.Username).toPromise();
+        console.log(createCommandeResponse2)
+      this.storageService.setPanier(0);
+        this.router.navigate(['/success']);
+    }
+  } catch (error) {
+    console.error("Une erreur s'est produite: ", error);
+    // Gérer l'erreur selon les besoins de votre application.
+  }
 }
 }
