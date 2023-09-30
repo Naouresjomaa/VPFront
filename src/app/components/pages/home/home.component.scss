@@ -431,15 +431,24 @@ li {
 }
 
 .logosearch {
-  width: 44px;
-  height: 35px;
- color: rgb(224, 59, 130);
- margin-top: -5px;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+ color: rgb(249, 68, 156);
+ margin-left: 10px;
+}
+.logossearch {
+  width: 50px;
+  height: 55px;
+  margin-left: 30px;
+ color: rgb(249, 68, 156);
+ margin-top: -14px;
 }
 .menu {
   background-color: transparent;
-  color: rgb(190, 29, 88);
+  color: rgb(249, 68, 156);
   font-family: Arial, sans-serif;
+
 }
 
 .menu ul {
@@ -456,17 +465,20 @@ li {
 
 .menu a {
   text-decoration: none;
-  color: rgb(190, 29, 88);
+  color: rgb(241, 79, 168);
 }
 
 .menu .dropdown-content {
   display: none;
   position: absolute;
   background-color: white;
-  width: 150px;
+  width: 220px;
   z-index: 1;
-  margin-top: 22px;
+
+  margin-top: 30px;
+  padding: 20px;
   border-radius: 10px;
+  line-height: 50px;
 }
 
 .menu .dropdown:hover .dropdown-content {
@@ -478,12 +490,14 @@ li {
 }
 
 .menu .dropdown-content a {
-  color: rgb(190, 29, 88);
+  color:rgb(249, 68, 156);
   text-decoration: none;
 }
 
 .menu .dropdown-content a:hover {
-  background-color: #e3d4dc78;
+  background-color: #f9ecf3d2;
+  color: rgb(249, 68, 156);
+  border-radius: 20px;
 }
 
 
