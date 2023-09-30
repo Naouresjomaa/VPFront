@@ -904,13 +904,19 @@ h1:visited {
 }
 .cart-badge{
 
-  border-radius: 100%;
-padding: 5px;
+  border-radius:50%;
+
+width: 20px;
+
+height: 20px;
+text-align: center;
   color: white;
+  font-size: 14px;
+  font-weight: bold;
   margin-left: -16px;
   margin-top: 5px;
-  background-color: rgb(212, 48, 100);
-  position: relative;
+  background-color: rgb(240, 63, 160);
+  position: absolute;
  
 }
 /************************responsive*********************************/
