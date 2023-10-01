@@ -1,0 +1,21 @@
+<div class="navbar">
+    <a href="#"><img src="assets/img/home-three/2.png" alt="Logo" class="logo" /></a>
+</div>
+<div class="login-container">
+<form [formGroup]="loginForm">
+    <div class="login-form">
+        <h1>DÉJÀ MEMBRE VENTE PRIVILIGÉE ?</h1>
+        <hr class="small-hr" />
+        <div class="social-buttons">
+            <img src="	https://www.veepee.fr/gr/icons/facebook.png" alt="Facebook" class="social-button" />
+            <span>OU</span>
+            <img src="assets/img/home-three/google.svg" alt="Gmail" class="social-button" />
+        </div>
+        <hr class="large-hr" />
+        <input formControlName="Email" type="email" placeholder="Adresse e-mail" />
+        <input formControlName="Password" type="password" placeholder="Mot de passe" />
+        <button type="submit" (click)="Login()">Se connecter</button>
+        <a routerLink="/register" class="sous-lien">Vous n'avez pas un compte? S'inscrire</a>
+    </div>
+</form>
+</div>

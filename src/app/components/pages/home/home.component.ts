@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit ,  AfterViewInit{
 brands :any;
 affichage = true;
   nbrpanier: any;
+  filteredBrand: any;
+  term: any;
   constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2,
     private dialog: MatDialog) { }
   ngOnInit() {
@@ -34,12 +36,20 @@ getAllBrand(){
 this.service.GetBrands().subscribe(res=>{
   console.log('resssssssssssssssssss',res)
   this.brands=res;
+  this.filteredBrand=[...this.brands]
 })
 }
 identifier(){
     this.dialog.open(LoginRegisterComponent, {
       width: '700px',height :'700px'
     });
+}
+filtrerDonnees(): void {
+  this.filteredBrand = this.brands.filter((brand: any) => 
+  brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) ||
+  brand.Categorie.toLowerCase().includes(this.term.toLowerCase()) 
+
+  );
 }
   private slideIndex: number = 1;
   @HostListener('window:scroll', ['$event'])

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-terms-condition',
@@ -6,18 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./terms-condition.component.scss']
 })
 export class TermsConditionComponent implements OnInit {
- linkParrainage = 'http://localhost:4200/#/login?parrainage='
-  constructor() { }
-  genererChaineAleatoire(longueur: number = 7) {
-    const caracteres = '0123456789';
-    let resultat = '';
-    for (let i = 0; i < longueur; i++) {
-      const indexAleatoire = Math.floor(Math.random() * caracteres.length);
-      resultat += caracteres.charAt(indexAleatoire);
-    }
-    this.linkParrainage=this.linkParrainage+resultat
+ linkParrainage = 'http://localhost:4200/#/register?parrainage='
+  parrainage: any;
+  constructor( private jwtHelper: JwtHelperService) { }
+  decodeToken() {
+    const token = localStorage.getItem('isLoggedin');
+    const decodedToken = this.jwtHelper.decodeToken(token);
+    this.parrainage = decodedToken.parrainage
+    console.log(decodedToken);
   }
+  genererChaineAleatoire() {
+    
+    this.linkParrainage=this.linkParrainage+this.parrainage
+  }
+  
   ngOnInit(): void {
+    this.decodeToken()
     this.genererChaineAleatoire()
   }
 

@@ -1,0 +1,36 @@
+<div class="navbar">
+    <a href="#"><img src="assets/img/home-three/2.png" alt="Logo" class="logo" /></a>
+</div>
+<div class="login-container">
+    
+    <div  class="login-form">
+        <h1>INSCRIVEZ-VOUS GRATUITEMENT POUR ACCEDER AUX VENTES</h1>
+        <hr class="small-hr" />
+        <div class="social-buttons">
+            <img src="	https://www.veepee.fr/gr/icons/facebook.png" alt="Facebook" class="social-button" />
+            <span>OU</span>
+            <img src="assets/img/home-three/google.svg" alt="Gmail" class="social-button" />
+        </div>
+        <hr class="large-hr" />
+        <form [formGroup]="registrationForm">
+        <input formControlName="Email" type="email" placeholder="Adresse e-mail" />
+        <input formControlName="Password" type="password" placeholder="Mot de passe" />
+        <input formControlName="NomComplet" type="name" placeholder="Nom & Prenom" />
+        <input formControlName="UserName" type="Username" placeholder="Username" />
+    </form>
+    <input list="genres" name="genre" id="genre" [(ngModel)]="genre"  class="custom-select">
+    <datalist id="genres">
+        <option value="Femme">
+        <option value="Homme">
+        <option value="Autre">
+    </datalist>
+    <input  *ngIf="parrainage" type="text" [(ngModel)]="parrainage" />
+    <a *ngIf="affiche" class="sous-lien2">Code Parrainage n'existe pas !</a>
+    <a *ngIf="parrainage && !affiche" class="sous-lien3">Code Parrainage Valide !</a>
+
+
+        <button type="submit" (click)="register()">Je m'inscris</button>
+        <a routerLink="/login" class="sous-lien">Vous avez un compte? Se connecter</a>
+    </div>
+
+</div>

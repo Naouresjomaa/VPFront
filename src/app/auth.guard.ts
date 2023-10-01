@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginRegisterComponent } from './components/pages/login-register/login-register.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { PopupComponent } from './components/pages/popup/popup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +26,12 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const token = localStorage.getItem('isLoggedin');
      if(!token){
-      this.dialog.open(LoginRegisterComponent, {
-        width: '700px',height :'700px'
-      }
-      );
+      this.dialog.open(PopupComponent ,{
+        width: '70%',
+        panelClass: 'custom-dialog-container',
+      });
+     
+      
       return false
      
     }

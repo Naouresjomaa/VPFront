@@ -35,6 +35,9 @@ import { ChaussureComponent } from './components/Categories/chaussure/chaussure.
 import { MatButtonModule } from '@angular/material/button';
  import { MatDialogModule } from '@angular/material/dialog';
  import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { PopupComponent } from './components/pages/popup/popup.component';
  export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -66,7 +69,10 @@ import { MatButtonModule } from '@angular/material/button';
     HomeComponent,
     NavbarComponent,
     ShopPanierComponent,
-    ChaussureComponent
+    ChaussureComponent,
+    LoginComponent,
+    RegisterComponent,
+    PopupComponent
   ],
   imports: [
     MatButtonModule,

@@ -78,13 +78,13 @@
 
         <!-- Left Section -->
         <div class="left" *ngIf="affichage">
-            <div>
+            <!-- <div>
                 <img src="assets/img/vp/question.png" class="icon" />
                 <p class="navp">Qui sommes-nous?</p>
-            </div>
+            </div> -->
             <div >
                 
-            <button class="button" (click)="identifier()">S'identifier</button>
+            <button class="button" routerLink="/login">S'identifier</button>
 
         </div>
         
@@ -149,7 +149,7 @@
     <!-- Search Bar -->
     <div class="search">
         <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Rechercher une marque, un produit..." />
+            <input type="text" class="search-bar" [(ngModel)]="term" (input)="filtrerDonnees()" placeholder="Rechercher une marque, un produit..." />
             <button class="search-button">
                 <img src="assets/img/vp/search.png" alt="Logo" class="logosearch" />
             </button>
@@ -170,7 +170,7 @@
     
     <!-- Main Content -->
     <main class="page-content">
-        <div *ngFor="let brand of brands">
+        <div *ngFor="let brand of filteredBrand">
         <div class="card">
             <div class="content">
                 <img

@@ -9,6 +9,8 @@ import { BrandService } from 'src/app/services/brand.service';
 export class ChaussureComponent implements OnInit , AfterViewInit{
   brands :any;
   nbrpanier: any;
+  filteredBrand: any;
+  term: any;
     constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
     ngOnInit() {
       this.getAllBrand()
@@ -18,10 +20,17 @@ export class ChaussureComponent implements OnInit , AfterViewInit{
       const storedPanier = localStorage.getItem('panier');
       this.nbrpanier =  storedPanier ? JSON.parse(storedPanier) : 0;
     }
+    filtrerDonnees(): void {
+      this.filteredBrand = this.brands.filter((brand: any) => 
+      brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) 
+    
+      );
+    }
   getAllBrand(){
   this.service.GetBrands().subscribe(res=>{
     console.log('resssssssssssssssssss',res)
     this.brands=res;
+    this.filteredBrand=[...this.brands]
   })
   }
     private slideIndex: number = 1;

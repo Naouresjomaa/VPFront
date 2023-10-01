@@ -116,7 +116,7 @@
     <!-- Search Bar -->
     <div class="search">
         <div class="search-container">
-            <input type="text" class="search-bar" placeholder="Rechercher une marque, un produit..." />
+            <input type="text" class="search-bar" [(ngModel)]="term" (input)="filtrerDonnees()" placeholder="Rechercher une marque, un produit..." />
             <button class="search-button">
                 <img src="assets/img/vp/search.png" alt="Logo" class="logosearch" />
             </button>
@@ -135,8 +135,8 @@
 <div class="bodycontainer">
     <!-- Main Content -->
     <main class="page-content">
-        <div *ngFor="let brand of brands">
-        <div class="card">
+        <div *ngFor="let brand of filteredBrand">
+        <div *ngIf="brand.Categorie == 'Chaussure'" class="card">
             <div class="content">
                 <img
                 [src]="'http://localhost:3000/image/' + brand.Image" />

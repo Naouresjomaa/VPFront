@@ -26,10 +26,15 @@ import { NavbarComponent } from "./components/common/navbar/navbar.component";
 import { ShopPanierComponent } from "./components/pages/shop-panier/shop-panier.component";
 import { ChaussureComponent } from "./components/Categories/chaussure/chaussure.component";
 import { AuthGuard } from "./auth.guard";
+import { LoginComponent } from "./components/pages/login/login.component";
+import { RegisterComponent } from "./components/pages/register/register.component";
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
- 
+    { path: "login-register", component: LoginRegisterComponent },
+    { path: "login", component: LoginComponent },
+    { path: "register", component: RegisterComponent },
+
     { path: "Mode", component: ModeComponent  },
     { path: "Chaussure", component: ChaussureComponent,   },
     { path: "Maison", component: MaisonComponent ,  },
@@ -49,7 +54,6 @@ const routes: Routes = [
   
     { path: "products-details/:id", component: ProductsDetailsComponent,   },
     { path: "error", component: ErrorComponent },
-    { path: "login", component: LoginRegisterComponent },
     { path: "parrainage", component: TermsConditionComponent ,  },
     { path: "success", component: PrivacyPolicyComponent },
     { path: "coming-soon", component: ComingSoonComponent },

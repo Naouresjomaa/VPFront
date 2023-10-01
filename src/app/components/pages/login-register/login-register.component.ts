@@ -17,16 +17,27 @@ export class LoginRegisterComponent implements OnInit {
     token: any;
     userData: any;
     parrainage:any
+  isDialog= false;
     constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,
-        public dialogRef: MatDialogRef<LoginRegisterComponent>,
-        private authService: AuthServiceService) {}
+      public dialogRef: MatDialogRef<LoginRegisterComponent>,
+        private authService: AuthServiceService) {
+        
+        }
 
     ngOnInit(): void {
         this.parrainage = this.route.snapshot.queryParamMap.get('parrainage');
+        if(this.parrainage){
+          this.updateUserParrainage(this.parrainage)
+        }
        
     }
-    close(): void {
-        this.dialogRef.close();
+    updateUserParrainage(parrainage){
+      this.clientservice.updateUserParrainage(parrainage).subscribe((res:any)=>{
+        console.log(res)
+      })
+    }
+    closePopup(): void {
+      this.dialogRef.close();
       }
     loginForm = new FormGroup({
         Email: new FormControl("", [Validators.required, Validators.email]),
@@ -63,7 +74,7 @@ export class LoginRegisterComponent implements OnInit {
                 .subscribe((res) => {
                     this.response = res;
                     if (this.response.message == "Vous êtes connecté") {
-                        this.close()
+                        this.closePopup()
                         
                         Swal.fire({
                             position: "top-end",
@@ -118,6 +129,11 @@ export class LoginRegisterComponent implements OnInit {
 
     register() {
         if (this.registrationForm.valid) {
+          let solde
+          if(this.parrainage && this.parrainage.length > 0){
+             solde = 10
+          }
+          let objetFinal = { ...this.registrationForm.value, solde };
           this.clientservice
             .AddClient(this.registrationForm.value)
             .subscribe((res) => {

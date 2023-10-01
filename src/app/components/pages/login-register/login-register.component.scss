@@ -1,73 +1,80 @@
-.user-area {
-  background-image: url("../../../../assets/img/home-three/BGg.png");
-  background-size: cover;
+.modal-content {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  width: 70%; /* Augmentez la taille ici */
+  margin: auto;
+  text-align: center;
+}
+
+.modal-content::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
- 
-}
-.default-btn{
-background-color:rgb(237, 43, 153) !important
-}
-.ChampError{
-  color: rgb(219, 1, 1);
-}
-/* Styles for the buttons */
-.circle-btn {
-display: inline-flex;
-justify-content: center;
-align-items: center;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-margin: 20px 40px; /* Space between the buttons */
-text-decoration: none;
-font-size: 24px;
-transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+  filter: blur(10px); /* Rend l'arrière-plan flou */
 }
 
-.circle-btn:hover {
-transform: scale(1.1);
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
 }
 
-.facebook-btn {
-background-color: #1877F2;
-color: #fff;
+
+
+.background-image {
+  width: 100%;
+  border-radius: 20px;
 }
 
-.google-btn {
-background-color: #DB4437;
-color: #fff;
+.main-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
 }
 
-/* Separator styles */
-.separator {
-position: relative;
-text-align: center;
-margin: 20px 0; 
-overflow: visible;
+.sub-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: white;
 }
 
-.separator span {
-color: #fff; 
-position: relative;
-z-index: 1;
-display: inline-block;
-padding: 0 5%; /* Padding around 'ou' */
+.buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.separator span::before,
-.separator span::after {
-content: '';
-position: absolute;
-top: 50%;
-height: 1px;
-width: 50%; /* Longer line */
-background-color: #fff;
+.btn-connect {
+  background-color: #ff4081;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  margin-right: 10px;
 }
 
-.separator span::before {
-left: -12%; /* Closer to 'ou' */
-}
-
-.separator span::after {
-right: -12%; /* Closer to 'ou' */
+.btn-signup {
+  background-color: white;
+  border: 2px solid #ff4081;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #ff4081;
 }

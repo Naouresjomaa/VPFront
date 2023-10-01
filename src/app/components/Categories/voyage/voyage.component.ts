@@ -9,6 +9,8 @@ import { BrandService } from 'src/app/services/brand.service';
 export class VoyageComponent implements OnInit,  AfterViewInit{
   brands :any;
   nbrpanier: any=0;
+  filteredBrand: any;
+  term: any;
     constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
     ngOnInit() {
       this.getAllBrand()
@@ -22,8 +24,15 @@ export class VoyageComponent implements OnInit,  AfterViewInit{
   this.service.GetBrands().subscribe(res=>{
     console.log('resssssssssssssssssss',res)
     this.brands=res;
-  })
-  }
+    this.filteredBrand=[...this.brands]
+    })
+    }
+    filtrerDonnees(): void {
+      this.filteredBrand = this.brands.filter((brand: any) => 
+      brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) 
+    
+      );
+    }
     private slideIndex: number = 1;
     @HostListener('window:scroll', ['$event'])
     handleScroll() {

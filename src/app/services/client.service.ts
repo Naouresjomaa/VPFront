@@ -26,6 +26,18 @@ export class ClientService {
             headers: headers,
         });
     }
+    getClientByParrainage(id: any): Observable<any> {
+        const headers = new HttpHeaders();
+        return this.http.get(environment.apiurl + "/clientP/" + id, {
+            headers: headers,
+        });
+    }
+    updateUserParrainage(parrainage): Observable<any> {
+        const headers = new HttpHeaders();
+        return this.http.put(environment.apiurl + "/UpdateclientParrianage/" + parrainage, {
+            headers: headers,
+        });
+    }
     LoginAuth(data: any) {
         const headers = new HttpHeaders();
         return this.http.post(environment.apiurl + "/AuthClient", data, {

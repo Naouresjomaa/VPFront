@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import { StorageService } from 'src/app/services/storage.service';
 import { LoginRegisterComponent } from '../login-register/login-register.component';
 import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.component.html',
@@ -82,8 +83,9 @@ modifierQuantite(valeur): void {
   Topanier(prod: any) {
     if(!this.Email && !this.Username){
       
-        this.dialog.open(LoginRegisterComponent, {
-          width: '700px',height :'700px'
+        this.dialog.open(PopupComponent ,{
+          width: '70%',
+          panelClass: 'custom-dialog-container',
         });
        
       }

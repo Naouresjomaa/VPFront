@@ -9,6 +9,7 @@ export class ClientModel {
     Ville: any;
     Adresse: any;
     DateNaissance: any;
+    solde?:any
 }
 export class NewlModel {
     id: any;
