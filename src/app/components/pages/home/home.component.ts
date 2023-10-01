@@ -52,11 +52,11 @@ identifier(){
     if (navContainer) {
          // Get the current scroll position
     const scrollY = window.scrollY || window.pageYOffset;
-    let aaa = navContainer.getElementsByTagName("a");
+    let aaa = navContainer.getElementsByClassName("sty");
     let button = navContainer.getElementsByClassName("button");
     let humbergerText = navContainer.getElementsByClassName("humberger-text");
     let navp = navContainer.getElementsByClassName("navp");
-    let images = navContainer.getElementsByTagName("img");
+    let images = navContainer.getElementsByClassName("ddd");
     let butterfly = navContainer.querySelector("#butterfly");
     let bar = navContainer.getElementsByClassName("bar");
     let navbar = navContainer.getElementsByClassName("navbar");
