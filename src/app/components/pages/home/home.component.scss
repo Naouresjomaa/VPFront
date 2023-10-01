@@ -127,8 +127,11 @@ header {
   gap: 16px;
   padding: 8px 12px;
   cursor: pointer;
+  color: #0b0b0b;
 }
-
+.tooltipp-item  h1{
+  color: #0b0b0b;
+}
 .tooltipp-item:hover {
   color:rgb(237, 43, 153); /* Use the variable here */
   fill:rgb(237, 43, 153) !important;
@@ -264,11 +267,7 @@ header {
   flex: 1;
   justify-content: flex-end;
 }
-@media (max-width: 768px) {
-  .left {
-    flex: 0;
-  }
-}
+
 .navbar {
   text-align: center;
   margin-top: 20px;
