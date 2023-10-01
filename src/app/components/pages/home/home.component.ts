@@ -62,7 +62,7 @@ identifier(){
     let navbar = navContainer.getElementsByClassName("navbar");
     let titels = navContainer.getElementsByClassName("titels");
     let titleunderline = navContainer.getElementsByClassName("titleunderline")[0];
-    let tooltipImages = navContainer.querySelectorAll(".tooltip-item img");
+    let tooltippImages = navContainer.querySelectorAll(".tooltipp-item img");
     let searchContainerHidden = navContainer.getElementsByClassName(
       "search-container-hidden"
     );
@@ -157,7 +157,7 @@ identifier(){
           " brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7492%) hue-rotate(278deg) brightness(101%) contrast(101%)";
       }
   
-      for (const iterator of tooltipImages) {
+      for (const iterator of tooltippImages) {
         iterator.style.filter =
           "brightness(0) saturate(100%) invert(37%) sepia(0%) saturate(1780%)hue-rotate(241deg) brightness(100%) contrast(78%)";
   
@@ -196,10 +196,10 @@ identifier(){
       this.plusSlides(1);
     }, 3000);
 
-    // Tooltip animations
+    // tooltipp animations
     const hamburger = this.el.nativeElement.querySelector('.hamburger');
-    const tooltiptext = this.el.nativeElement.querySelector('.tooltiptext');
-    const navbar = this.el.nativeElement.querySelector('.tooltip');
+    const tooltipptext = this.el.nativeElement.querySelector('.tooltipptext');
+    const navbar = this.el.nativeElement.querySelector('.tooltipp');
 
     this.renderer.listen(hamburger, 'mouseenter', () => {
       this.renderer.addClass(navbar, 'opened');
@@ -207,10 +207,10 @@ identifier(){
     this.renderer.listen(hamburger, 'mouseleave', () => {
       this.renderer.removeClass(navbar, 'opened');
     });
-    this.renderer.listen(tooltiptext, 'mouseenter', () => {
+    this.renderer.listen(tooltipptext, 'mouseenter', () => {
       this.renderer.addClass(navbar, 'opened');
     });
-    this.renderer.listen(tooltiptext, 'mouseleave', () => {
+    this.renderer.listen(tooltipptext, 'mouseleave', () => {
       this.renderer.removeClass(navbar, 'opened');
     });
   }
