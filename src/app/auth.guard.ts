@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { LoginRegisterComponent } from './components/pages/login-register/login-register.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { PopupComponent } from './components/pages/popup/popup.component';
 

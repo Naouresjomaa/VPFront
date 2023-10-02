@@ -682,7 +682,7 @@ p {
   padding: 0.25rem 2rem;
   height: 2.5rem;
   font-family: "Ubuntu";
-  font-weight: 500;
+  font-weight: 1000;
   font-size: 1rem;
   line-height: 23px;
   white-space: nowrap;
@@ -906,5 +906,9 @@ input {
       
       }
       
-  
+      button.copied {
+        background-color: rgb(227, 68, 164); /* ou toute autre couleur pâle */
+        border-color: rgb(227, 68, 164);
+        color: rgb(251, 248, 248);
+      }
 

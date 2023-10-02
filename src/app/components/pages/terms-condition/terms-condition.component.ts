@@ -9,6 +9,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class TermsConditionComponent implements OnInit {
  linkParrainage = 'http://localhost:4200/#/register?parrainage='
   parrainage: any;
+  isCopied =false;
   constructor( private jwtHelper: JwtHelperService) { }
   decodeToken() {
     const token = localStorage.getItem('isLoggedin');
@@ -20,7 +21,12 @@ export class TermsConditionComponent implements OnInit {
     
     this.linkParrainage=this.linkParrainage+this.parrainage
   }
-  
+  copyInputMessage(inputElement: HTMLInputElement) {
+    inputElement.select(); // Sélectionne le texte du champ d'entrée
+    document.execCommand('copy'); // Copie le texte sélectionné
+    inputElement.setSelectionRange(0, 0); // Désélectionne le texte
+    this.isCopied = true;
+  }
   ngOnInit(): void {
     this.decodeToken()
     this.genererChaineAleatoire()

@@ -7,9 +7,9 @@
         <h1>DÉJÀ MEMBRE VENTE PRIVILIGÉE ?</h1>
         <hr class="small-hr" />
         <div class="social-buttons">
-            <img src="	https://www.veepee.fr/gr/icons/facebook.png" alt="Facebook" class="social-button" />
+            <img src="	https://www.veepee.fr/gr/icons/facebook.png" (click)="onFacebookLogin()" alt="Facebook" class="social-button" />
             <span>OU</span>
-            <img src="assets/img/home-three/google.svg" alt="Gmail" class="social-button" />
+            <img src="assets/img/home-three/google.svg" alt="Gmail" (click)="onGoogleLogin()" class="social-button" />
         </div>
         <hr class="large-hr" />
         <input formControlName="Email" type="email" placeholder="Adresse e-mail" />

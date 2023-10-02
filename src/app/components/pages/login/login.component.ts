@@ -44,10 +44,24 @@ isDialog= false;
 
   onFacebookLogin() {
     this.authService.loginWithFacebook();
+    // fetch('http://localhost:3000/auth/google')
+    // .then(response => response.json())
+    // .then(data => {
+    //   if (data.redirect) {
+    //     window.location.href = data.redirect;
+    //   }
+    // });
   }
 
   onGoogleLogin() {
     this.authService.loginWithGoogle();
+    fetch('http://localhost:3000/auth/google')
+    .then(response => response.json())
+    .then(data => {
+      if (data.redirect) {
+        window.location.href = data.redirect;
+      }
+    });
   }
   Login() {
    

@@ -22,7 +22,7 @@
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
-                        <div class="shop__sidebar__accordion">
+                        <div *ngIf="brand.Categorie == 'Mode'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -181,6 +181,409 @@
                                 </div> -->
                             </div>
                         </div>
+                        <div *ngIf="brand.Categorie == 'Chaussure'"class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll">
+                                                    <li><a (click)="filterModel.cat = 'Baskets';applyFilter()">Baskets</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Bottines';applyFilter()">Bottines</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Escarpins';applyFilter()">Escarpins</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Sandales';applyFilter()">Sandales</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Mocassins';applyFilter()">Mocassins</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Ballerines';applyFilter()">Ballerines</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Espadrilles';applyFilter()">Espadrilles</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                                <ul>
+                                                    <li><a  (click)="filterModel.genre = 'Homme';applyFilter()">Homme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Femme' ;applyFilter()">Femme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Enfant' ;applyFilter()">Enfant</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Unisex' ;applyFilter()">Unisex</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                       
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour">Pointure</a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">32
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">33
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">34
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '35';applyFilter()"><label for="xs">35
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '36';applyFilter()"><label for="sm" >36
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '37';applyFilter()"><label for="sm" >37
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '38';applyFilter()"><label for="md">38
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '39';applyFilter()"><label for="md">39
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '40';applyFilter()"><label for="xl">40
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = '41';applyFilter()"><label for="xl">41
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = '42';applyFilter()"><label for="2xl">42
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '43';applyFilter()"><label for="3xl">43
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '44';applyFilter()"><label for="xxl">44
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__color">
+                                                <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
+                                                    <input type="radio" id="sp-1">
+                                                </label>
+                                                <label class="c-2" for="sp-2"(click)="filterModel.color = 'blue';applyFilter()">
+                                                    <input type="radio" id="sp-2">
+                                                </label>
+                                                <label class="c-3" for="sp-3"(click)="filterModel.color = 'yellow';applyFilter()">
+                                                    <input type="radio" id="sp-3">
+                                                </label>
+                                                <label class="c-4" for="sp-4"(click)="filterModel.color = 'grey';applyFilter()">
+                                                    <input type="radio" id="sp-4">
+                                                </label>
+                                                <label class="c-5" for="sp-5"(click)="filterModel.color = 'green';applyFilter()">
+                                                    <input type="radio" id="sp-5">
+                                                </label>
+                                                <label class="c-6" for="sp-6"(click)="filterModel.color = 'pink';applyFilter()">
+                                                    <input type="radio" id="sp-6">
+                                                </label>
+                                                <label class="c-7" for="sp-7"(click)="filterModel.color = 'orange';applyFilter()">
+                                                    <input type="radio" id="sp-7">
+                                                </label>
+                                                <label class="c-8" for="sp-8"(click)="filterModel.color = 'red';applyFilter()">
+                                                    <input type="radio" id="sp-8">
+                                                </label>
+                                                <label class="c-9" for="sp-9"(click)="filterModel.color = 'white';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                                <label class="c-10" for="sp-9"(click)="filterModel.color = 'brown';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                                <label class="c-11" for="sp-9"(click)="filterModel.color = 'beige';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div *ngIf="brand.Categorie == 'Loisir'"class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll">
+                                                    <li><a (click)="filterModel.cat = 'Sport et Fitness';applyFilter()">Sport et Fitness</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Plein Air';applyFilter()">Plein Air</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Arts et Métiers';applyFilter()">Arts et Métiers</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Jeux et Jouets';applyFilter()">Jeux et Jouets</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Musique et Instruments';applyFilter()">Musique et Instruments</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Livres et Papeterie';applyFilter()">Livres et Papeterie</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Cinéma et Photographie';applyFilter()">Cinéma et Photographie</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Jardinage';applyFilter()">Jardinage</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Technologie et Électronique';applyFilter()">Technologie et Électronique</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Voyage';applyFilter()">Voyage</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                                <ul>
+                                                    <li><a  (click)="filterModel.genre = 'Homme';applyFilter()">Homme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Femme' ;applyFilter()">Femme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Enfant' ;applyFilter()">Enfant</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Unisex' ;applyFilter()">Unisex</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = 'Équipements de sport';applyFilter()"><label for="xs">Équipements de sport
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Camping';applyFilter()"><label for="sm" >Camping
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Fournitures art';applyFilter()"><label for="md">Fournitures d'art
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Puzzles';applyFilter()"><label for="xl">Puzzles
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Instruments';applyFilter()"><label for="2xl">Instruments
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Jeux vidéo';applyFilter()"><label for="xxl">Jeux vidéo
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                       
+                            </div>
+                        </div>
+                        <div *ngIf="brand.Categorie == 'Maison'"class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll">
+                                                    <li><a (click)="filterModel.cat = 'Meubles';applyFilter()">Meubles</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Décoration';applyFilter()">Décoration</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Électroménager';applyFilter()">Électroménager</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Cuisine';applyFilter()">Cuisine</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Literie';applyFilter()">Literie</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Salle de Bain';applyFilter()">Salle de Bain</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Jardin';applyFilter()">Jardin</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Nettoyage';applyFilter()">Nettoyage</a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                               
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = 'Miroirs';applyFilter()"><label for="xs">Miroirs
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Horloges';applyFilter()"><label for="sm" >Horloges
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Petit électroménager';applyFilter()"><label for="md">Petit électroménager
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Ustensiles de cuisine';applyFilter()"><label for="xl">Ustensiles de cuisine
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Draps et housses de couette';applyFilter()"><label for="2xl">Draps et housses de couette
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Produits de nettoyage';applyFilter()"><label for="xxl">Produits de nettoyage
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Tables';applyFilter()"><label for="3xl">Tables
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__color">
+                                                <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
+                                                    <input type="radio" id="sp-1">
+                                                </label>
+                                                <label class="c-2" for="sp-2"(click)="filterModel.color = 'blue';applyFilter()">
+                                                    <input type="radio" id="sp-2">
+                                                </label>
+                                                <label class="c-3" for="sp-3"(click)="filterModel.color = 'yellow';applyFilter()">
+                                                    <input type="radio" id="sp-3">
+                                                </label>
+                                                <label class="c-4" for="sp-4"(click)="filterModel.color = 'grey';applyFilter()">
+                                                    <input type="radio" id="sp-4">
+                                                </label>
+                                                <label class="c-5" for="sp-5"(click)="filterModel.color = 'green';applyFilter()">
+                                                    <input type="radio" id="sp-5">
+                                                </label>
+                                                <label class="c-6" for="sp-6"(click)="filterModel.color = 'pink';applyFilter()">
+                                                    <input type="radio" id="sp-6">
+                                                </label>
+                                                <label class="c-7" for="sp-7"(click)="filterModel.color = 'orange';applyFilter()">
+                                                    <input type="radio" id="sp-7">
+                                                </label>
+                                                <label class="c-8" for="sp-8"(click)="filterModel.color = 'red';applyFilter()">
+                                                    <input type="radio" id="sp-8">
+                                                </label>
+                                                <label class="c-9" for="sp-9"(click)="filterModel.color = 'white';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                                <label class="c-10" for="sp-9"(click)="filterModel.color = 'brown';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                                <label class="c-11" for="sp-9"(click)="filterModel.color = 'beige';applyFilter()">
+                                                    <input type="radio" id="sp-9">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                        <div *ngIf="brand.Categorie == 'Beaute'"class="shop__sidebar__accordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__categories">
+                                                <ul class="nice-scroll">
+                                                    <li><a (click)="filterModel.cat = 'Maquillage';applyFilter()">Maquillage</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Soins de la Peau';applyFilter()">Soins de la Peau</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Soins des Cheveux';applyFilter()">Soins des Cheveux</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Parfums';applyFilter()">Parfums</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Soins des Ongles';applyFilter()">Soins des Ongles</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Bain et Corps';applyFilter()">Bain et Corps</a></li>
+                                
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__brand">
+                                                <ul>
+                                                    <li><a  (click)="filterModel.genre = 'Homme';applyFilter()">Homme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Femme' ;applyFilter()">Femme</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Enfant' ;applyFilter()">Enfant</a></li>
+                                                    <li><a (click)="filterModel.genre = 'Unisex' ;applyFilter()">Unisex</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = 'Fond de teint';applyFilter()"><label for="xs">Fond de teint
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Rouge à lèvres';applyFilter()"><label for="sm" >Rouge à lèvres
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Nettoyants';applyFilter()"><label for="md">Nettoyants
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Hydratants';applyFilter()"><label for="xl">Hydratants
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Sérums';applyFilter()"><label for="2xl">Sérums
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Shampoings';applyFilter()"><label for="xxl">Shampoings
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Eau de parfum';applyFilter()"><label for="3xl">Eau de parfum
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'Vernis à ongles';applyFilter()"><label for="3xl">Vernis à ongles
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                             
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -188,7 +591,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
+                                    <p></p>
                                 </div>
                             </div>
                             

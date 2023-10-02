@@ -4,7 +4,6 @@ import { PricingComponent } from "./components/pages/pricing/pricing.component";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { ProductsDetailsComponent } from "./components/pages/products-details/products-details.component";
 import { ErrorComponent } from "./components/pages/error/error.component";
-import { LoginRegisterComponent } from "./components/pages/login-register/login-register.component";
 import { TermsConditionComponent } from "./components/pages/terms-condition/terms-condition.component";
 import { PrivacyPolicyComponent } from "./components/pages/privacy-policy/privacy-policy.component";
 import { ComingSoonComponent } from "./components/pages/coming-soon/coming-soon.component";
@@ -31,7 +30,6 @@ import { RegisterComponent } from "./components/pages/register/register.componen
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
-    { path: "login-register", component: LoginRegisterComponent },
     { path: "login", component: LoginComponent },
     { path: "register", component: RegisterComponent },
 
@@ -45,7 +43,7 @@ const routes: Routes = [
     { path: "Gastronomie", component: GastronomieComponent,   },
     { path: "Loisir", component: LoisirComponent ,  },
     { path: "Sport", component: SportComponent ,  },
-    { path: "Compte", component: CompteComponent  },
+    { path: "Compte", component: CompteComponent, canActivate: [AuthGuard]  },
     { path: "Brand/:id", component: ListingComponent ,  canActivate: [AuthGuard]},
     { path: "pricing", component: PricingComponent , canActivate: [AuthGuard] },
     { path: "Panier", component: CartComponent ,  canActivate: [AuthGuard]},
@@ -54,7 +52,7 @@ const routes: Routes = [
   
     { path: "products-details/:id", component: ProductsDetailsComponent,   },
     { path: "error", component: ErrorComponent },
-    { path: "parrainage", component: TermsConditionComponent ,  },
+    { path: "parrainage", component: TermsConditionComponent ,  canActivate: [AuthGuard] },
     { path: "success", component: PrivacyPolicyComponent },
     { path: "coming-soon", component: ComingSoonComponent },
     { path: "**", component: ErrorComponent },

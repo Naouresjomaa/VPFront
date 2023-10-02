@@ -33,6 +33,11 @@ export class ChaussureComponent implements OnInit , AfterViewInit{
     this.filteredBrand=[...this.brands]
   })
   }
+  logout() {
+    localStorage.removeItem('isLoggedin');
+    localStorage.removeItem('panier');
+    window.location.reload()
+  }
     private slideIndex: number = 1;
     @HostListener('window:scroll', ['$event'])
     handleScroll() {

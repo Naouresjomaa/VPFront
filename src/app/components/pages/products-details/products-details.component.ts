@@ -8,7 +8,6 @@ import { ProduitService } from 'src/app/services/produit.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import Swal from "sweetalert2";
 import { StorageService } from 'src/app/services/storage.service';
-import { LoginRegisterComponent } from '../login-register/login-register.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 @Component({

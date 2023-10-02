@@ -9,7 +9,7 @@
             <h1>
                 Offrez 10DNT, et recevez 10DNT en retour*
             </h1>
-            <p>Invitez vos proches à s’inscrire avec votre lien de parrainage, et recevez 10€ après leur première
+            <p>Invitez vos proches à s’inscrire avec votre lien de parrainage, et recevez 10DNT après leur première
                 commande*.</p>
         </div>
 
@@ -17,13 +17,17 @@
             <!-- <label for="username">Lien à partager</label>
             <br> -->
 
-            <input type="text" id="username" name="username"
+            <input #inputField type="text" id="username" name="username"
                 [value]="linkParrainage">
             <!-- <button onclick="copyPlaceholder()" class="inputbutton"> Copier </button> -->
         </div>
         <div class="butonline">
 
-            <button class="cardbutton">Partager mon lien</button>
+            <button (click)="copyInputMessage(inputField)" 
+            [disabled]="isCopied" 
+            [ngClass]="{'copied': isCopied}"
+            class="cardbutton">{{ isCopied ? 'Lien Copié!' : 'Copier le Texte' }}</button>
+
 
         </div>
     </div>
@@ -54,7 +58,7 @@
             <div class="containermenue">
                 <img src="https://www.veepee.fr/gr/userEngagement/_cmn/sponsorship/veepee/step_3.svg" alt=""
                     class="iconfooters">
-                <h4 class="titre">Vous gagnez 10€* chacun</h4>
+                <h4 class="titre">Vous gagnez 10DNT* chacun</h4>
                 <p>valables sur toutes nos ventes* dès la première commande de votre ami*.
                     C’est dans la poche !</p>
 

@@ -27,6 +27,11 @@ export class SportComponent implements OnInit ,  AfterViewInit{
     this.filteredBrand=[...this.brands]
     })
     }
+    logout() {
+      localStorage.removeItem('isLoggedin');
+      localStorage.removeItem('panier');
+      window.location.reload()
+    }
     filtrerDonnees(): void {
       this.filteredBrand = this.brands.filter((brand: any) => 
       brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) 

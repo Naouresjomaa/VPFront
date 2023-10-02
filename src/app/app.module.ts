@@ -7,7 +7,6 @@ import { PreloaderComponent } from './components/common/preloader/preloader.comp
 import { FooterStyleTwoComponent } from './components/common/footer-style-two/footer-style-two.component';
 import { PricingComponent } from './components/pages/pricing/pricing.component';
 import { ErrorComponent } from './components/pages/error/error.component';
-import { LoginRegisterComponent } from './components/pages/login-register/login-register.component';
 import { TermsConditionComponent } from './components/pages/terms-condition/terms-condition.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 import { ComingSoonComponent } from './components/pages/coming-soon/coming-soon.component';
@@ -48,7 +47,6 @@ import { PopupComponent } from './components/pages/popup/popup.component';
     FooterStyleTwoComponent,
     PricingComponent,
     ErrorComponent,
-    LoginRegisterComponent,
     TermsConditionComponent,
     PrivacyPolicyComponent,
     ComingSoonComponent,

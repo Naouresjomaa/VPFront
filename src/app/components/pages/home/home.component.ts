@@ -2,7 +2,6 @@ import { OnInit } from '@angular/core';
 import { Component, Renderer2, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BrandService } from 'src/app/services/brand.service';
-import { LoginRegisterComponent } from '../login-register/login-register.component';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +25,11 @@ affichage = true;
     const storedPanier = localStorage.getItem('panier');
     this.nbrpanier =  storedPanier ? JSON.parse(storedPanier) : 0;
   }
+  logout() {
+    localStorage.removeItem('isLoggedin');
+    localStorage.removeItem('panier');
+    window.location.reload()
+  }
   decodeToken() {
     const token = localStorage.getItem('isLoggedin');
    if(token && token.length > 0){
@@ -39,11 +43,7 @@ this.service.GetBrands().subscribe(res=>{
   this.filteredBrand=[...this.brands]
 })
 }
-identifier(){
-    this.dialog.open(LoginRegisterComponent, {
-      width: '700px',height :'700px'
-    });
-}
+
 filtrerDonnees(): void {
   this.filteredBrand = this.brands.filter((brand: any) => 
   brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) ||

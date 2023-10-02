@@ -20,7 +20,11 @@ export class BeauteComponent implements OnInit ,  AfterViewInit{
         const storedPanier = localStorage.getItem('panier');
         this.nbrpanier =  storedPanier ? JSON.parse(storedPanier) : 0;
       }
-    
+      logout() {
+        localStorage.removeItem('isLoggedin');
+        localStorage.removeItem('panier');
+        window.location.reload()
+      }
     getAllBrand(){
     this.service.GetBrands().subscribe(res=>{
       console.log('resssssssssssssssssss',res)
