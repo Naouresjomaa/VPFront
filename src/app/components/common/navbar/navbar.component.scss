@@ -330,11 +330,7 @@ li:active {
   font-weight: bold;
   margin-right: 12px;
 }
-@media (max-width: 768px) {
-  .navp {
-    display: none;
-  }
-}
+
 
 .navp:hover {
   padding-bottom: 2px;
@@ -353,11 +349,7 @@ li:active {
   height: 25px;
   margin-left: 50px;
 }
-@media (max-width: 768px) {
-  .icon {
-    display: none;
-  }
-}
+
 .search {
   display: block;
   position: relative;
@@ -1001,6 +993,9 @@ h1:visited {
   .navbar {
 display: none;
   }
+.navp{
+  display: none;
+}
   nav {
     display: none;
       }
@@ -1134,9 +1129,9 @@ display: none;
 
 
 @media (max-width: 990px) {
-  .navbar {
-display: none;
-  }
+//   .navbar {
+// display: none;
+//   }
   nav {
     display: none;
       }
