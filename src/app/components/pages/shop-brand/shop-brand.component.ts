@@ -21,7 +21,8 @@ brand : any
     genre:'', 
     priceRange: '',
     size: '', 
-    color: ''
+    color: '',
+    tag:''
   };
   filteredProducts: any;
   constructor(private route: ActivatedRoute,private brandservice : BrandService,private produitservice :ProduitService) { }
@@ -71,6 +72,11 @@ brand : any
       this.filterModel.size=''
       
     } 
+    if (this.filterModel.tag) {
+      this.filteredProducts = this.produits.filter(product => product.DetailsP.includes(this.filterModel.tag));
+      this.filterModel.tag=''
+      
+    }
 
    
   }

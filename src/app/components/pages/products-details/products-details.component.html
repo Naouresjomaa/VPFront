@@ -42,7 +42,8 @@
                
                </div>
                <div class="quantity "> 
-                <p>{{produit.DetailsP}} <br></p>
+                
+                <p class="para">{{produit.DetailsP}} <br></p>
                 <div class="pname">Les Tailles Disponibles</div>
                 <div class="sizes" >
                     <div *ngFor="let b of produit.Taille">
@@ -109,13 +110,14 @@
         
                     </div>
                         <br>
+                       
                     <button class="pinkbutton" (click)="Topanier(produit)">Ajouter au panier</button>
                     <br>
                     <p>Vendu et expédié par <span style="color: rgba(211, 16, 84, 0.794);">Vente Privilégié</span>
-
+                           
 
                     </p>
-                    </div>
+                    </div> 
 
                     <!--------dropdown size-->
                

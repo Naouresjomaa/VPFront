@@ -412,15 +412,10 @@ h1 {
     "Lucida Sans", Arial, sans-serif;
 }
 p {
-  display: block;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+ 
   color: rgba(44, 43, 43, 0.887);
   margin-bottom: 30px;
+  font-size: 1vw;
 }
 .inputimg{
 display: flex;
@@ -928,17 +923,26 @@ a:visited{
   display: block;
   flex-direction: column;
   }
+  .quantity p{
+    font-size: 2vw;
+  }
 }
 
 @media (max-width:728px) {
+  .big-img{
+
+    width: 150%;
+    height: 100%;
+    margin-top: 50px;
+     
+      margin-left: 100px;
+  }
   .flex-box{
    width: 100vw;
    margin: auto;
   }
-  .big-img {
-    margin: auto;
-    width: 110%;
-    height: 100%;
+  .para{
+    font-size: 0.6vw;
   }
   .left{
     margin-left: 100px;
@@ -952,22 +956,28 @@ margin-left: 100px; }
     font-size: 2.1vw;
   }
   .pinkp{
-    font-size: 1.8vw;
+    font-size: 2.1vw;
   }
   .greenspan{
-    font-size: 1.8vw;
+    font-size: 2.1vw;
   }
-  p{
-    font-size: 1vw;
-    
-  }
+
   .pname{
     font-size: 2.1vw;
   }
   .pinkbutton{
     width: 200px;
   }
+  p{
+    font-size: 2vw;
+  }
+  .left{
+    margin-left: 0px;
+
+    flex-wrap: wrap;
   
+   
+  }
 
  }
 
