@@ -9,13 +9,17 @@
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+   justify-content: center;
+    display: flex;
+    align-self: center;
 }
 
 .logo {
     height: 90px;
     width: 120px;
-    margin-left: 47%;
-    margin-right: 47%;
+   margin: auto;
+   display: flex;
+   align-self: center;
 }
 
 .login-container {
