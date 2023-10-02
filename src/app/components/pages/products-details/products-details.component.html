@@ -44,12 +44,14 @@
                <div class="quantity "> 
                 
                 <p class="para">{{produit.DetailsP}} <br></p>
+                <div *ngIf="produit.categorie == 'Mode'">
                 <div class="pname">Les Tailles Disponibles</div>
                 <div class="sizes" >
                     <div *ngFor="let b of produit.Taille">
                     <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
                 </div>
                 </div>
+            </div>
                 <div *ngIf="produit" class="pname">Choisir La Quantité</div>
                 <div class="quantity-selector">
                     <button (click)="modifierQuantite('-1')" class="quantity-change" id="decrement">-</button>

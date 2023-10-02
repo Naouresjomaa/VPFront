@@ -1,8 +1,10 @@
  <!-- Header Section -->
+ 
  <section class="headertop" id="headertop">
     <div class="headercontainertop">
         <!-- Hamburger Menu -->
-        <div class="tooltip t">
+
+        <div class="tooltipp t">
             <div class="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -10,84 +12,125 @@
                 <span class="humberger-text">Menu</span>
             </div>
 
-            <!-- Tooltip for Menu -->
-            <span class="tooltiptext">
-                <h2>Bien le bonjour</h2>
-                <p>Déja membre Veepee?</p>
-                <button class="whitebutton">S'identifier</button>
-                <hr />
+            <!-- tooltipp for Menu -->
+
+            <span class="tooltipptext">
+               
+
+
+                
+
+
 
                 <!-- Menu Items -->
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/home.svg" />
-                    <h1>Accueil</h1>
+                <div class="tooltipp-item">
+                   
+                    <a  href="#"><h1>Accueil</h1></a>
                 </div>
-                <hr>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/avatar.svg">
-                    <h1>Mon compte</h1>
+               
+              
+                <div class="tooltipp-item">
+                    
+                   <a routerLink="/Mode"><h1>Mode</h1></a>
                 </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/cadeau.svg">
-                  <a href="payement.html" > <h1>Mes commandes</h1></a>
+                <div class="tooltipp-item">
+                    
+                    <a routerLink="/Chaussure"><h1>Chaussures</h1></a>
                 </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/alert.svg">
-                     <h1>Mes communications</h1>
-                </div>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/chat.svg">
-                    <h1>Le Club</h1>
+                <div class="tooltipp-item">
+                  
+                    <a routerLink="/Maison"><h1>Maison</h1></a>
                 </div>
 
-                <hr>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/help.svg">
-                    <h1>Aide et contact</h1>
+                <!-- <hr> -->
+
+                <div class="tooltipp-item">
+                    <a routerLink="/Voyage"><h1>Voyage</h1></a>
                 </div>
 
+                <div class="tooltipp-item">
+                    <a routerLink="/Beaute"><h1>Beauté</h1></a>
+                </div>
+
+                <div class="tooltipp-item">
+                    <a routerLink="/Sport"><h1>Sport</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a routerLink="/Enfant"><h1>Enfant</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a routerLink="/Gastronomie"><h1>Gastronomie</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a routerLink="/Loisir"><h1>Loisir</h1></a>
+                </div>
                 <hr>
-                <div class="tooltip-item">
-                    <img src="assets/img/vp/mobile.svg">
-                    <h1>VPMobile</h1>
+
+                <div class="tooltipp-item">
+                    <a routerLink="/Compte"><h1>Mon compte</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a (click)="logout()"><h1>Se déconnecter</h1></a>
                 </div>
 
                 <!-- Add more menu items here -->
+
+
             </span>
         </div>
 
         <!-- Veepee Logo -->
-        <div class="veeplogo">
-            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo" id="butterfly" />
+        <div class="veeplogo ">
+            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo ddd" id="butterfly" />
         </div>
 
+
         <!-- Left Section -->
-        <div class="left d-flex ">
-            <div class="d-flex">
-                <a routerLink="/parrainage"><img src="assets/img/vp/parrainage.svg" id="my_image" class="icon" />
-                </a><p class="navp">          Parrainage</p>
-            </div>
-            <div class="cart-container">
-                <a routerLink="/Panier"><img class="img" src="assets/img/vp/panier.svg" id="my_image">
-                <span class="cart-badge">{{nbrpanier}}</span> </a><!-- This is the label for the cart count -->
-            </div>
+        <div class="left" *ngIf="affichage">
+            <!-- <div>
+                <img src="assets/img/vp/question.png" class="icon" />
+            <div>
+                <img src="assets/img/vp/question.png" class="icon ddd" />
+                <p class="navp">Qui sommes-nous?</p>
+            </div> -->
+            <div >
+                
+            <button class="button" routerLink="/login">S'identifier</button>
+
         </div>
+        
+        </div>
+       
+            <div class="left d-flex " *ngIf="!affichage">
+                <div class="d-flex">
+                    <a routerLink="/parrainage"><img src="assets/img/vp/parrainage.svg" id="my_image" class="icon ddd" />
+                    </a>
+                    <p class="navp">Parrainage</p>
+                </div>
+                <div class="cart-container">
+                    <a routerLink="/Panier"><img class="img ddd" src="assets/img/vp/panier.svg" id="my_image">
+                    <span class="cart-badge">{{nbrpanier}}</span> </a><!-- This is the label for the cart count -->
+                </div>
+            </div>  
+        
     </div>
 
     <!-- Navigation Links -->
     <nav class="navbar">
         <div class="navlinks">
-            <ul>
-                <li><a href="#" class="titleunderline">Accueil </a></li>
-                <li><a routerLink="/Mode" class="titels"> Mode</a></li>
-                <li><a routerLink="/Chaussure" class="titels"> Chaussures</a></li>
-                <li><a routerLink="/Maison" class="titels">Maison</a></li>
-                <li><a routerLink="/Voyage" class="titels">Voyage</a></li>
-                <li><a routerLink="/Beaute" class="titels">Beauté </a></li>
-                <li><a routerLink="/Sport" class="titels"> Sport</a></li>
-                <li><a routerLink="/Enfant" class="titels"> Enfant</a></li>
-                <li><a routerLink="/Gastronomie" class="titels"> Gastronomie</a></li>
-                <li><a routerLink="/Loisir" class="titels">Loisir</a></li>
+            <ul id="nav">
+                <li><a href="#" class="titels sty">Accueil </a></li>
+                <li><a routerLink="/Mode" class="titels sty "> Mode</a></li>
+                <li><a routerLink="/Chaussure" class="titels sty"> Chaussures</a></li>
+                <li><a routerLink="/Maison" class="titels sty">Maison</a></li>
+                <li><a routerLink="/Voyage" class="titels sty">Voyage</a></li>
+                <li><a routerLink="/Beaute" class="titels sty">Beauté </a></li>
+                <li><a routerLink="/Sport" class="titels sty"> Sport</a></li>
+                <li><a routerLink="/Enfant" class="titels sty"> Enfant</a></li>
+                <li><a routerLink="/Gastronomie" class="titels sty"> Gastronomie</a></li>
+                <li><a routerLink="/Loisir" class="titels sty">Loisir</a></li>
+                
+                
                 <nav class="menu">
                     <ul>
                        
@@ -104,92 +147,89 @@
                     </ul>
                 </nav>
             </ul>
+            
         </div>
     </nav>
 </section>
 
+
 <!-- Header -->
-<header style="background-image: url('../../../../assets/img/home-three/loisirbg.jpg');">
-    <!-- Search Bar -->
+<header style="background-image: url('../../../../assets/img/home-three/loisirbg.jpg');">    <!-- Search Bar -->
     <div class="search">
         <div class="search-container">
-            <input type="text" class="search-bar"[(ngModel)]="term" (input)="filtrerDonnees()" placeholder="Rechercher une marque, un produit..." />
+            <input type="text" class="search-bar" [(ngModel)]="term" (input)="filtrerDonnees()" placeholder="Rechercher une marque, un produit..." />
             <button class="search-button">
                 <img src="assets/img/vp/search.png" alt="Logo" class="logosearch" />
             </button>
         </div>
     </div>
-
-    
 </header>
+<div>
 <section class="titlecontainer">
-<div class="title">
-  <h1 class="containertitle">ça va vous plaire</h1>
-  <p class="containerparagraphe">Coup de foudre inévitale</p>
-</div>
+    <div class="title">
+      <h1 class="containertitle">ça va vous plaire</h1>
+      <p class="containerparagraphe">Coup de foudre inévitale</p>
+    </div>
 </section>
+
 <!-- Container for Body Content -->
+
 <div class="bodycontainer">
+    
     <!-- Main Content -->
     <main class="page-content">
         <div *ngFor="let brand of filteredBrand">
-        <div *ngIf="brand.Categorie == 'Loisir'" class="card">
-            <div class="content">
+            <div *ngIf="brand.Categorie == 'Loisir'" class="card"> 
+                           <div class="content">
                 <img
                 [src]="'http://localhost:3000/image/' + brand.Image" />
                 <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
             </div>
         </div>
-    </div>
-        <!-- <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/05b570bd-1bab-418d-90ac-031aa353917f" />
-                <h3 class="copy">Jusqu'au mercredie 20 septembre 2023 06:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/10675226-af3b-429f-935e-c619b5167397" />
-                <h3 class="copy">Jusqu'au mardi 19 septembre 2023 06:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/6b3bcf49-d6cb-4fa3-a2b8-6e7d87947f03 " />
-                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/7b3514bb-7871-47a5-8825-cf34e10f6543 " />
-                <h3 class="copy">Jusqu'au dimache 24 mars 2024 08:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/6f9116af-197e-4f63-bb3b-3fd71969d4af " />
-                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/1b07de54-4c8e-4791-b33e-1ff8abcccdf5 " />
-                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <img src="https://media.veepee.com/v1/media/31e81be7-f6f0-4df1-a185-2b11809cb438 " />
-                <h3 class="copy">Jusqu'au lundi 18 septembre 2023 06:00</h3>
-            </div>
-        </div> -->
+        
+     </div>
+    
+   
+     
+     
+
         
     </main>
-
-
-
+    <section class="titlecontainerr">
+        <div class="titlee">
+          <h1 class="containertitlee">ENCORE QUELQUES JOURS</h1>
+          <p class="containerparagraphee">De quoi sauter sur l'occasion</p>
+        </div>
+    </section>
     
+    <!-- Container for Body Content -->
+    
+    <div class="bodycontainer">
+        
+        <!-- Main Content -->
+        <main class="page-content">
+            <div *ngFor="let brand of filteredBrand">
+            <div class="card">
+                <div class="content">
+                    <img
+                    [src]="'http://localhost:3000/image/' + brand.Image" />
+                    <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
+                </div>
+            </div>
+            
+         </div>
+        
+       
+         
+         
+    
+            
+        </main>
 </div>
+
+</div>
+
+
 
 
 
@@ -197,4 +237,8 @@
 <!-- JavaScript Scripts -->
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 <script src="./script.js"></script>
+
+
+<!---------footer-------->
+
 <app-footer-style-two></app-footer-style-two>

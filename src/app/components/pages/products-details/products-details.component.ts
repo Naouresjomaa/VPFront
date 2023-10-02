@@ -88,7 +88,7 @@ modifierQuantite(valeur): void {
         });
        
       }
-    else if(!this.panier.taille){
+    else if(!this.panier.taille && this.produit.categorie=="Mode"){
       Swal.fire({
         position: "center",
         title: "selectionnez une taille svp !",

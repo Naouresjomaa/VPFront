@@ -24,41 +24,52 @@
                 <!-- Menu Items -->
                 <div class="tooltipp-item">
                    
-                    <h1>Accueil</h1>
+                    <a  href="#"><h1>Accueil</h1></a>
                 </div>
                
               
                 <div class="tooltipp-item">
                     
-                   <h1>Mode</h1>
+                   <a routerLink="/Mode"><h1>Mode</h1></a>
                 </div>
                 <div class="tooltipp-item">
                     
-                     <h1>Chaussures</h1>
+                    <a routerLink="/Chaussure"><h1>Chaussures</h1></a>
                 </div>
                 <div class="tooltipp-item">
                   
-                    <h1>Maison</h1>
+                    <a routerLink="/Maison"><h1>Maison</h1></a>
                 </div>
 
                 <!-- <hr> -->
 
                 <div class="tooltipp-item">
-                    <h1>Voyage</h1>
+                    <a routerLink="/Voyage"><h1>Voyage</h1></a>
                 </div>
 
                 <div class="tooltipp-item">
-                    <h1>Beauté</h1>
+                    <a routerLink="/Beaute"><h1>Beauté</h1></a>
                 </div>
 
                 <div class="tooltipp-item">
-                    <h1>Sport</h1>
+                    <a routerLink="/Sport"><h1>Sport</h1></a>
                 </div>
-
+                <div class="tooltipp-item">
+                    <a routerLink="/Enfant"><h1>Enfant</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a routerLink="/Gastronomie"><h1>Gastronomie</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a routerLink="/Loisir"><h1>Loisir</h1></a>
+                </div>
                 <hr>
 
                 <div class="tooltipp-item">
-                    <h1>Mon compte</h1>
+                    <a routerLink="/Compte"><h1>Mon compte</h1></a>
+                </div>
+                <div class="tooltipp-item">
+                    <a (click)="logout()"><h1>Se déconnecter</h1></a>
                 </div>
 
                 <!-- Add more menu items here -->
@@ -108,7 +119,7 @@
                               
                                 <li><a routerLink="/Compte"> <img src="../../../../assets/img/stock-vector-eps-pink-vector-logout-icon-or-logo-in-simple-flat-trendy-modern-style-isolated-on-white-2167805975-removebg-preview (1).png" alt=""  width="40px" > &emsp; Mon compte</a></li>
                              <hr>
-                                <li><a href="#"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Deconnection</a></li>
+                                <li><a (click)="logout()"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Se déconnecter</a></li>
                             </ul>
                         </li>
                        

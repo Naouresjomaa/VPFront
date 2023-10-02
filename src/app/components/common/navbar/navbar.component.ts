@@ -26,7 +26,11 @@ export class NavbarComponent implements OnInit {
   getTotal(paniers: any) {
     throw new Error('Method not implemented.');
   }
- 
+  logout() {
+    localStorage.removeItem('isLoggedin');
+    localStorage.removeItem('panier');
+    window.location.reload()
+  }
 
   ngOnInit(): void {
    

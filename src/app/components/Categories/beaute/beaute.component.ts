@@ -11,9 +11,11 @@ export class BeauteComponent implements OnInit ,  AfterViewInit{
   nbrpanier: any;
   filteredBrand: any;
   term: any;
+  affichage: boolean =true;
       constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
       ngOnInit() {
         this.getAllBrand()
+        this.decodeToken()
         this.getPanier()
       }
       getPanier(){
@@ -25,19 +27,26 @@ export class BeauteComponent implements OnInit ,  AfterViewInit{
         localStorage.removeItem('panier');
         window.location.reload()
       }
+      decodeToken() {
+        const token = localStorage.getItem('isLoggedin');
+       if(token && token.length > 0){
+        this.affichage = false
+       }
+      }
     getAllBrand(){
     this.service.GetBrands().subscribe(res=>{
       console.log('resssssssssssssssssss',res)
       this.brands=res;
       this.filteredBrand=[...this.brands]
-    })
-    }
-    filtrerDonnees(): void {
-      this.filteredBrand = this.brands.filter((brand: any) => 
-      brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) 
+      })
+      }
     
-      );
-    }
+      filtrerDonnees(): void {
+        this.filteredBrand = this.brands.filter((brand: any) => 
+        brand.BrandName.toLowerCase().includes(this.term.toLowerCase()) 
+      
+        );
+      }
       private slideIndex: number = 1;
       @HostListener('window:scroll', ['$event'])
       handleScroll() {
