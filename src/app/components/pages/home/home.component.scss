@@ -544,13 +544,13 @@ li:active {
   display: block;
   position: relative;
   margin-top: 80px;
-  /* margin-left: 10%; */
+//  margin-left: 10%; 
 }
 .titlecontainerr {
   margin-top: 50px;
   margin-bottom: 100px;
-  margin-left: 0;
-  margin-left: -185px;
+padding-left: -223px;
+
 
 }
 
@@ -761,13 +761,7 @@ q {
   color: cornflowerblue;
 }
 
-.lastimage {
-  margin-top: 20px;
-  height: 65vh;
-  width: 100%;
-  background-size: cover;
-  background-image: url(https://media.veepee.com/v1/media/acd55ab1-f623-4434-bf0c-b2017b56175b);
-}
+
 
 /*footer*/
 h3 {
@@ -984,6 +978,11 @@ h1:visited {
     /* display: none; */
     padding: 30px 20px;
     background: unset;
+  }  
+  .titlecontainerr {
+    /* display: none; */
+    padding: 30px 20px;
+    background: unset;
   }
 
   .containertitle {
@@ -1105,7 +1104,32 @@ display: none;
   .dot-container {
     margin-top: 20px;
   }
+  .dot-containerr {
+    margin-top: 20px;
+  }
+  .titlecontainerr {
+    // padding: 30px 20px;
+    margin-left: 0px;
+    width: 100vw;
+    
+    background: linear-gradient(
+      0deg,
+      rgb(243, 243, 243) 0%,
+      rgb(255, 255, 255) 50%,
+      /* rgba(255, 255, 255, 1) 52%, */ rgba(255, 255, 255, 1) 50%,
+      rgba(255, 254, 254, 0) 100%
+    );
+  }
 
+  .containertitlee {
+    color: rgb(70, 70, 80);
+  }
+  .titlee {
+    margin-top: 0px;
+  }
+  .containerparagraphee {
+    color: rgb(70, 70, 80);
+  }
   .titlecontainer {
     // padding: 30px 20px;
     margin-left: 0px;
