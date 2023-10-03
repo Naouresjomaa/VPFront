@@ -77,6 +77,7 @@ filtrerDonnees(): void {
     let humbergerText = navContainer.getElementsByClassName("humberger-text");
     let navp = navContainer.getElementsByClassName("navp");
     let images = navContainer.getElementsByClassName("ddd");
+    
     let butterfly = navContainer.querySelector("#butterfly");
     let bar = navContainer.getElementsByClassName("bar");
     let navbar = navContainer.getElementsByClassName("navbar");

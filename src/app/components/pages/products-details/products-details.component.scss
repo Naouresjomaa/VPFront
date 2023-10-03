@@ -918,10 +918,10 @@ h1:visited {
     padding-top: 10px;
   }
   .pinkbutton {
-    font-size: 1.4vw;
+    font-size: 22px;
     width: unset;
     height: unset;
-    padding: 8px 32px;
+    padding: 10px 32px;
     background-color: #ef206c !important;
     margin-bottom: 50px;
   }
@@ -1004,7 +1004,7 @@ h1:visited {
     display: none;
   }
   .pinkbutton {
-    font-size: 1.4vw;
+    font-size: 18px;
     width: unset;
     height: unset;
     padding: 8px 32px;
@@ -1101,15 +1101,15 @@ h1:visited {
     padding: 16px;
   }
   .pinkbutton {
-    font-size: 1.4vw;
+    font-size: 18px;
     width: unset;
     height: unset;
-    padding: 8px 32px;
+    padding: 14px 32px;
     background-color: #ef206c !important;
     margin-bottom: 50px;
   }
   .para {
-    width: 400px;
+    width: 300px;
   }
   .left {
     width: 90%;
@@ -1175,7 +1175,8 @@ h1:visited {
 /* Responsive Large screen */
 @media (min-width: 1100px) {
   .pname {
-    font-size: 1.8vw;
+    font-size: 1vw;
+    font-weight: bold;
   }
   .pinkp {
     font-size: 2vw;
@@ -1212,10 +1213,10 @@ h1:visited {
     gap: 8%;
   }
   .pinkbutton {
-    font-size: 1.4vw;
+    font-size: 18px;
     width: unset;
     height: unset;
-    padding: 8px 32px;
+    padding: 10px 32px;
     background-color: #ef206c !important;
     margin-bottom: 50px;
   }
