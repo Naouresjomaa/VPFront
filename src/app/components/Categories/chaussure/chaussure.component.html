@@ -182,7 +182,7 @@
             <div *ngIf="brand.Categorie == 'Chaussure' && brand.AffichafeAccueil == 'ÇA VA VOUS PLAIRE'" class="card">
                 <div class="content">
                 <img
-                [src]="'http://51.254.119.123:3000/image/' + brand.Image" />
+                [src]="'https://api.venteprivilegiee.com/image/' + brand.Image" />
                 <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
             </div>
         </div>

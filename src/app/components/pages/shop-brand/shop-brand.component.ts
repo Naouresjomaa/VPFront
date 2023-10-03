@@ -72,7 +72,7 @@ getMaxPage() {
      this.brandservice.getBrandByid(id).subscribe((res) => {
         console.log(res[0])
       this.brand=res[0]
-    this.image='http://51.254.119.123:3000/image/'+this.brand.Image 
+    this.image='https://api.venteprivilegiee.com/image/'+this.brand.Image 
   this.setBgImage(this.image)})}
   setBgImage(imageUrl:any) {
     const element = document.querySelector('.inner-bg111') as HTMLElement;

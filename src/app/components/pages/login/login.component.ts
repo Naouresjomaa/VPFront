@@ -72,7 +72,7 @@ isDialog= false;
 
   onGoogleLogin() {
     this.authService.loginWithGoogle();
-    fetch('http://51.254.119.123:3000/auth/google')
+    fetch('https://api.venteprivilegiee.com/auth/google')
     .then(response => response.json())
     .then(data => {
       if (data.redirect) {

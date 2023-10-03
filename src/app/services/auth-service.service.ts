@@ -9,11 +9,11 @@ export class AuthServiceService {
 
   loginWithFacebook() {
     // Adjust the URL to point to your backend
-    window.location.href = 'http://51.254.119.123:3000/auth/facebook';
+    window.location.href = 'https://api.venteprivilegiee.com/auth/facebook';
   }
 
   loginWithGoogle() {
     // Adjust the URL to point to your backend
-    window.location.href = 'http://51.254.119.123:3000/auth/google';
+    window.location.href = 'https://api.venteprivilegiee.com/auth/google';
   }
 }
