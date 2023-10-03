@@ -882,10 +882,7 @@ input {
       margin: 0;
       padding: 0;
     }
-    .card{
-      margin-top: 0;
-      width: 100vw;
-    }
+
     
     }
     @media (max-width:476px) {
@@ -895,10 +892,7 @@ input {
       main{
         width: 100vw;
       }
-      .card{
-        margin-top: 0;
-        width: 100vw;
-      }
+   
       .card p{
         padding-right: 100px;
       }
@@ -910,5 +904,64 @@ input {
         background-color: rgb(227, 68, 164); /* ou toute autre couleur pâle */
         border-color: rgb(227, 68, 164);
         color: rgb(251, 248, 248);
+      }
+        /*mini screen*/
+  @media (max-width:600px) {
+    .card{
+      width: 400px;
+    }
+    .container h1 {
+      font-size: 2.8vw;
+      text-align: center;
+     padding-right: 50px;
+    }
+    hr {
+      display: none;
+    }
+    .container p {
+      font-size: 2.2vw;
+      width: auto;
+      padding-right: 50px;
+    }
+    .input-container{
+      width: auto;
+    }
+    }
+    
+     /*mini screen*/
+  @media (max-width:476px) {
+    .veeplogoo{
+      display: none;
+    }
+    header{
+      width: 100%;
+    }
+    main{
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+    .card{
+      margin-top: 50px;
+      width: 80vw;
+    }
+    
+    }
+    @media (max-width:476px) {
+      header{
+        width: 100%;
+      }
+      main{
+        width: 100vw;
+      }
+      .card{
+        margin-top: -150px;
+        width: 80vw;
+      }
+      .card p{
+        padding-right: 100px;
+      }
+     
+      
       }
 
