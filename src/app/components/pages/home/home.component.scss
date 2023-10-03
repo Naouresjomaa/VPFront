@@ -549,8 +549,12 @@ li:active {
 .titlecontainerr {
   margin-top: 50px;
   margin-bottom: 100px;
-margin-left: -18%;
+// margin-left: -18%;
 // padding-left: -283px;
+
+  /* display: none; */
+  padding: 30px 30px;
+
 
 
 }
@@ -919,8 +923,10 @@ h1:visited {
 }
 .titlecontainer {
   margin-top: -378px;
+  margin-bottom: 50px;
   margin-left: 155px;
 }
+
 .left d-flex{
   margin: 10px;
 }
