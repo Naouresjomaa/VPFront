@@ -489,3 +489,12 @@ app-navbar {
     border-color: #555555; /* Bordure plus foncée pour la page active */
 }
 
+@media (max-width:564px){
+    .product__item sale{
+        overflow: visible;
+    }
+    .product__item__text{
+       margin-top: 10px;
+       position: relative;
+    }
+}
