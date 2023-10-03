@@ -958,6 +958,9 @@ h1:visited {
   .footerheader {
     display: none;
   }
+  .veeplogo {
+    justify-content: normal; 
+  }
   nav {
     display: none;
       }
@@ -1034,8 +1037,9 @@ display: none;
   nav {
     display: none;
       }
-  .veeplogo {
-  }
+      .veeplogo {
+        justify-content: normal; 
+      }
 
   .logo {
     transform: translateX(20px);
