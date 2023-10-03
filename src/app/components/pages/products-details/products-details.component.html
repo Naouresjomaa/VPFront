@@ -6,7 +6,7 @@
         <div class="flex-box" >
             <div class="left">
                 <div  class="big-img">
-                    <img [src]="'https://api.venteprivilegiee.com/image/'+ produit.Image">
+                    <img [src]="'http://51.254.119.123:3000/image/'+ produit.Image">
                 </div>
                 <div class="images">
                     <!-- <div class="small-img">
@@ -115,7 +115,7 @@
                        
                     <button class="pinkbutton" (click)="Topanier(produit)">Ajouter au panier</button>
                     <br>
-                    <p>Vendu et expédié par <span style="color: rgba(211, 16, 84, 0.794);">Vente Privilégié</span>
+                    <p class="endso">Vendu et expédié par <span style="color: rgba(211, 16, 84, 0.794);">Vente Privilégié</span>
                            
 
                     </p>
@@ -136,5 +136,4 @@ function showImg(pic){
   </script>
 
   <app-footer-style-two></app-footer-style-two>
-
 

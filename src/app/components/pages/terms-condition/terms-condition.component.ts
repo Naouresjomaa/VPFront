@@ -7,7 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./terms-condition.component.scss']
 })
 export class TermsConditionComponent implements OnInit {
- linkParrainage = 'http://localhost:4200/#/register?parrainage='
+ linkParrainage = 'https://venteprivilegiee.com/#/register?parrainage='
   parrainage: any;
   isCopied =false;
   constructor( private jwtHelper: JwtHelperService) { }

@@ -15,7 +15,11 @@
         <input formControlName="Email" type="email" placeholder="Adresse e-mail" />
         <input formControlName="Password" type="password" placeholder="Mot de passe" />
         <button type="submit" (click)="Login()">Se connecter</button>
-        <a routerLink="/register" class="sous-lien">Vous n'avez pas un compte? S'inscrire</a>
+        <div class="d-flex justify-content-between">
+            <a routerLink="/" class="sous-lien">Home</a>
+            <a routerLink="/register" class="sous-lien2">Vous n'avez pas un compte? S'inscrire</a>
+        </div>
+       
     </div>
 </form>
 </div>

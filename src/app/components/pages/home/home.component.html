@@ -66,10 +66,10 @@
                 </div>
                 <hr>
 
-                <div class="tooltipp-item">
+                <div *ngIf="!affichage" class="tooltipp-item">
                     <a routerLink="/Compte"><h1>Mon compte</h1></a>
                 </div>
-                <div class="tooltipp-item">
+                <div *ngIf="!affichage" class="tooltipp-item">
                     <a (click)="logout()"><h1>Se déconnecter</h1></a>
                 </div>
 
@@ -131,7 +131,7 @@
                 <li><a routerLink="/Loisir" class="titels sty">Loisir</a></li>
                 
                 
-                <nav class="menu">
+                <nav *ngIf="!affichage" class="menu">
                     <ul>
                        
                         <li class="dropdown">
@@ -166,10 +166,10 @@
     </div>
 </header>
 <div>
-    <section class="titlecontainer ">
+    <section class="titlecontainer">
         <div class="title">
-          <h1 class="containertitle2 ">ENCORE QUELQUES JOURS</h1>
-          <p class="containerparagraphe2 ">De quoi sauter sur l'occasion</p>
+          <h1 class="containertitle">ça va vous plaire</h1>
+          <p class="containerparagraphe">Coup de foudre inévitale</p>
         </div>
     </section>
 
@@ -196,10 +196,11 @@
 
         
     </main>
-    <section class="titlecontainer">
+ 
+     <section class="titlecontainer ">
         <div class="title">
-          <h1 class="containertitle">ça va vous plaire</h1>
-          <p class="containerparagraphe">Coup de foudre inévitale</p>
+          <h1 class="containertitle2 ">ENCORE QUELQUES JOURS</h1>
+          <p class="containerparagraphe2 ">De quoi sauter sur l'occasion</p>
         </div>
     </section>
   

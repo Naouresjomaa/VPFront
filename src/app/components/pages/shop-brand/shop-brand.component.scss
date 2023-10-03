@@ -417,7 +417,13 @@ app-navbar {
 }
 
 .product__item__text{
-    margin-top: 40px;
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.product__item__text h5{
+ 
+ color: #e83b9d !important;
 }
 .row {
     display: flex;
@@ -482,5 +488,4 @@ app-navbar {
 .page-number.active {
     border-color: #555555; /* Bordure plus foncée pour la page active */
 }
-
 

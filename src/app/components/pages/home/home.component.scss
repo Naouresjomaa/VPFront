@@ -44,6 +44,7 @@ header {
   background-color: transparent; /* Initial background color */
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
+
 @media (max-width: 768px) {
   .headertop {
     margin: 10px;
@@ -534,6 +535,7 @@ li:active {
   font-size: 30px;
   position: relative;
   width: 100%;
+  margin-top: -50px;
 }
 
 .containerparagraphe {
@@ -549,36 +551,16 @@ li:active {
 .titlee {
   display: block;
   position: relative;
-  margin-top: 80px;
+  margin-bottom: 50px;
+  
 //  margin-left: 10%; 
 }
-.titlecontainerr {
-  margin-top: 50px;
-  margin-bottom: 100px;
-// margin-left: -18%;
-// padding-left: -283px;
-
-  /* display: none; */
-  padding: 30px 30px;
 
 
 
-}
-
-.containertitlee {
-  text-transform: uppercase;
-  color: rgb(18, 18, 18);
-  font-size: 30px;
-  position: relative;
-  width: 100%;
-}
 
 
-.containerparagraphee {
-  color: rgb(19, 19, 19);
-  font-size: 20px;
-  position: relative;
-}
+
 .bodycontainer {
   text-align: center;
   position: relative;
@@ -1167,6 +1149,7 @@ display: none;
   .title {
     margin-top: 0px;
   }
+  
   .containerparagraphe {
     color: rgb(70, 70, 80);
   }
