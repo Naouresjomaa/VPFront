@@ -129,9 +129,11 @@
 
 @media (max-width: 480px) {
     .login-form {
-        width: 95%;
+        width: 90%;
         padding: 15px;
         top: -20px;
+        margin: 10px;
+        margin-left: 20px;
     }
 
     .social-button {
