@@ -138,12 +138,14 @@ filtrerDonnees(): void {
       // searchContainerHidden[0].style.display = "flex";
       titleunderline.style.color = "#ec008c";
       titleunderline.style.borderBottom = "3px solid #ec008c";
-    } else {
+    } 
+    else {
       // If not scrolled past the threshold, keep the initial background color
       navContainer.style.backgroundColor = "transparent"; // Change to your initial color
       for (const iterator of bar) {
         iterator.style.backgroundColor = "white";
       }
+      
       for (const iterator of button) {
         iterator.style.color = "white";
         iterator.style.borderColor = "white";

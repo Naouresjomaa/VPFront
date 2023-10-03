@@ -221,6 +221,7 @@ header {
     height: 30px;
   }
 }
+
 .button:hover {
   background-color:rgb(237, 43, 153); /* Use the variable here */
   color: white;
@@ -519,7 +520,7 @@ li:active {
   margin-top: -35%;
   margin-bottom: 50px;
   padding: 50px 15%;
-  margin-left: 155px;
+  margin-left: -6px;
 }
 
 .containertitle {
@@ -577,11 +578,12 @@ li:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1500px;
+  width: 1100px;
   margin-top: -50px;
 
   margin-inline: auto;
   gap: 10px;
+  margin-bottom: 300px;
 }
 @media (max-width: 770px) {
   .page-content {
@@ -912,7 +914,7 @@ h1:visited {
 .titlecontainer {
   margin-top: -378px;
   margin-bottom: 50px;
-  margin-left: 155px;
+
 }
 
 .left d-flex{
@@ -1195,4 +1197,71 @@ display: none;
   nav {
     display: none;
       }
+      .page-content {
+        gap: 0px;
+      
+        width: 100%;
+        /* margin-top: -50px; */
+        margin-left: 0px;
+        margin-bottom: 500px;
+      }
+  }
+  @media (max-width:1120px) {
+    .page-content {
+      gap: 0px;
+    
+      width: 100%;
+      /* margin-top: -50px; */
+      margin-left: 0px;
+      margin-bottom: 500px;
+    }
+
+    .title {
+      margin-top: 0px;
+    }
+    .titlecontainer{
+      margin-left: -106px;
+    }
+    
+   
+  }
+  @media (max-width:944px) {
+  
+    .page-content {
+      gap: 0px;
+      width: 100%;
+      /* margin-top: -50px; */
+      margin-left: 0px;
+      margin-bottom: 500px;
+    }
+
+    .title {
+      margin-top: 0px;
+    }
+    .titlecontainer{
+      margin-left: 0px;
+    }
+    .card {
+      width: 100vw !important;
+    }
+    .card img {
+      max-width: 100%;
+      min-width: 100%;
+    }
+   
+  }
+  @media (max-width: 880px) {
+    .page-content {
+      gap: 0px;
+      width: 100%;
+      /* margin-top: -50px; */
+      margin-left: 0px;
+    }
+    .card {
+      width: 100vw !important;
+    }
+    .card img {
+      max-width: 100%;
+      min-width: 100%;
+    }
   }

@@ -81,7 +81,7 @@
 
         <!-- Veepee Logo -->
         <div class="veeplogo ">
-            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo ddd" id="butterfly" />
+            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo " id="butterfly" />
         </div>
 
 
@@ -180,7 +180,7 @@
     <!-- Main Content -->
     <main class="page-content">
         <div *ngFor="let brand of filteredBrand">
-        <div *ngIf="brand.AffichafeAccueil == 'ÇA VA VOUS PLAIRE'" class="card">
+        <div *ngIf="brand.AffichafeAccueil == 'ÇA VA VOUS PLAIRE'" class="card ">
             <div class="content">
                 <img
                 [src]="'https://api.venteprivilegiee.com/image/' + brand.Image" />
