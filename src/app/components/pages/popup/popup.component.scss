@@ -56,6 +56,7 @@
     font-size: 18px;
     font-weight: bold;
     color: rgb(6, 6, 6);
+   
   }
   
   .sub-text {
@@ -65,6 +66,7 @@
     transform: translate(-50%, -50%);
     font-size: 14px;
     color: rgb(8, 8, 8);
+    
   }
   
   .buttons {
@@ -96,6 +98,7 @@
     .main-text{
       line-height: 20px;
       margin-bottom: 20px;
+      
     }
     .sub-text{
       line-height: 20px;
@@ -134,6 +137,8 @@
         font-size: 26px;
         font-weight: bold;
         color: rgb(6, 6, 6);
+        line-height: 40px;
+        padding-bottom: 150px;
       }
       
       .sub-text {
@@ -143,6 +148,10 @@
         transform: translate(-50%, -50%);
         font-size: 22px;
         color: rgb(8, 8, 8);
+        line-height: 40px;
+        margin-top: 70px;
+        padding-bottom: 150px;
+    
       }
       .buttons {
      
