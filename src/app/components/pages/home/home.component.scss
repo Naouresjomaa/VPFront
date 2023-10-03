@@ -16,7 +16,9 @@
 body {
   font-family: "Ubuntu";
 }
-
+.rf{
+  color: #0b0b0b;
+}
 /* Header styles */
 header {
   display: flex;
@@ -538,6 +540,10 @@ li:active {
   color: white;
   font-size: 20px;
   position: relative;
+}.containerparagraphe2 {
+  color: rgb(20, 19, 19);
+  font-size: 20px;
+  position: relative;
 }
 
 .titlee {
@@ -549,8 +555,12 @@ li:active {
 .titlecontainerr {
   margin-top: 50px;
   margin-bottom: 100px;
+// margin-left: -18%;
+// padding-left: -283px;
 
-padding-left: -223px;
+  /* display: none; */
+  padding: 30px 30px;
+
 
 
 }
@@ -919,8 +929,10 @@ h1:visited {
 }
 .titlecontainer {
   margin-top: -378px;
+  margin-bottom: 50px;
   margin-left: 155px;
 }
+
 .left d-flex{
   margin: 10px;
 }
