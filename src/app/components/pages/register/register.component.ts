@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
 import { AuthServiceService } from "src/app/services/auth-service.service";
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -21,8 +22,9 @@ export class RegisterComponent implements OnInit {
   selectedGenre: string = '';
   affiche =false;
   genres=["Femme","Homme","Autre"]
+  nbrPanier = 0;
   constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,
-    private authService: AuthServiceService) { }
+    private authService: AuthServiceService,private storageService : StorageService) { }
 
   ngOnInit(): void {
     this.parrainage = this.route.snapshot.queryParamMap.get('parrainage');
@@ -85,6 +87,7 @@ onSelectChange(event: any){
           } else {
             this.token = this.response.Token;
             localStorage.setItem("isLoggedin", this.token);
+            this.storageService.setPanier(0)
             if (localStorage.getItem("isLoggedin")) {
                 this.userData = jwt_decode(this.token);
                 this.router.navigate(["/"]);
@@ -106,4 +109,5 @@ onSelectChange(event: any){
 
     }
   }
+  
 }

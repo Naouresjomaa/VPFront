@@ -6,6 +6,8 @@ import { ClientService } from 'src/app/services/client.service';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import jwt_decode from "jwt-decode";
 import Swal from "sweetalert2";
+import { PanierService } from 'src/app/services/panier.service';
+import { StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,8 +20,9 @@ export class LoginComponent implements OnInit {
   userData: any;
   parrainage:any
 isDialog= false;
+  nbrPanier: any=0;
   constructor(private clientservice: ClientService, private router: Router,private route: ActivatedRoute,
-      private authService: AuthServiceService) {
+      private authService: AuthServiceService,private panierService : PanierService,private storageService : StorageService) {
       
       }
 
@@ -29,6 +32,20 @@ isDialog= false;
         this.updateUserParrainage(this.parrainage)
       }
      
+  }
+  getUserConnected(email:any,username:any){
+    this.panierService.Getpanier(email,username).subscribe((res:any)=>{
+      console.log(res)
+      if(res){
+        this.nbrPanier = res.length
+        console.log('this.nbrPanier',this.nbrPanier)
+       this.storageService.setPanier(this.nbrPanier)
+      }
+  
+
+    }
+    )
+
   }
   updateUserParrainage(parrainage){
     this.clientservice.updateUserParrainage(parrainage).subscribe((res:any)=>{
@@ -55,7 +72,7 @@ isDialog= false;
 
   onGoogleLogin() {
     this.authService.loginWithGoogle();
-    fetch('http://localhost:3000/auth/google')
+    fetch('http://51.254.119.123:3000/auth/google')
     .then(response => response.json())
     .then(data => {
       if (data.redirect) {
@@ -85,6 +102,7 @@ isDialog= false;
                       localStorage.setItem("isLoggedin", this.token);
                       if (localStorage.getItem("isLoggedin")) {
                           this.userData = jwt_decode(this.token);
+                          this.getUserConnected(this.userData.Email,this.userData.UserName)
                           this.router.navigate(["/"]);
                       } else {
                       }

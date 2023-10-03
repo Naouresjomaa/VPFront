@@ -24,6 +24,8 @@ brand : any
     color: '',
     tag:''
   };
+  currentPage: number = 1;
+pageSize: number = 4;
   filteredProducts: any;
   constructor(private route: ActivatedRoute,private brandservice : BrandService,private produitservice :ProduitService) { }
 
@@ -32,6 +34,32 @@ brand : any
     this.GetBrand(this.id)
         this.GetProduitByIdBrand(this.id)
   }
+  getCurrentPageProducts() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    return this.filteredProducts.slice(startIndex, startIndex + this.pageSize);
+}
+previousPage() {
+  if (this.currentPage > 1) {
+      this.currentPage--;
+  }
+}
+
+nextPage() {
+  if (this.currentPage < this.getMaxPage()) {
+      this.currentPage++;
+  }
+}
+getPageNumbers(): number[] {
+  let maxPage = this.getMaxPage();
+  return Array(maxPage).fill(0).map((x, i) => i + 1); // Retourne un tableau comme [1, 2, 3,...]
+}
+
+goToPage(page: number) {
+  this.currentPage = page;
+}
+getMaxPage() {
+  return Math.ceil(this.filteredProducts.length / this.pageSize);
+}
   GetProduitByIdBrand(id:any){
     this.produitservice.GetProduitByIdBrand(id).subscribe(res=>{
    console.log(res);
@@ -44,7 +72,7 @@ brand : any
      this.brandservice.getBrandByid(id).subscribe((res) => {
         console.log(res[0])
       this.brand=res[0]
-    this.image='http://localhost:3000/image/'+this.brand.Image 
+    this.image='http://51.254.119.123:3000/image/'+this.brand.Image 
   this.setBgImage(this.image)})}
   setBgImage(imageUrl:any) {
     const element = document.querySelector('.inner-bg111') as HTMLElement;

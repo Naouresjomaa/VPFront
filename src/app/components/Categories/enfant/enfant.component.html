@@ -179,19 +179,12 @@
     <!-- Main Content -->
     <main class="page-content">
         <div *ngFor="let brand of filteredBrand">
-            <div *ngIf="brand.Categorie == 'Enfant'" class="card">            <div class="content">
+            <div *ngIf="brand.Categorie == 'Enfant' && brand.AffichafeAccueil == 'ÇA VA VOUS PLAIRE'" class="card">
                 <img
-                [src]="'http://localhost:3000/image/' + brand.Image" />
+                [src]="'http://51.254.119.123:3000/image/' + brand.Image" />
                 <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
             </div>
         </div>
-        
-     </div>
-    
-   
-     
-     
-
         
     </main>
     <section class="titlecontainerr">
@@ -208,10 +201,10 @@
         <!-- Main Content -->
         <main class="page-content">
             <div *ngFor="let brand of filteredBrand">
-            <div class="card">
-                <div class="content">
+                <div *ngIf="brand.Categorie == 'Enfant' && brand.AffichafeAccueil == 'ENCORE QUELQUES JOURS'"class="card">
+                    <div class="content">
                     <img
-                    [src]="'http://localhost:3000/image/' + brand.Image" />
+                    [src]="'http://51.254.119.123:3000/image/' + brand.Image" />
                     <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
                 </div>
             </div>

@@ -904,3 +904,41 @@ footer {
     min-height: unset;
   }
 }
+.product__cart__item__pic{
+  max-width: 40%;
+}
+
+.cart__discount form button {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgb(236, 0, 140) !important;
+  padding: 0 30px;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.cart__total .primary-btn {
+  display: block;
+  padding: 12px 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  background: rgb(236, 0, 140) !important;
+  color: #ffffff;
+
+
+}
+.continue__btn a {
+  color: rgb(236, 0, 140) !important;;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid rgb(236, 0, 140) !important;;
+  padding: 14px 35px;
+  display: inline-block;
+}

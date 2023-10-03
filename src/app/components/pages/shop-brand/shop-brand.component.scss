@@ -384,7 +384,7 @@ app-navbar {
 .product-card {
     border: 1px solid #ddd;
     transition: box-shadow 0.3s ease;
-    margin-bottom: 20px; /* Espacement entre les cartes */
+    margin-bottom: 20px;
     padding: 10px; 
     margin-right: 35px;
     margin-left: 35px;
@@ -416,7 +416,71 @@ app-navbar {
     background-color: rgb(206, 0, 120);
 }
 
+.product__item__text{
+    margin-top: 40px;
+}
+.row {
+    display: flex;
+    justify-content: center; /* Pour centrer horizontalement */
+    flex-wrap: wrap; /* Pour permettre aux éléments de passer à la ligne suivante s'ils débordent */
+}
+.col-lg-5, .col-md-6, .col-sm-6 {
+    display: flex;
+    flex-direction: column; /* Organise les éléments verticalement */
+    justify-content: center; /* Centre le contenu verticalement */
+}
+/* Positionne la pagination au centre et en bas de la page */
+.pagination-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centrage horizontal */
+    text-align: center;
+}
 
+/* Boutons de pagination */
+.pagination-btn {
+    background-color: #ffffff;
+    border: 2px solid #000000; /* Bordure noire pour contraste */
+    color: #000000;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+}
 
+.pagination-btn:hover {
+    background-color: #f2f2f2; /* Légère nuance au survol */
+}
+
+.pagination-btn[disabled] {
+    background-color: #e0e0e0; /* Gris pour les boutons désactivés */
+    cursor: not-allowed;
+}
+
+/* Numéros de page */
+.page-number {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 2px solid #000000; /* Bordure noire pour contraste */
+    color: #000000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.page-number:hover {
+    background-color: #f2f2f2;
+}
+
+.page-number.active {
+    border-color: #555555; /* Bordure plus foncée pour la page active */
+}
 
 
