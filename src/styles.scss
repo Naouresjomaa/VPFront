@@ -1,7 +1,7 @@
 
 :root {
     --fontFamily: 'SF Pro' , sans-serif;
-    --mainColor: #CF4DCE;
+    --mainColor: #dc1d89;
     --paragraphColor: #8c8c8c;
     --whiteColor: #ffffff;
     --titleColor: #2a2a2a;
@@ -6565,7 +6565,7 @@ User Area End
 ===================================*/
 .error-area {
     height: 100vh;
-    background-image: url(assets/img/home-three/homebg.jpg);
+    background-image: url(../src/assets/img/baaack.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -6595,7 +6595,7 @@ User Area End
             font-size: 150px;
             line-height: 0.5;
             font-weight: 600;
-            color: var(--titleColor);
+            color: rgba(111, 107, 110, 0.849);
             span {
                 color: var(--mainColor);
             }
