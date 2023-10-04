@@ -70,7 +70,7 @@
                     <a routerLink="/Compte"><h1>Mon compte</h1></a>
                 </div>
                 <div *ngIf="!affichage" class="tooltipp-item">
-                    <a (click)="logout()"><h1>Se déconnecter</h1></a>
+                    <a routerLink="/" (click)="logout()"><h1>Se déconnecter</h1></a>
                 </div>
 
                 <!-- Add more menu items here -->
@@ -140,7 +140,7 @@
                               
                                 <li><a routerLink="/Compte"> <img src="../../../../assets/img/stock-vector-eps-pink-vector-logout-icon-or-logo-in-simple-flat-trendy-modern-style-isolated-on-white-2167805975-removebg-preview (1).png" alt=""  width="40px" > &emsp; Mon compte</a></li>
                              <hr>
-                                <li><a (click)="logout()"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Deconnection</a></li>
+                                <li><a routerLink="/" (click)="logout()"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Deconnection</a></li>
                             </ul>
                         </li>
                        
