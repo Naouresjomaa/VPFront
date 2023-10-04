@@ -113,8 +113,13 @@ getMaxPage() {
       this.filterModel.color=''
       
     } 
-    if (this.filterModel.size) {
+    if (this.filterModel.size && this.brand=='Mode') {
       this.filteredProducts = this.produits.filter(product => product.Taille.includes(this.filterModel.size));
+      this.filterModel.size=''
+      
+    } 
+    if (this.filterModel.size && this.brand=='Chaussure' ) {
+      this.filteredProducts = this.produits.filter(product => product.pointure.includes(this.filterModel.size));
       this.filterModel.size=''
       
     } 
