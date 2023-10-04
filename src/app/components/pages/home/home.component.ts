@@ -132,7 +132,7 @@ filtrerDonnees(): void {
       }
       navbar[0].style.borderTop = "1px solid #ccc";
       humbergerText[0].style.color = "#333";
-      navp[0].style.color = "#333";
+      //navp[0].style.color = "#333";
       navContainer.style.color = "#000";
       butterfly.src = "assets/img/vp/midlelogo.jpg";
       butterfly.style.filter = "none";
@@ -201,7 +201,7 @@ filtrerDonnees(): void {
       navbar[0].style.borderTop = "none";
   
       humbergerText[0].style.color = "white";
-      navp[0].style.color = "white";
+      //navp[0].style.color = "white";
       butterfly.src = "assets/img/vp/logovente.jpg";
       butterfly.style.filter = "none";
       navContainer.style.color = "white";
