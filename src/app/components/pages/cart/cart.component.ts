@@ -79,6 +79,7 @@ export class CartComponent implements OnInit {
             this.storageService.setPanier( nbr)
             
             this.paniers = this.paniers.filter(panier => panier.id !== p);
+            this.getTotal(this.paniers)
         },
         err => {
             console.error('Erreur lors de la suppression du panier:', err);

@@ -15,10 +15,11 @@
         <form [formGroup]="registrationForm">
         <input formControlName="Email" type="email" placeholder="Adresse e-mail" />
         <input formControlName="Password" type="password" placeholder="Mot de passe" />
+        <a  class="sous-lien2">Contient au moins un de ces caractéres  (?=.*[!@#$%^&*])</a>
         <input formControlName="NomComplet" type="name" placeholder="Nom & Prenom" />
         <input formControlName="UserName" type="Username" placeholder="Username" />
     </form>
-    <input list="genres" name="genre" id="genre" [(ngModel)]="genre"  class="custom-select">
+    <input list="genres" name="genre" id="genre" [(ngModel)]="genre"  class="custom-select" placeholder="Genre">
     <datalist id="genres">
         <option value="Femme">
         <option value="Homme">

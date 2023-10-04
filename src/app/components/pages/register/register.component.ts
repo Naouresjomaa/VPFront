@@ -44,11 +44,10 @@ export class RegisterComponent implements OnInit {
   }
   registrationForm = new FormGroup({
     NomComplet: new FormControl("", Validators.required),
-    Email: new FormControl("", [Validators.required, Validators.email]),
+    Email: new FormControl("", [Validators.required]),
     UserName: new FormControl("", Validators.required),
     Password: new FormControl("", [
         Validators.required,
-        Validators.minLength(6),
         Validators.pattern(/^(?=.*[!@#$%^&*])/),
     ]),
 });
