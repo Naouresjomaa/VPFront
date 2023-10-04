@@ -79,6 +79,7 @@ header {
   gap: 20px;
   z-index: 99999999999;
   visibility: hidden;
+  
 }
 @media (max-width: 820px) {
   .tooltipp {
@@ -364,7 +365,7 @@ li:active {
   width: 450px;
   transform: translateY(250px);
   justify-content: center;
-  margin-left: 50px;
+  margin-left: 175px;
   align-items: center;
   height: 50px;
 }
@@ -456,6 +457,7 @@ li:active {
   background-color: transparent;
   color: rgb(249, 68, 156);
   font-family: Arial, sans-serif;
+ 
 
 }
 
@@ -464,11 +466,13 @@ li:active {
   list-style: none;
   display: flex;
   margin: 0;
+  
 }
 
 .menu li {
   padding: 15px;
   position: relative;
+
 }
 
 .menu a {
@@ -482,13 +486,16 @@ li:active {
   background-color: white;
   width: 220px;
   z-index: 1;
-
+ margin-left: -110px;
   margin-top: 30px;
   padding: 20px;
   border-radius: 10px;
   line-height: 50px;
-}
 
+}
+.dropdown-content {
+  margin-right: 50px;
+}
 .menu .dropdown:hover .dropdown-content {
   display: block;
 }
