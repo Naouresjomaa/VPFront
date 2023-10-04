@@ -936,7 +936,7 @@ ol {
 }
 
 .product__item {
-	overflow: hidden;
+	/* overflow: hidden; */
 	margin-bottom: 40px;
 }
 

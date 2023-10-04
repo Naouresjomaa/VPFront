@@ -491,10 +491,13 @@ app-navbar {
 
 @media (max-width:564px){
     .product__item sale{
-        overflow: visible;
+        overflow: visible !important;
     }
     .product__item__text{
-       margin-top: 10px;
-       position: relative;
+       margin-top: 50px; 
     }
+    .shop__sidebar__accordion .card-heading a:after,
+.shop__sidebar__accordion .card-heading > a.active[aria-expanded=false]:after{
+    position: relative;
+}
 }
