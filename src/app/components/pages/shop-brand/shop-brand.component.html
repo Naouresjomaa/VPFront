@@ -16,13 +16,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
-                        <div class="shop__sidebar__search">
+                        <!-- <div class="shop__sidebar__search">
                             <form action="#">
-                                <input type="text" placeholder="Search...">
+                                <input type="text" placeholder="Search..." [(ngModel)]="term" (input)="filtrerDonnees()"[ngModelOptions]="{standalone: true}">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
-                        </div>
-                        <div *ngIf="brand.Categorie == 'Mode'"class="shop__sidebar__accordion">
+                        </div> -->
+                        <div *ngIf="brand && brand.Categorie == 'Mode'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -146,7 +146,7 @@
                              
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Chaussure'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand && brand.Categorie == 'Chaussure'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -285,7 +285,7 @@
                                
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Loisir'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand && brand.Categorie == 'Loisir'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -362,7 +362,7 @@
                        
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Maison'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand && brand.Categorie == 'Maison'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -468,7 +468,7 @@
                              
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Beaute'"class="shop__sidebar__accordion">
+                        <div *ngIf=" brand && brand.Categorie == 'Beaute'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -549,7 +549,7 @@
                              
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Enfant'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand &&brand.Categorie == 'Enfant'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -646,7 +646,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Sport'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand && brand.Categorie == 'Sport'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
@@ -719,7 +719,7 @@
                              
                             </div>
                         </div>
-                        <div *ngIf="brand.Categorie == 'Gastronomie'"class="shop__sidebar__accordion">
+                        <div *ngIf="brand &&brand.Categorie == 'Gastronomie'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
