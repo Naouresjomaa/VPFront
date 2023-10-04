@@ -134,7 +134,7 @@ export class NavbarHomeComponent implements OnInit ,  AfterViewInit{
         }
         navbar[0].style.borderTop = "1px solid #ccc";
         humbergerText[0].style.color = "#333";
-        navp[0].style.color = "#333";
+        // navp[0].style.color = "#333";
         navContainer.style.color = "#000";
         butterfly.style.filter = "none";
         butterfly.src = "assets/img/vp/midlelogo.jpg";
@@ -205,7 +205,7 @@ export class NavbarHomeComponent implements OnInit ,  AfterViewInit{
         navbar[0].style.borderTop = "none";
     
         humbergerText[0].style.color = "white";
-        navp[0].style.color = "white";
+        // navp[0].style.color = "white";
         butterfly.style.filter = "none";
         butterfly.src = "assets/img/vp/2.png";
         this.img= "assets/img/vp/2.png"

@@ -494,10 +494,16 @@ app-navbar {
         overflow: visible !important;
     }
     .product__item__text{
-       margin-top: 50px; 
+       margin-top:150px; 
+       font-weight: 900;
+
     }
     .shop__sidebar__accordion .card-heading a:after,
 .shop__sidebar__accordion .card-heading > a.active[aria-expanded=false]:after{
     position: relative;
+}
+.col-lg-5 col-md-6 col-sm-6 product-card{
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 }
