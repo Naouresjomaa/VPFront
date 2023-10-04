@@ -1,5 +1,3 @@
-
-
  <!-- Header Section -->
  
  <section class="headertop" id="headertop">
@@ -83,7 +81,7 @@
 
         <!-- Veepee Logo -->
         <div class="veeplogo ">
-            <img src="assets/img/vp/logovente.jpg" alt="logo" class="logo ddd" id="butterfly" />
+            <img src="assets/img/vp/logovente.png" alt="logo" class="logo" id=" butterfly" />
         </div>
 
 
@@ -153,98 +151,3 @@
         </div>
     </nav>
 </section>
-
-
-
-
-<!-- Header -->
-<header>
-    <!-- Search Bar -->
-    <div class="search">
-        <div class="search-container">
-            <input type="text" class="search-bar" [(ngModel)]="term" (input)="filtrerDonnees()" placeholder="Rechercher une marque, un produit..." />
-            <button class="search-button">
-                <img src="assets/img/vp/search.png" alt="Logo" class="logosearch" />
-            </button>
-        </div>
-    </div>
-</header>
-<div>
-    <section class="titlecontainer">
-        <div class="title">
-          <h1 class="containertitle">ça va vous plaire</h1>
-          <p class="containerparagraphe">Coup de foudre inévitale</p>
-        </div>
-    </section>
-
-<!-- Container for Body Content -->
-
-<div class="bodycontainer">
-    
-    <!-- Main Content -->
-    <main class="page-content">
-        <div *ngFor="let brand of filteredBrand">
-        <div *ngIf="brand.AffichafeAccueil == 'ÇA VA VOUS PLAIRE'" class="card ">
-            <div class="content">
-                <img
-                [src]="'https://api.venteprivilegiee.com/image/' + brand.Image" />
-                <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
-            </div>
-        </div>
-        
-     </div>
-    
-   
-     
-     
-
-        
-    </main>
- 
-     <section class="titlecontainer ">
-        <div class="title">
-          <h1 class="containertitle2 ">ENCORE QUELQUES JOURS</h1>
-          <p class="containerparagraphe2 ">De quoi sauter sur l'occasion</p>
-        </div>
-    </section>
-  
-    
-    <!-- Container for Body Content -->
-    
-    <div class="bodycontainer">
-        
-        <!-- Main Content -->
-        <main class="page-content">
-            <div *ngFor="let brand of filteredBrand">
-            <div *ngIf="brand.AffichafeAccueil == 'ENCORE QUELQUES JOURS'"class="card">
-                <div class="content">
-                    <img
-                    [src]="'https://api.venteprivilegiee.com/image/' + brand.Image" />
-                    <a [routerLink]="'/shopBrand/'+brand.id"><h3 class="copy">Jusqu'au {{ brand.DateExpiration | date:'EEEE d MMMM y' }}</h3></a>
-                </div>
-            </div>
-            
-         </div>
-        
-       
-         
-         
-    
-            
-        </main>
-</div>
-
-</div>
-
-
-
-
-
-
-<!-- JavaScript Scripts -->
-<script src="https://jsuites.net/v4/jsuites.js"></script>
-
-
-<!---------footer-------->
-
-<app-footer-style-two></app-footer-style-two>

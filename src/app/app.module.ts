@@ -37,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { PopupComponent } from './components/pages/popup/popup.component';
+import { NavbarHomeComponent } from './components/common/navbar-home/navbar-home.component';
  export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -70,7 +71,8 @@ import { PopupComponent } from './components/pages/popup/popup.component';
     ChaussureComponent,
     LoginComponent,
     RegisterComponent,
-    PopupComponent
+    PopupComponent,
+    NavbarHomeComponent
   ],
   imports: [
     MatButtonModule,

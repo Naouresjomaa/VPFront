@@ -20,7 +20,12 @@ export class PrivacyPolicyComponent implements OnInit {
  getCommandeByPaiementId(id){
   this.commandeServicie.GetCommandeByidP(id).subscribe(res=>{console.log(res)
     let commande =res[0]
-  this.commandeServicie.sendOrderEmail(commande).subscribe(res=>console.log(res))
+    if(commande){
+      commande.paiement_status="success",
+      this.commandeServicie.UpdateCommande(commande.id,commande).subscribe(res=>console.log(res))
+    this.commandeServicie.sendOrderEmail(commande).subscribe(res=>console.log(res))
+    }
+
 })
  }
 }

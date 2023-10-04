@@ -27,6 +27,7 @@ export class AuthGuard implements CanActivate {
      if(!token){
       this.dialog.open(PopupComponent ,{
         width: '70%',
+        
         panelClass: 'custom-dialog-container',
       });
      

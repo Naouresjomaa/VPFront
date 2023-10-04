@@ -133,7 +133,8 @@ getTotal(pan) {
 async Order(c: CommandeModel) {
   this.commandeType()
   console.log(this.commande.TypePaiement)
-  c.Statut = "Commandéé";
+  c.Statut = "Encours";
+  c.paiement_status = "Encours"
   c.Order=this.paniers
   c.PrixTotal=this.prixTotale
   if (
@@ -191,6 +192,7 @@ async Order(c: CommandeModel) {
     }  )}
 
 async paiementLivraison(c: CommandeModel) {
+  console.log('ccccccccccccc',c)
   try {
     
     const createCommandeResponse: any = await this.commandeService.CreateCommande(c).toPromise();

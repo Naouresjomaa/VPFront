@@ -18,4 +18,5 @@ export class CommandeModel {
     CodePostal:any;
     TypePaiement:any;
     Statut:any;
+    paiement_status?:any
 }
