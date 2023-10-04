@@ -12,9 +12,11 @@ import { ProduitService } from 'src/app/services/produit.service';
 })
 export class ShopBrandComponent implements OnInit {
 id : any
+term:any
 brand : any
   image: any;
   produits : any
+  filteredBrand: any;
   filterModel = {
     cat:'',
     type: '', 
@@ -34,9 +36,21 @@ pageSize: number = 4;
     this.GetBrand(this.id)
         this.GetProduitByIdBrand(this.id)
   }
+  GetProduitByIdBrand(id:any){
+    this.produitservice.GetProduitByIdBrand(id).subscribe(res=>{
+   console.log(res);
+   this.produits=res
+   this.filteredProducts=this.produits
+   this.filteredBrand=[...this.produits]
+    
+ })
+ }
   getCurrentPageProducts() {
     const startIndex = (this.currentPage - 1) * this.pageSize;
-    return this.filteredProducts.slice(startIndex, startIndex + this.pageSize);
+    if(this.filteredProducts){
+      return this.filteredProducts.slice(startIndex, startIndex + this.pageSize);
+
+    }
 }
 previousPage() {
   if (this.currentPage > 1) {
@@ -58,16 +72,20 @@ goToPage(page: number) {
   this.currentPage = page;
 }
 getMaxPage() {
-  return Math.ceil(this.filteredProducts.length / this.pageSize);
+  if(this.filteredProducts){
+    return Math.ceil(this.filteredProducts.length / this.pageSize);
+  }
+  
 }
-  GetProduitByIdBrand(id:any){
-    this.produitservice.GetProduitByIdBrand(id).subscribe(res=>{
-   console.log(res);
-   this.produits=res
-   this.filteredProducts=this.produits
-    
- })
- }
+
+ filtrerDonnees(): void {
+  this.filteredBrand = this.produits.filter((brand: any) => 
+  brand.Produit.toLowerCase().includes(this.term.toLowerCase()) ||
+  brand.SousCategorie.toLowerCase().includes(this.term.toLowerCase() || 
+  brand.DetailsP.toLowerCase().includes(this.term.toLowerCase()) ))
+
+  
+}
  GetBrand(id:any) {
      this.brandservice.getBrandByid(id).subscribe((res) => {
         console.log(res[0])
