@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class EnfantComponent implements OnInit ,  AfterViewInit{
   filteredBrand: any;
   term: any;
   affichage: boolean =true;
-    constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
+    constructor(private router: Router,private service : BrandService,private el: ElementRef, private renderer: Renderer2) { }
     ngOnInit() {
       this.getAllBrand()
       this.decodeToken()
@@ -26,6 +27,7 @@ export class EnfantComponent implements OnInit ,  AfterViewInit{
       localStorage.removeItem('isLoggedin');
       localStorage.removeItem('panier');
       window.location.reload()
+      this.router.navigate(['/']);
     }
     decodeToken() {
       const token = localStorage.getItem('isLoggedin');

@@ -3464,6 +3464,7 @@ ol {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.spad{padding-top: 0px;}
 	.canvas__open {
 		display: block;
 		font-size: 22px;

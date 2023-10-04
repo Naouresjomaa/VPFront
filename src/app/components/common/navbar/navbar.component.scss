@@ -41,11 +41,13 @@ header {
   z-index: 9999999;
   background-color: transparent; /* Initial background color */
   transition: background-color 0.3s ease; /* Smooth transition effect */
+  margin-bottom: 30px;
 }
 @media (max-width: 768px) {
   .headertop {
     margin: 10px;
     width: 60%;
+    margin-bottom: 0;
   }
 }
 
@@ -933,6 +935,7 @@ h1:visited {
       }
   .headertop {
     padding-top: 10px;
+    margin-bottom: -20px;
   }
 
   .navlinks > ul {
@@ -1035,6 +1038,7 @@ display: none;
     width: 100%;
     margin: 0;
     padding: 0;
+    margin-bottom: -20px;
   }
 
   .headercontainertop {

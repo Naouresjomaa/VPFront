@@ -58,10 +58,10 @@
                 </div>
                 <hr>
 
-                <div class="tooltipp-item">
+                <div *ngIf="affiche" class="tooltipp-item">
                     <a routerLink="/Compte"><h1>Mon compte</h1></a>
                 </div>
-                <div class="tooltipp-item">
+                <div *ngIf="affiche" class="tooltipp-item">
                     <a (click)="logout()"><h1>Se déconnecter</h1></a>
                 </div>
 
@@ -105,7 +105,7 @@
                 <li><a routerLink="/Enfant" class="titels"> Enfant</a></li>
                 <li><a routerLink="/Gastronomie" class="titels"> Gastronomie</a></li>
                 <li><a routerLink="/Loisir" class="titels">Loisir</a></li>
-                <nav class="menu">
+                <nav *ngIf="affiche" class="menu">
                     <ul>
                        
                         <li class="dropdown">

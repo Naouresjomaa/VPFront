@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { PanierService } from 'src/app/services/panier.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -10,10 +11,10 @@ import { StorageService } from 'src/app/services/storage.service';
 export class NavbarComponent implements OnInit {
   Email: any;
   Username: any;
- 
+ affiche =false;
   paniers: any;
   nbrpanier: number=0;
-  constructor(private storageService: StorageService ,private el: ElementRef,  private cd: ChangeDetectorRef,private jwtHelper: JwtHelperService) { }
+  constructor(private router: Router,private storageService: StorageService ,private el: ElementRef,  private cd: ChangeDetectorRef,private jwtHelper: JwtHelperService) { }
   decodeToken() {
     const token = localStorage.getItem('isLoggedin');
     this.nbrpanier = Number(localStorage.getItem('panier') || '0');
@@ -21,6 +22,9 @@ export class NavbarComponent implements OnInit {
     this.Email=decodedToken.Email
     this.Username=decodedToken.UserName
     console.log(decodedToken);
+    if(this.Email && this.Username ){
+      this.affiche=true
+    }
   }
 
   getTotal(paniers: any) {
@@ -29,7 +33,9 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.removeItem('isLoggedin');
     localStorage.removeItem('panier');
-    window.location.reload()
+    this.router.navigate(['/']);
+    
+   
   }
 
   ngOnInit(): void {

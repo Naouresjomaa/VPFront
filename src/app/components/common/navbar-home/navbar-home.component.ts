@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component, Renderer2, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BrandService } from 'src/app/services/brand.service';
 import { ClientService } from 'src/app/services/client.service';
@@ -22,7 +23,7 @@ export class NavbarHomeComponent implements OnInit ,  AfterViewInit{
     Username: any;
     nbrPanier: any=0;
     img:any
-    constructor(private service : BrandService,private el: ElementRef, private renderer: Renderer2,
+    constructor(private router: Router,private service : BrandService,private el: ElementRef, private renderer: Renderer2,
       private jwtHelper: JwtHelperService,private panierService : PanierService) { }
     ngOnInit() {
       
@@ -38,7 +39,9 @@ export class NavbarHomeComponent implements OnInit ,  AfterViewInit{
     logout() {
       localStorage.removeItem('isLoggedin');
       localStorage.removeItem('panier');
-      window.location.reload()
+      this.router.navigate(['/']);
+      
+      
     }
     decodeToken() {
       const token = localStorage.getItem('isLoggedin');

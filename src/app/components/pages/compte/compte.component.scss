@@ -12,7 +12,9 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-
+.biig{
+ font-size: 50px;
+}
 body {
   font-family: "Ubuntu";
 }
@@ -25,8 +27,8 @@ body {
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 .soldee{
-  width: 200px;
-  height: 100px;
+  width: 130px;
+  height: 60px;
   background-color: #f6f5f5;
   border-radius: 10px;
   // padding: 20px;
@@ -373,6 +375,10 @@ h1 {
   font-weight: 400;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+.sss{
+  margin-top: 10px;
+  
 }
 p {
   display: block;
