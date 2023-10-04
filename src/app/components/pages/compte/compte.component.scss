@@ -21,7 +21,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 9999999;
-  background-color: transparent; /* Initial background color */
+  background-color: transparent; 
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 .soldee{
@@ -30,7 +30,7 @@ body {
   background-color: #f6f5f5;
   border-radius: 10px;
   // padding: 20px;
-  padding-left: 10px;
+  padding-left: 12px;
   box-shadow: 3px 3px rgb(247, 201, 227), -1em 0 .4em rgba(230, 220, 225, 0.877);
   align-self: flex-end;
  
