@@ -405,7 +405,7 @@ h1 {
   margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  font-weight: 400;
+  font-weight: 900;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
     color: black !important;
@@ -1171,19 +1171,20 @@ h1:visited {
     max-height: unset;
     min-height: unset;
   }
+  
 }
 
 /* Responsive Large screen */
 @media (min-width: 1100px) {
   .pname {
-    font-size: 1vw;
+   // font-size: 1vw;
     font-weight: bold;
   }
   .pinkp {
-    font-size: 2vw;
+    //font-size: 2vw;
   }
   .btn-box h1 {
-    font-size: 1.8vw !important;
+   // font-size: 1.8vw !important;
     margin-block-start: unset;
     margin-block-end: inherit;
   }
@@ -1192,16 +1193,16 @@ h1:visited {
   }
   .greyp {
     margin-top: 8px;
-    font-size: 1.3vw;
+   // font-size: 1.3vw;
   }
   p {
-    font-size: 1.4vw;
+   // font-size: 1.4vw;
   }
   .quantity p {
-    font-size: 1.4vw;
+  //  font-size: 1.4vw;
   }
   a {
-    font-size: 1vw;
+   // font-size: 1vw;
   }
   .small-imgg {
     width: 4vw;
@@ -1222,7 +1223,7 @@ h1:visited {
     margin-bottom: 50px;
   }
   .spann {
-    font-size: 1.2vw;
+    //font-size: 1.2vw;
   }
   .navv {
     width: 20vw;
