@@ -23,3 +23,16 @@ describe('CompteComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+function showPopup(): void {
+  const popup: HTMLElement | null = document.getElementById('popup');
+  if (popup) {
+      popup.style.display = 'block';
+  }
+}
+
+function hidePopup(): void {
+  const popup: HTMLElement | null = document.getElementById('popup');
+  if (popup) {
+      popup.style.display = 'none';
+  }
+}

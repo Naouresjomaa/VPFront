@@ -12,6 +12,36 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+.containeeer {
+  position: relative;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  background-color: #fff !important;
+  border: 1px solid #ddd !important;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+
 .biig{
  font-size: 50px;
 }
