@@ -1189,7 +1189,7 @@ ol {
 	color: #b7b7b7;
 }
 .shop__sidebar__search form input[type="text"]:focus {
-    box-shadow: 0 0 10px  rgb(236, 0, 140); /* Ombre en rose autour de l'élément */
+    box-shadow: 0 0 7px  rgb(174, 169, 172); /* Ombre en rose autour de l'élément */
 }
 
 .shop__sidebar__search form button {

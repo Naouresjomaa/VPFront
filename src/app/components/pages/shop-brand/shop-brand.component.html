@@ -14,22 +14,26 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
-                        <!-- <div class="shop__sidebar__search">
+                        <!--search globale-->
+                        <div class="shop__sidebar__search">
                             <form action="#">
-                                <input type="text" placeholder="Search..." [(ngModel)]="term" (input)="filtrerDonnees()"[ngModelOptions]="{standalone: true}">
+                                <input type="text" placeholder="Rechercher..." [(ngModel)]="term" (input)="filtrerDonnees()"[ngModelOptions]="{standalone: true}">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
-                        </div> -->
+                        </div>
+                        <!--Partie Filtre Mode-->
                         <div *ngIf="brand && brand.Categorie == 'Mode'"class="shop__sidebar__accordion">
+
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
+                                                    <li><a (click)="filterModel.cat = 'T-shirt';applyFilter()">Voir tous</a></li>
                                                     <li><a (click)="filterModel.cat = 'T-shirt';applyFilter()">T-shirt</a></li>
                                                     <li><a (click)="filterModel.cat = 'Chemise';applyFilter()">Chemise</a></li>
                                                     <li><a (click)="filterModel.cat = 'Pantalon';applyFilter()">Pantalon</a></li>
@@ -46,9 +50,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                        <a data-toggle="collapse" data-target="#collapseTwo" (click)="showGenre()">Genre</a>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showGenrev" id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
@@ -64,9 +68,9 @@
                              
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Taille</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour"(click)="showTaille()">Taille</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTaillev" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.size = 'XS/34';applyFilter()"><label for="xs">XS/34
@@ -99,9 +103,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                        <a data-toggle="collapse" data-target="#collapseFive" (click)="showCouleurs()">Couleurs</a>
                                     </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCouleursv" id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__color">
                                                 <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
@@ -144,13 +148,14 @@
                              
                             </div>
                         </div>
+                        <!--Partie Filtre Chaussure-->
                         <div *ngIf="brand && brand.Categorie == 'Chaussure'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -169,9 +174,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                        <a data-toggle="collapse" data-target="#collapseTwo" (click)="showGenre()">Genre</a>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showGenrev" id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
@@ -187,9 +192,9 @@
                        
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Pointure</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showPointure()">Pointure</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showPointurev" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">32
@@ -238,9 +243,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                        <a data-toggle="collapse" data-target="#collapseFive" (click)="showCouleurs()">Couleurs</a>
                                     </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCouleursv" id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__color">
                                                 <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
@@ -283,13 +288,14 @@
                                
                             </div>
                         </div>
+                         <!--Partie Filtre Loisir-->
                         <div *ngIf="brand && brand.Categorie == 'Loisir'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -311,9 +317,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                        <a data-toggle="collapse" data-target="#collapseTwo" (click)="showGenre()">Genre</a>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showGenrev" id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
@@ -329,9 +335,9 @@
                              
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'Équipements de sport';applyFilter()"><label for="xs">Équipements de sport
@@ -360,13 +366,14 @@
                        
                             </div>
                         </div>
+                        <!--Partie Filtre Maison-->
                         <div *ngIf="brand && brand.Categorie == 'Maison'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -388,9 +395,9 @@
                                
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'Miroirs';applyFilter()"><label for="xs">Miroirs
@@ -421,9 +428,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                        <a data-toggle="collapse" data-target="#collapseFive" (click)="showCouleurs()">Couleurs</a>
                                     </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCouleursv" id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__color">
                                                 <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
@@ -466,13 +473,14 @@
                              
                             </div>
                         </div>
+                         <!--Partie Filtre Beaute-->
                         <div *ngIf=" brand && brand.Categorie == 'Beaute'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -491,9 +499,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                        <a data-toggle="collapse" data-target="#collapseTwo" (click)="showGenre()">Genre</a>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showGenrev" id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
@@ -509,9 +517,9 @@
                                
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'Fond de teint';applyFilter()"><label for="xs">Fond de teint
@@ -547,22 +555,23 @@
                              
                             </div>
                         </div>
+                        <!--Partie Filtre Enfant-->
                         <div *ngIf="brand &&brand.Categorie == 'Enfant'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat();closedFiltre()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a (click)="filterModel.cat = 'Vêtements';applyFilter()">Vêtements</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Chaussures';applyFilter()">Chaussures </a></li>
-                                                    <li><a (click)="filterModel.cat = 'Jouets et Jeux';applyFilter()">Jouets et Jeux</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Livres et Fournitures Scolaires';applyFilter()">Livres et Fournitures Scolaires</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Décoration';applyFilter()">Décoration</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Hygiène';applyFilter()">Hygiène</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Vêtements';applyFilter() ;showTailleExtra()" >Vêtements</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Chaussures';applyFilter();showPointureExtra()">Chaussures </a></li>
+                                                    <li><a (click)="filterModel.cat = 'Jouets et Jeux';applyFilter();closedFiltre()">Jouets et Jeux</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Livres et Fournitures Scolaires';applyFilter();closedFiltre()">Livres et Fournitures Scolaires</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Décoration';applyFilter();closedFiltre()">Décoration</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Hygiène';applyFilter();closedFiltre()">Hygiène</a></li>
                                 
                                                     
                                                 </ul>
@@ -570,13 +579,114 @@
                                         </div>
                                     </div>
                                 </div>
-                             
+                                <div class="card" *ngIf="showTailleExtrav " >
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour" >Taille</a>
+                                    </div>
+                                    <div *ngIf="showTailleExtrav" id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = '0-3 Mois';applyFilter()"><label for="xs">0-3Mois
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '3-6 Mois';applyFilter()"><label for="sm" >3-6Mois
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '6-9 Mois';applyFilter()"><label for="md">6-9Mois
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '9-12 Mois';applyFilter()"><label for="xl">9-12Mois
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = '12-18 Mois';applyFilter()"><label for="2xl">12-18Mois
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '2 ans';applyFilter()"><label for="xxl">2an
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '3-4ans';applyFilter()"><label for="3xl">3-4an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '4-5ans';applyFilter()"><label for="3xl">4-5an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '5-6ans';applyFilter()"><label for="3xl">5-6an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '6-8ans';applyFilter()"><label for="3xl">6-8an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '8-10ans';applyFilter()"><label for="3xl">8-10an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '8-10ans';applyFilter()"><label for="3xl">10-12an
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <!-- <label for="4xl">4xl
+                                                    <input type="radio" id="4xl">
+                                                </label> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div *ngIf="showPointurExtrav"class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseFour" >Pointure</a>
+                                </div>
+                                <div *ngIf="showPointurExtrav" id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__size">
+                                            <a (click)="filterModel.size = '0-6Mois';applyFilter()"><label for="xs">0-6Mois
+                                                <input  type="radio" id="xs">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '6-9Mois';applyFilter()"><label for="xs">6-9Mois
+                                                <input  type="radio" id="xs">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '19';applyFilter()"><label for="xs">19
+                                                <input  type="radio" id="xs">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '20';applyFilter()"><label for="xs">20
+                                                <input  type="radio" id="xs">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '21';applyFilter()"><label for="sm" >21
+                                                <input  type="radio" id="sm">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '22';applyFilter()"><label for="sm" >22
+                                                <input  type="radio" id="sm">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '23';applyFilter()"><label for="md">23
+                                                <input  type="radio" id="md">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '24';applyFilter()"><label for="md">24
+                                                <input  type="radio" id="md">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '25';applyFilter()"><label for="xl">25
+                                                <input  type="radio" id="xl" >
+                                            </label></a>
+                                            <a (click)="filterModel.size = '26';applyFilter()"><label for="xl">26
+                                                <input  type="radio" id="xl" >
+                                            </label></a>
+                                            <a (click)="filterModel.size = '27';applyFilter()"><label for="2xl">27
+                                                <input  type="radio" id="2xl">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '28';applyFilter()"><label for="3xl">28
+                                                <input  type="radio" id="3xl">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '29';applyFilter()"><label for="xxl">29
+                                                <input  type="radio" id="xxl">
+                                            </label></a>
+                                            <a (click)="filterModel.size = '30';applyFilter()"><label for="xxl">30
+                                                <input  type="radio" id="xxl">
+                                            </label></a>
+                                        </div>
+                                    </div>
+                                </div>
                                
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'filles';applyFilter()"><label for="xs">filles
@@ -600,9 +710,9 @@
                               
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Couleurs</a>
+                                        <a data-toggle="collapse" data-target="#collapseFive" (click)="showCouleurs()">Couleurs</a>
                                     </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCouleursv"id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__color">
                                                 <label class="c-1" for="sp-1"(click)="filterModel.color = 'black';applyFilter()">
@@ -644,22 +754,23 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Partie Filtre Sport-->
                         <div *ngIf="brand && brand.Categorie == 'Sport'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat();closedFiltre()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a (click)="filterModel.cat = 'Équipements de Sport';applyFilter()">Équipements de Sport</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Vêtements de Sport';applyFilter()">Vêtements de Sport</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Chaussures de Sport';applyFilter()">Chaussures de Sport</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Accessoires';applyFilter()">Accessoires</a></li>
-                                                    <li><a (click)="filterModel.cat = 'Fitness et Musculation ';applyFilter()">Fitness et Musculation </a></li>
-                                                    <li><a (click)="filterModel.cat = 'Nutrition Sportive';applyFilter()">Nutrition Sportive</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Équipements de Sport';applyFilter(); closedFiltre()">Équipements de Sport</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Vêtements de Sport';applyFilter();showTailleExtra()">Vêtements de Sport</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Chaussures de Sport';applyFilter();showPointureExtra()">Chaussures de Sport</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Accessoires';applyFilter(); closedFiltre()">Accessoires</a></li>
+                                                    <li><a (click)="filterModel.cat = 'Fitness et Musculation';applyFilter(); closedFiltre()">Fitness et Musculation </a></li>
+                                                    <li><a (click)="filterModel.cat = 'Nutrition Sportive';applyFilter(); closedFiltre()">Nutrition Sportive</a></li>
                                 
                                                     
                                                 </ul>
@@ -667,11 +778,95 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div *ngIf="showTailleExtrav" class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour">Taille</a>
+                                    </div>
+                                    <div  id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = 'XS/34';applyFilter()"><label for="xs">XS/34
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'S/36';applyFilter()"><label for="sm" >S/36
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'M/38';applyFilter()"><label for="md">M/38
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'L/40';applyFilter()"><label for="xl">L/40
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'XL/42';applyFilter()"><label for="2xl">XL/42
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'XXL/44';applyFilter()"><label for="xxl">XXL/44
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = 'XXXL/46';applyFilter()"><label for="3xl">XXXL/46
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="showPointurExtrav" class="card">
+                                    <div class="card-heading">
+                                        <a data-toggle="collapse" data-target="#collapseFour" >Pointure</a>
+                                    </div>
+                                    <div  id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shop__sidebar__size">
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">32
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">33
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '34';applyFilter()"><label for="xs">34
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '35';applyFilter()"><label for="xs">35
+                                                    <input  type="radio" id="xs">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '36';applyFilter()"><label for="sm" >36
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '37';applyFilter()"><label for="sm" >37
+                                                    <input  type="radio" id="sm">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '38';applyFilter()"><label for="md">38
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '39';applyFilter()"><label for="md">39
+                                                    <input  type="radio" id="md">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '40';applyFilter()"><label for="xl">40
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = '41';applyFilter()"><label for="xl">41
+                                                    <input  type="radio" id="xl" >
+                                                </label></a>
+                                                <a (click)="filterModel.size = '42';applyFilter()"><label for="2xl">42
+                                                    <input  type="radio" id="2xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '43';applyFilter()"><label for="3xl">43
+                                                    <input  type="radio" id="3xl">
+                                                </label></a>
+                                                <a (click)="filterModel.size = '44';applyFilter()"><label for="xxl">44
+                                                    <input  type="radio" id="xxl">
+                                                </label></a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Genre</a>
+                                        <a data-toggle="collapse" data-target="#collapseTwo" (click)="showGenre()">Genre</a>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showGenrev" id="collapseTwo" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__brand">
                                                 <ul>
@@ -687,9 +882,9 @@
                                
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div  *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'Football';applyFilter()"><label for="xs">Football
@@ -717,13 +912,14 @@
                              
                             </div>
                         </div>
+                         <!--Partie Filtre Gastronomie-->
                         <div *ngIf="brand &&brand.Categorie == 'Gastronomie'"class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Catégories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne" (click)="showCat()">Catégories</a>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showCatv" id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
@@ -743,9 +939,9 @@
                                
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseFour" (click)="showTAg()">Tags</a>
                                     </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
+                                    <div *ngIf="showTAgsv" id="collapseFour" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__size">
                                                 <a (click)="filterModel.tag = 'Épicerie';applyFilter()"><label for="xs">Épicerie
@@ -793,12 +989,12 @@
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="img/products/product3.jpg">
                                     <a [routerLink]="'/products-details/'+prod.id"><img [src]="'https://api.venteprivilegiee.com/image/'+prod.Image" alt="Description de l'image"></a>
-                                    <span class="label">{{prod.Reduction }}%</span>
+                                    <span class="label" style="cursor: default;">{{prod.Reduction }}%</span>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>{{prod.Produit }}-{{prod.Genre}}</h6>
+                                    <h6 style="cursor: default;">{{prod.Produit }}</h6>
                                     <a [routerLink]="'/products-details/'+prod.id" class="add-cart">+ Ajouter Au Panier</a>
-                                    <h5>{{prod.PrixR}}DNT</h5>
+                                    <h5 style="cursor: default;">{{prod.PrixR}}DNT</h5>
                                 </div>
                             </div>
                         </div>
@@ -819,8 +1015,7 @@
                         </div> 
                         
                     </div>
-                    <!-- <button (click)="previousPage()" [disabled]="currentPage === 1">Précédent</button>
-<button (click)="nextPage()" [disabled]="currentPage === getMaxPage()">Suivant</button> -->
+                   
                 </div>
                 </div>
             </div>

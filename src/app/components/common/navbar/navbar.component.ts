@@ -14,14 +14,21 @@ export class NavbarComponent implements OnInit {
  affiche =false;
   paniers: any;
   nbrpanier: number=0;
+  selectedLink: string = '';
   constructor(private router: Router,private storageService: StorageService ,private el: ElementRef,  private cd: ChangeDetectorRef,private jwtHelper: JwtHelperService) { }
+  setActiveLink(route: string) {
+    this.selectedLink = route;
+  }
   decodeToken() {
     const token = localStorage.getItem('isLoggedin');
     this.nbrpanier = Number(localStorage.getItem('panier') || '0');
     const decodedToken = this.jwtHelper.decodeToken(token);
-    this.Email=decodedToken.Email
-    this.Username=decodedToken.UserName
-    console.log(decodedToken);
+    if(decodedToken){
+      this.Email=decodedToken.Email
+      this.Username=decodedToken.UserName
+      console.log(decodedToken);
+    }
+   
     if(this.Email && this.Username ){
       this.affiche=true
     }
@@ -34,8 +41,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('isLoggedin');
     localStorage.removeItem('panier');
     this.router.navigate(['/']);
-    
-   
   }
 
   ngOnInit(): void {

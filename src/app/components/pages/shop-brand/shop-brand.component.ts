@@ -26,10 +26,26 @@ brand : any
     color: '',
     tag:''
   };
-  currentPage: number = 1;
-pageSize: number = 4;
-  filteredProducts: any;
+   currentPage: number = 1;
+   pageSize: number = 4;
+   filteredProducts: any;
+   showCatv:boolean=true;
+   showGenrev :boolean=true;
+   showTaillev:boolean =true;
+   showCouleursv:boolean=true;
+  showPointurev:boolean=true;
+  showTAgsv:boolean=true;
+  showTailleFenfant: boolean;
+  showPointureFenfant: boolean;
+  showTailleExtrav: boolean;
+  showPointurExtrav: boolean;
   constructor(private route: ActivatedRoute,private brandservice : BrandService,private produitservice :ProduitService) { }
+  showCat(){this.showCatv=!this.showCatv}
+  showGenre(){this.showGenrev=!this.showGenrev}
+  showTaille(){this.showTaillev=!this.showTaillev}
+  showCouleurs(){this.showCouleursv=!this.showCouleursv}
+  showPointure(){this.showPointurev=!this.showPointurev}
+  showTAg(){this.showTAgsv=!this.showTAgsv}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -79,7 +95,7 @@ getMaxPage() {
 }
 
  filtrerDonnees(): void {
-  this.filteredBrand = this.produits.filter((brand: any) => 
+  this.filteredProducts = this.produits.filter((brand: any) => 
   brand.Produit.toLowerCase().includes(this.term.toLowerCase()) ||
   brand.SousCategorie.toLowerCase().includes(this.term.toLowerCase() || 
   brand.DetailsP.toLowerCase().includes(this.term.toLowerCase()) ))
@@ -99,39 +115,48 @@ getMaxPage() {
   applyFilter() {
   console.log(this.filterModel)
     if (this.filterModel.genre) {
-     
       this.filteredProducts = this.produits.filter(product => product.Genre === this.filterModel.genre);
       this.filterModel.genre=''
+      this.term=''
     } 
     if (this.filterModel.cat) {
       this.filteredProducts = this.produits.filter(product => product.SousCategorie === this.filterModel.cat);
       this.filterModel.cat=''
-      
+      this.term=''
     } 
     if (this.filterModel.color) {
       this.filteredProducts = this.produits.filter(product => product.Couleur === this.filterModel.color);
       this.filterModel.color=''
-      
+      this.term=''
     } 
-    if (this.filterModel.size && this.brand=='Mode') {
+    if (this.filterModel.size && this.brand.Categorie=='Mode'|| (this.filterModel.size && this.showTailleExtrav)) {
       this.filteredProducts = this.produits.filter(product => product.Taille.includes(this.filterModel.size));
       this.filterModel.size=''
-      
+      this.term=''
     } 
-    if (this.filterModel.size && this.brand=='Chaussure' ) {
+    if ((this.filterModel.size && this.brand.Categorie=='Chaussure') || (this.filterModel.size && this.showPointurExtrav ) ) {
       this.filteredProducts = this.produits.filter(product => product.pointure.includes(this.filterModel.size));
       this.filterModel.size=''
-      
+      this.term=''
     } 
     if (this.filterModel.tag) {
       this.filteredProducts = this.produits.filter(product => product.DetailsP.includes(this.filterModel.tag));
       this.filterModel.tag=''
-      
+      this.term=''
     }
-
-   
   }
- 
+  showTailleExtra(){
+    this.showTailleExtrav = true 
+    this.showPointurExtrav = false 
+  }
+  showPointureExtra(){
+    this.showPointurExtrav = true 
+    this.showTailleExtrav=false
+  }
+  closedFiltre(){
+    this.showTailleExtrav=false
+    this.showPointurExtrav = false 
+  }
   
 }
 

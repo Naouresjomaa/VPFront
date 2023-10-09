@@ -6,7 +6,7 @@
         <div class="flex-box" >
             <div class="left">
                 <div  class="big-img">
-                    <img [src]="'https://api.venteprivilegiee.com/image/'+ produit.Image">
+                    <img *ngIf="produit" [src]="'https://api.venteprivilegiee.com/image/'+ produit.Image">
                 </div>
                 <div class="images">
                     <!-- <div class="small-img">
@@ -27,15 +27,15 @@
     
             <div class="right">
                 
-                <h1>{{produit.Produit}} - {{produit.Couleur}}</h1>
+                <h1 *ngIf="produit">{{produit.Produit}} - {{produit.Couleur}}</h1>
 
 
                <div class="detail">
-                <div class="price"> <span class="pinkp">{{produit.PrixR}} DNT</span>
-                    <span class="greenspan">-{{produit.Reduction}}%</span></div>
+                <div *ngIf="produit" class="price"> <span class="pinkp">{{produit.PrixR}} DNT</span>
+                    <span *ngIf="produit" class="greenspan">-{{produit.Reduction}}%</span></div>
                 <div class="size">
                    
-                         <span class="greyp">{{produit.Prix}} DNT
+                         <span *ngIf="produit" class="greyp">{{produit.Prix}} DNT
                          </span>  
                 </div>
               
@@ -43,11 +43,19 @@
                </div>
                <div class="quantity "> 
                 
-                <p class="para">{{produit.DetailsP}} <br></p>
-                <div *ngIf="produit.categorie == 'Mode'">
+                <p *ngIf="produit" class="para">{{produit.DetailsP}} <br></p>
+                <div *ngIf="produit && produit.categorie == 'Mode'">
                 <div class="pname">Les Tailles Disponibles</div>
-                <div class="sizes" >
-                    <div *ngFor="let b of produit.Taille">
+                <div *ngIf="produit" class="sizes" >
+                    <div  *ngFor="let b of produit.Taille">
+                    <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
+                </div>
+                </div>
+            </div>
+            <div *ngIf="produit && produit.categorie == 'Chaussure'">
+                <div class="pname">Les Pointures Disponibles</div>
+                <div *ngIf="produit" class="sizes" >
+                    <div *ngFor="let b of produit.pointure">
                     <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
                 </div>
                 </div>

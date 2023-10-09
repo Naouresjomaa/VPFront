@@ -306,26 +306,21 @@ li {
   font-size: 18px;
   white-space: nowrap;
 }
-.navbar a:active {
-  color:rgb(233, 68, 161);
+.navbar a.active span {
+  color:  rgb(237, 43, 153);
+  font-weight: bold;
+  //background-color: rgb(233, 68, 161);
+  padding: 5px 10px;
+  border-radius: 4px;
 }
-/* Add a class for the active link */
-.active-link {
-  color: rgb(233, 68, 161);
-}
-li:active {
-  color:rgb(233, 68, 161);
-}
+
+
+
 .titels:hover {
   padding-bottom: 18px;
 }
-.titels:active {
-  color:rgb(233, 68, 161);
-}
 
-.titleunderline {
-  padding-bottom: 18px;
-}
+
 
 .navp {
   font-family: "Inclusive Sans";
@@ -741,10 +736,12 @@ h3:hover {
 }
 
 /* Add a background color to the active dot/circle */
-.active,
-.dot:hover {
-  background-color:rgb(237, 43, 153); /* Use the variable here */
-}
+// .active,
+// .dot:hover {
+//   background-color:rgb(237, 43, 153); /* Use the variable here */
+
+  
+// }
 
 /* Add an italic font style to all quotes */
 q {

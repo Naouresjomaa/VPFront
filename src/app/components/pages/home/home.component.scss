@@ -310,6 +310,9 @@ li {
 .navbar a:active {
   color:rgb(233, 68, 161);
 }
+.navbar a::after {
+  color:rgb(233, 68, 161);
+}
 /* Add a class for the active link */
 .active-link {
   color: rgb(233, 68, 161);
