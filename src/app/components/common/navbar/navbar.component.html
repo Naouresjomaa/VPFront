@@ -94,36 +94,33 @@
     <!-- Navigation Links -->
     <nav class="navbar">
         <div class="navlinks">
-            <ul id="nav">
-                <li><a routerLink="/home" routerLinkActive="active"class="titels sty"><span>Accueil</span> </a></li>
-                <li><a routerLink="/Mode" routerLinkActive="active"class="titels sty "> <span>Mode</span></a></li>
-                <li><a routerLink="/Chaussure" routerLinkActive="active"class="titels sty"> <span>Chaussure</span></a></li>
-                <li><a routerLink="/Maison" routerLinkActive="active"class="titels sty"><span>Maison</span></a></li>
-                <li><a routerLink="/Voyage" routerLinkActive="active"class="titels sty"><span>Voyage</span></a></li>
-                <li><a routerLink="/Beaute" routerLinkActive="active"class="titels sty"><span>Beauté</span> </a></li>
-                <li><a routerLink="/Sport" routerLinkActive="active"class="titels sty"> <span>Sport</span></a></li>
-                <li><a routerLink="/Enfant" routerLinkActive="active"class="titels sty"> <span>Enfant</span></a></li>
-                <li><a routerLink="/Gastronomie" routerLinkActive="active"class="titels sty"> <span>Gastronomie</span></a></li>
-                <li><a routerLink="/Loisir" routerLinkActive="active"class="titels sty"><span>Loisir</span></a></li>
-                
-                
+            <ul>
+                <li><a  class="titleunderline" routerLink="/"  >Accueil </a></li>
+                <li><a routerLink="/Mode"   > Mode</a></li>
+                <li><a routerLink="/Chaussure"   > Chaussure</a></li>
+                <li><a routerLink="/Maison"   >Maison</a></li>
+                <li><a routerLink="/Voyage"    >Voyage</a></li>
+                <li><a routerLink="/Beaute"  >Beauté </a></li>
+                <li><a routerLink="/Sport"   > Sport</a></li>
+                <li><a routerLink="/Enfant"   > Enfant</a></li>
+                <li><a routerLink="/Gastronomie"   > Gastronomie</a></li>
+                <li><a routerLink="/Loisir"    >Loisir</a></li>
                 <nav *ngIf="affiche" class="menu">
                     <ul>
                        
                         <li class="dropdown">
-                            <a ><img src="../../../../assets/img/pink-user-icon-vector-42797480-removebg-preview.png" alt="Logo" class="logossearch " /></a>
+                            <a ><img src="../../../../assets/img/pink-user-icon-vector-42797480-removebg-preview.png" alt="Logo" class="logossearch" /></a>
                             <ul class="dropdown-content">
                               
                                 <li><a routerLink="/Compte"> <img src="../../../../assets/img/stock-vector-eps-pink-vector-logout-icon-or-logo-in-simple-flat-trendy-modern-style-isolated-on-white-2167805975-removebg-preview (1).png" alt=""  width="40px" > &emsp; Mon compte</a></li>
                              <hr>
-                                <li><a routerLink="/" (click)="logout()"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Deconnection</a></li>
+                                <li><a (click)="logout()"> <img src="../../../../assets/img/images-removebg-preview.png" alt="" width="30px" style="margin-right: 10px; margin-left: 10px;">Se déconnecter</a></li>
                             </ul>
                         </li>
                        
                     </ul>
                 </nav>
             </ul>
-            
         </div>
     </nav>
 </section>
