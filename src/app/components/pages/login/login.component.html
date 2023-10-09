@@ -25,13 +25,11 @@
         </svg>
       </label>
   
-      <input formControlName="Password" type="text" id="password" placeholder=" " autocomplete="off" autocapitalize="off" autocorrect="off" required pattern=".{6,}" class="ControlInput ControlInput--password">
+      <input formControlName="Password" type="text" id="password" placeholder=" Mot de passe" autocomplete="off" autocapitalize="off" autocorrect="off" required pattern=".{6,}" class="ControlInput ControlInput--password">
   
       <label for="password" class="Control-label Control-label--password" style="visibility: hidden;">Password</label>
   
-      <div class="Control-requirements">
-        Must contain at least 6 characters. We did this for your own sake.
-      </div>
+    
         
         <button type="submit" (click)="Login()">Se connecter</button>
         <div class="d-flex justify-content-between">
