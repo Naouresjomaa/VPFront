@@ -7,7 +7,43 @@
                
                  <div>
                      <div style="display: flex; justify-content: space-between; flex-wrap: wrap;" class="cpm">
-                     <h2 class="ccc">Mon compte</h2> 
+
+                      <section style="display: flex; flex-direction: row;">
+
+                        <h2 class="ccc">Mon compte</h2> 
+
+
+
+
+
+
+
+
+
+
+
+                        
+                        <nav  class="menu">
+                            <ul>
+                               
+                                <li class="dropdown" id="editInfo">
+                                    <a  ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAX9W4AwL2ezqDr1QkZvxS5zQLNmYd2uN4D6CPF5MvEF_s8K72fbRV9Xs16dQf6e7Hs4I&usqp=CAU" alt="" class="upp" ></a>
+                                    <ul class="dropdown-content">
+                                      
+                                        <li><a > Modifier</a></li>
+                                   
+                                    </ul>
+                                </li>
+                               
+                            </ul>
+                        </nav>
+
+
+                      
+
+                       
+
+                     </section>
                      <div class="soldee">
                         
                          <h3 class="sss"> <img src=".././../../../assets/img/coin.png" alt="" width="30px" style="margin-right: 20px;">{{client.solde}} dt</h3> 
@@ -22,27 +58,17 @@
                       
                          <div class="tableBloc" id="infosBloc">
                              <div class="tableBloc1"><strong>Nom & Prénom</strong></div>
-                             <div class="tableBloc2">{{client.NomComplet}}</div>
+                             <div class="tableBloc2 "id="nomComplet">{{client.NomComplet}}</div>
                              
-                             <div class="actionBloc">
-                                <div class="containeeer">
-                                    <div class="icon" onclick="showPopup()"><img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt=""> </div>
-                                    <div class="popup" id="popup">
-                                        <span class="close" onclick="hidePopup()">&times;</span>
-                                        <p>This is a popup! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi accusantium officiis natus quas nostrum obcaecati id laudantium excepturi aperiam, deleniti autem quasi corrupti expedita quisquam! Sed explicabo suscipit sequi cupiditate!</p>
-                                    </div>
-                                </div>
-                            </div>
+                            
                              <div class="clear"></div>
                          </div>
  
                          <div class="tableBloc" id="infosBloc">
                             <div class="tableBloc1"><strong>Téléphone</strong></div>
-                            <div class="tableBloc2">{{client.Telephone}}</div>
+                            <div class="tableBloc2" id="telephone">{{client.Telephone}}</div>
                             
-                            <div class="actionBloc"> 
-                            <img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt="">
-                       </div> 
+                           
                             <div class="clear"></div>
                       </div> 
  
@@ -52,55 +78,33 @@
  
  
  
-                    </section>
-                 </div>
-                <div class="tableBloc" id="infosBloc">
-                     <div class="tableBloc1"><strong>Mes coordonnées</strong></div>
-                     <div class="tableBloc2"></div>
-                     <div class="tableBloc3">
-                         Tél. Mobile :<i>{{client.Telephone}}</i><br>
-                          Autre numéro : <i>Non renseigné</i>
-                     </div>
-                     <div class="actionBloc">
-                     <img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt=""></div>
-                     <div class="clear"></div>
-                 </div> 
+                    
+                 
+                
  
                  <div class="tableBloc" id="infosBloc">
                      <div class="tableBloc1"><strong>Email</strong></div>
-                     <div class="tableBloc2"> {{client.Email}}</div>
-                     <div class="tableBloc3">
-                        <br>
-                         
-                     </div>
-                     <div class="actionBloc">
-                     <img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt=""> 
-                    </div>
+                     <div class="tableBloc2" id="editEmail"> {{client.Email}}</div>
+                     
+                     
                      <div class="clear"></div>
                  </div>
                  <div class="tableBloc" id="infosBloc">
                     <div class="tableBloc1"><strong>Adresse</strong></div>
-                    <div class="tableBloc2">  rue baghded Monastir</div>
-                    <div class="tableBloc3">
-                       <br>
-                        
-                    </div>
-                    <div class="actionBloc">
-                     <img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt=""> 
-                </div>
+                    <div class="tableBloc2" id="editAdresse">  rue baghded Monastir</div>
+                    
+                   
                     <div class="clear"></div>
                 </div>
  
                  <div class="tableBloc" id="infosBloc">
                      <div class="tableBloc1"><strong>Mot de passe</strong></div>
-                     <div class="tableBloc2">{{client.Password}}</div>
-                     <div class="tableBloc3">
-                       
-                     </div>
-                     <div class="actionBloc">
-                     <img src="	https://static.vente-privee.com/vp5//_web/site//vp/_common/img/acc_table-changeLine.png" alt=""></div>
-                     <div class="clear"></div>
+                     <div class="tableBloc2" id="editPassword">{{client.Password}}</div>
+                    
+                     
                  </div> 
+                 <button id="saveButton" style="display: none; width: 150px;height: 50px; border: none; background-color: rgb(214, 44, 123); color: white; font-weight: bold; margin: auto; margin-left:395px; margin-bottom: 50px;border-radius: 5px;" >Enregister</button>
+                </section></div>
                  <div style="height: 150px;">
                      <h4></h4>
                      <p></p>

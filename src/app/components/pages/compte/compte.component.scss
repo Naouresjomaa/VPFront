@@ -12,33 +12,74 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-.containeeer {
+
+
+
+
+
+
+.upp{
+  width: 30px;
+  height: 25px;
+  margin-top: 25px;
+}
+
+.menu {
+  background-color: transparent;
+  color: rgb(249, 68, 156);
+  font-family: Arial, sans-serif;
+
+}
+
+.menu ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.menu li {
+  padding: 15px;
   position: relative;
 }
 
-.icon {
-  font-size: 24px;
-  cursor: pointer;
+.menu a {
+  text-decoration: none;
+  color: rgb(241, 79, 168);
 }
 
-.popup {
+.menu .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #fff !important;
-  border: 1px solid #ddd !important;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  width: 220px;
   z-index: 1;
+
+  margin-top: -10px;
+  margin-right:25px;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 50px;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
+.menu .dropdown:hover .dropdown-content {
+  display: block;
 }
 
+.menu .dropdown-content li {
+  padding: 10px;
+}
+
+.menu .dropdown-content a {
+  color:rgb(249, 68, 156);
+  text-decoration: none;
+}
+
+.menu .dropdown-content a:hover {
+  background-color: transparent;
+  color: rgb(249, 68, 156);
+  border-radius: 20px;
+}
 
 
 
@@ -95,136 +136,9 @@ h3{
   justify-content: space-between;
   padding: 12px 20px;
 }
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  color: black;
-  flex: 1;
-  display: flex;
-  gap: 20px;
-  z-index: 99999999999;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  background-color: white;
-  color: #0b0b0b;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 10px;
-  font-family: "Ubuntu";
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 0;
-  /* margin-left: -60px; */
-  opacity: 0;
-  transition: opacity 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
-  line-height: 28px;
-  border: 1px solid #cecece;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 100%;
-  margin-left: -5px;
-}
-
-.hamburger:hover + .tooltiptext,
-.tooltiptext:hover {
-  visibility: visible;
-  opacity: 1;
-}
-
-.tooltip-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  /* padding: 8px 12px; */
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.tooltip-item a {
-  color: #0b0b0b;
-}
-
-.tooltip-item:hover {
-  color: var(--main-color); /* Use the variable here */
-  fill: var(--main-color) !important;
-}
-
-.tooltip-item:hover path {
-  fill: var(--main-color) !important;
-}
-
-.tooltiptext hr {
-  border: 1px solid #c7c7c783 !important;
-  width: 100% !important;
-  border-radius: 20px;
-  margin: 12px 0px;
-}
-
-.tooltip-item img {
-  width: 35px;
-  height: 35px;
-}
-
-.tooltip-item h1 {
-  font-size: 16px;
-}
-
-.hamburger {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  box-sizing: content-box;
-  position: relative;
-  padding-bottom: 20px;
-  box-sizing: content-box;
-  margin-top: 12px;
-  /* flex: 1; */
-}
-
-.humberger-text {
-  position: absolute;
-  bottom: 0px;
-  font-size: 12px;
-}
 .icon {
   margin-bottom: -10px;
 }
-.bar {
-  width: 100%;
-  height: 3px;
-  background-color: black;
-  transition: transform 0.4s ease;
-}
-
-.opened .bar:first-child {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.opened .bar:nth-child(2) {
-  transform: scaleX(0);
-}
-
-.opened .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
 .whitebutton {
   background-color: white;
   color: var(--main-color); /* Use the variable here */

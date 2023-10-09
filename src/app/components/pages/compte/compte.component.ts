@@ -134,3 +134,44 @@ export class CompteComponent implements OnInit {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const editInfoButton = document.getElementById("editInfo") as HTMLAnchorElement;
+    const saveButton = document.getElementById("saveButton") as HTMLButtonElement;
+    const nomCompletDiv = document.getElementById("nomComplet") as HTMLDivElement;
+    const telephoneDiv = document.getElementById("telephone") as HTMLDivElement;
+    const emailDiv = document.getElementById("editEmail") as HTMLDivElement;
+    const adressDiv = document.getElementById("editAdresse") as HTMLDivElement;
+    const passwordDiv = document.getElementById("editPassword") as HTMLDivElement;
+
+    editInfoButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Transform the content of divs into input fields
+        nomCompletDiv.innerHTML = `<input type="text" value="${nomCompletDiv.textContent}" id="nomCompletInput">`;
+        telephoneDiv.innerHTML = `<input type="text" value="${telephoneDiv.textContent}" id="telephoneInput">`;
+        emailDiv.innerHTML = `<input type="text" value="${emailDiv.textContent}" id="emailInput">`;
+        adressDiv.innerHTML = `<input type="text" value="${adressDiv.textContent}" id="adressInput">`;
+        passwordDiv.innerHTML = `<input type="text" value="${passwordDiv.textContent}" id="passwordInput">`;
+        // Show the Save button
+        saveButton.style.display = "block";
+    });
+
+    saveButton.addEventListener("click", function () {
+        // Assuming you want to save the changes here
+        const nomCompletInput = document.getElementById("nomCompletInput") as HTMLInputElement;
+        const telephoneInput = document.getElementById("telephoneInput") as HTMLInputElement;
+        const emailInput = document.getElementById("emailInput") as HTMLInputElement;
+        const adressInput = document.getElementById("adressInput") as HTMLInputElement;
+        const passwordInput = document.getElementById("passwordInput") as HTMLInputElement;
+
+        // Save or update the information, you can send it to the server, update in local storage, etc.
+        console.log("Saving changes...");
+        console.log("Nom Complet:", nomCompletInput.value);
+        console.log("Téléphone:", telephoneInput.value);
+        console.log("Email:", emailInput.value);
+        console.log("Adresse:", adressInput.value);
+        console.log("Password:", passwordInput.value);
+
+        // Hide the Save button after saving
+        saveButton.style.display = "none";
+    });
+});
