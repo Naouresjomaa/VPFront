@@ -368,7 +368,7 @@ li:active {
   width: 450px;
   transform: translateY(250px);
   justify-content: center;
-  margin-left: 175px;
+
   align-items: center;
   height: 50px;
 }
@@ -445,9 +445,8 @@ li:active {
 .logosearch {
   width: 30px;
   height: 30px;
-  margin-left: 20px;
  color: rgb(249, 68, 156);
- margin-left: 10px;
+ 
 }
 .logossearch {
   width: 50px;
@@ -592,7 +591,7 @@ li:active {
   margin-top: -50px;
 
   margin-inline: auto;
-  gap: 10px;
+
   margin-bottom: 300px;
 }
 @media (max-width: 770px) {
