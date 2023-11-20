@@ -12,7 +12,38 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+.styled-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  position: relative; /* Nécessaire pour positionner la barre absolue par rapport au bouton */
+  background-color: #f6faf7;
+  color: #5b5858;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 
+}
+
+.styled-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  top:15px;
+  background-color: red; /* Couleur de la barre rouge */
+   /* Effet de transition pour la largeur de la barre */
+}
+
+.styled-button:hover::after {
+  width: 0; /* Réduire la largeur de la barre au survol */
+}
 body {
   font-family: "Ubuntu";
 }
