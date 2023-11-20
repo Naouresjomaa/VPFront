@@ -967,7 +967,7 @@ h1:visited {
     margin-top: -671px;
   } }
 /*tablette responsive*/
-@media (max-width:1188px) {
+@media (max-width:1035px) {
   .page-content {
     gap: 0px;
   
@@ -978,7 +978,7 @@ h1:visited {
     
   }
   .titlecontainer77 {
-    margin-top: -671px;
+    margin-top: -571px;
     margin-bottom: 50px;
   }
 
@@ -1000,8 +1000,11 @@ h1:visited {
     justify-content: normal; 
   }
   .titlecontainer77 {
-    margin-top: -471px;
+    margin-top: -400px;
     margin-bottom: 50px;
+    margin-left: 40px;
+    width: 650px;
+    margin-left: -40px;
   }
   nav {
     display: none;
@@ -1231,6 +1234,8 @@ display: none;
   }
   .titlecontainer77{
     margin-top: -400px;
+ 
+    margin-left: -40px;
   }
 
 }
@@ -1250,7 +1255,7 @@ display: none;
       
         width: 100%;
         /* margin-top: -50px; */
-        margin-left: 0px;
+        margin-left: 30px;
         margin-bottom: 500px;
       }
   }
@@ -1261,7 +1266,7 @@ display: none;
       gap: 0px;
       width: 100%;
       /* margin-top: -50px; */
-      margin-left: 0px;
+      margin-left: -28px;
       margin-bottom: 500px;
     }
 
@@ -1298,43 +1303,89 @@ display: none;
       background-image: url('../../../../assets/img/home-three/veepee_mobile.jpeg');
     }
   }
-  @media (max-width: 760px){
-    .titlecontainer77{
-      margin-top: -424px;
-    }
-      }
+
       @media (max-width: 750px) and (min-width: 500px){
         .titlecontainer77{
-          margin-top: -324px;
-        }
+          margin-top: -524px;
+       
+       
+        }}
+        @media (max-width: 690px) and (min-width: 500px){
+          .titlecontainer77{
+            margin-top: -424px;
+      width: 586px;
+            margin-left: -40px;
+            
+          }
+          .containertitle{
+            font-size: 22px;
+          }
           }
           @media (max-width: 501px) and (min-width: 400px){
             .titlecontainer77{
               margin-top: -295px;
+              width: 400px;
+              margin-left: -40px;
+              font-size: 12px;
+            }  .containertitle{
+              font-size: 22px;
             }
               }
+              @media (max-width: 570px) {
+                .titlecontainer77{
+                  margin-top: -295px;
+                  width: 540px;
+                  margin-left: -40px;
+                  font-size: 12px;
+                }  .containertitle{
+                  font-size: 22px;
+                }
+                  }
               @media (max-width: 445px) {
                 .titlecontainer77{
                   margin-top: -241px;
+                  width: 540px;
+              margin-left: -40px;
+              font-size: 12px;
+                }  .containertitle{
+                  font-size: 22px;
                 }
                   }
                   @media (max-width: 397px) {
                     .titlecontainer77{
                       margin-top: -200px;
+                      width: 540px;
+                      margin-left: -40px;
+                      font-size: 8px;
+                    }  .containertitle{
+                      font-size: 22px;
                     }
                       }
                       @media (max-width: 341px) {
                         .titlecontainer77{
                           margin-top: -150px;
+                          width: 540px;
+                          margin-left: -40px;
+                          font-size: 8px;
+                        }  .containertitle{
+                          font-size: 22px;
                         }
                           }
                           @media (max-width: 289px) {
                             .titlecontainer77{
                               margin-top: -110px;
+                              width: 540px;
+                              margin-left: -40px;
+                              font-size: 12px;
+                            }  .containertitle{
+                              font-size: 18px;
                             }
                               }
                               @media (max-width: 247px) {
                                 .titlecontainer77{
                                   margin-top: -80px;
+                                  width: 540px;
+                                  margin-left: -40px;
+                                  font-size: 12px;
                                 }
                                   }
