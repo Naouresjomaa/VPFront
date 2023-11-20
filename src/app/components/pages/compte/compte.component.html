@@ -26,7 +26,7 @@
                         <nav  class="menu">
                             <ul>
                                
-                                <li class="dropdown" id="editInfo">
+                                <li class="dropdown" (click)="clickUpdate()" style="cursor: pointer;" id="editInfo">
                                     <a  ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAX9W4AwL2ezqDr1QkZvxS5zQLNmYd2uN4D6CPF5MvEF_s8K72fbRV9Xs16dQf6e7Hs4I&usqp=CAU" alt="" class="upp" ></a>
                                     <ul class="dropdown-content">
                                       
@@ -58,64 +58,82 @@
                       
                          <div class="tableBloc" id="infosBloc">
                              <div class="tableBloc1"><strong>Nom & Prénom</strong></div>
-                             <div class="tableBloc2 "id="nomComplet">{{client.NomComplet}}</div>
-                             
-                            
+                             <div  *ngIf="!update" class="tableBloc2 "id="nomComplet">{{client.NomComplet}}</div>
+                             <input *ngIf="update" class="tableBloc2 " [(ngModel)]="client.NomComplet" id="nomComplet">
                              <div class="clear"></div>
                          </div>
- 
                          <div class="tableBloc" id="infosBloc">
                             <div class="tableBloc1"><strong>Téléphone</strong></div>
-                            <div class="tableBloc2" id="telephone">{{client.Telephone}}</div>
-                            
-                           
+                            <div *ngIf="!update" class="tableBloc2" id="telephone">{{client.Telephone}}</div>
+                            <input *ngIf="update" class="tableBloc2 " [(ngModel)]="client.Telephone" id="nomComplet">
+
                             <div class="clear"></div>
                       </div> 
- 
- 
- 
- 
- 
- 
- 
-                    
-                 
-                
- 
                  <div class="tableBloc" id="infosBloc">
                      <div class="tableBloc1"><strong>Email</strong></div>
-                     <div class="tableBloc2" id="editEmail"> {{client.Email}}</div>
-                     
-                     
+                     <div *ngIf="!update" class="tableBloc2" id="editEmail"> {{client.Email}}</div>
+                     <input *ngIf="update" class="tableBloc2 " [(ngModel)]="client.Email" id="nomComplet">
+
                      <div class="clear"></div>
                  </div>
-                 <div class="tableBloc" id="infosBloc">
-                    <div class="tableBloc1"><strong>Adresse</strong></div>
-                    <div class="tableBloc2" id="editAdresse">  rue baghded Monastir</div>
-                    
-                   
+                
+                <div class="tableBloc" id="infosBloc">
+                    <div class="tableBloc1"><strong>Ville</strong></div>
+                    <div *ngIf="!update" class="tableBloc2" id="editAdresse">  {{client.Ville}}</div>
+                    <input *ngIf="update" list="villes" class="tableBloc2 " [(ngModel)]="client.Ville" id="ville">
+                    <datalist id="villes">
+                        <option value="Ariana">Ariana</option>
+                        <option value="Béja">Béja</option>
+                        <option value="Ben Arous">Ben Arous</option>
+                        <option value="Bizerte">Bizerte</option>
+                        <option value="Gabès">Gabès</option>
+                        <option value="Gafsa">Gafsa</option>
+                        <option value="Jendouba">Jendouba</option>
+                        <option value="Kairouan">Kairouan</option>
+                        <option value="Kasserine">Kasserine</option>
+                        <option value="Kébili">Kébili</option>
+                        <option value="Le Kef">Le Kef</option>
+                        <option value="Mahdia">Mahdia</option>
+                        <option value="Manouba">Manouba</option>
+                        <option value="Médenine">Médenine</option>
+                        <option value="Monastir">Monastir</option>
+                        <option value="Nabeul">Nabeul</option>
+                        <option value="Sfax">Sfax</option>
+                        <option value="Sidi Bouzid">Sidi Bouzid</option>
+                        <option value="Siliana">Siliana</option>
+                        <option value="Sousse">Sousse</option>
+                        <option value="Tataouine">Tataouine</option>
+                        <option value="Tozeur">Tozeur</option>
+                        <option value="Tunis">Tunis</option>
+                        <option value="Zaghouan">Zaghouan</option>
+                    </datalist>
                     <div class="clear"></div>
                 </div>
- 
+
+                <div class="tableBloc" id="infosBloc">
+                    <div class="tableBloc1"><strong>Adresse</strong></div>
+                    <div *ngIf="!update" class="tableBloc2" id="editAdresse">  {{client.Adresse}}</div>
+                    <input *ngIf="update" class="tableBloc2 " [(ngModel)]="client.Adresse" id="nomComplet">
+
+                    <div class="clear"></div>
+                </div>
+
+
+
                  <div class="tableBloc" id="infosBloc">
                      <div class="tableBloc1"><strong>Mot de passe</strong></div>
-                     <div class="tableBloc2" id="editPassword">{{client.Password}}</div>
-                    
-                     
+                     <div *ngIf="!update" class="tableBloc2" id="editPassword">{{client.Password}}</div>
+                     <input *ngIf="update" class="tableBloc2" [(ngModel)]="client.Password" id="nomComplet">
+
                  </div> 
-                 <button id="saveButton" style="display: none; width: 150px;height: 50px; border: none; background-color: rgb(214, 44, 123); color: white; font-weight: bold; margin: auto; margin-left:395px; margin-bottom: 50px;border-radius: 5px;" >Enregister</button>
+                 <button *ngIf="update" id="saveButton" (click)="updateClient()" style=" width: 150px;height: 50px; border: none; background-color: rgb(214, 44, 123); color: white; font-weight: bold; margin: auto;  margin-bottom: 50px;border-radius: 5px;" >Enregister</button>
                 </section></div>
                  <div style="height: 150px;">
                      <h4></h4>
                      <p></p>
                  </div>
-                 <!-- <div style="height: 150px;">
-                     <h4>FACEBOOK</h4>
-                     <p>Votre compte Facebook n'est pas associé à votre compte Vente.</p>
-                 </div> -->
                  <p class="comptpara">Vente-Privee.com est le responsable du traitement de vos données personnelles. Les informations collectées ci-dessus sont utilisées pour: 
                      <br>
- 
                      -Gérer l’accès à notre site et à nos ventes, l’envoi de nos emails d’informations sur nos ventes et la passation de vos commandes. Sous réserve de vos choix, ces données seront également utilisées pour vous adresser des communications sur nos nouveautés, <br> bons plans et jeux-concours et/ou pourront être utilisées par nos partenaires afin de vous adresser des publicités personnalisées si vous avez exprimé ce souhait lors de votre inscription.  <br>
                       Vous pourrez modifier ou compléter ces informations à tout moment dans la rubrique « Mon Compte/ Mon profil ».
                      <br>

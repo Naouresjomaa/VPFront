@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ClientService } from 'src/app/services/client.service';
@@ -19,16 +20,43 @@ export class ShopPanierComponent implements OnInit {
   payment =false;
   Date = new Date()
   paypal=false;
+  selectedGouvernorat: string = '';
+  gouvernorats = [
+    { name: 'Ariana', value: 'ariana' },
+    { name: 'Béja', value: 'beja' },
+    { name: 'Ben Arous', value: 'benarous' },
+    { name: 'Bizerte', value: 'bizerte' },
+    { name: 'Gabès', value: 'gabes' },
+    { name: 'Gafsa', value: 'gafsa' },
+    { name: 'Jendouba', value: 'jendouba' },
+    { name: 'Kairouan', value: 'kairouan' },
+    { name: 'Kasserine', value: 'kasserine' },
+    { name: 'Kébili', value: 'kebili' },
+    { name: 'Kef', value: 'kef' },
+    { name: 'Mahdia', value: 'mahdia' },
+    { name: 'Manouba', value: 'manouba' },
+    { name: 'Médenine', value: 'medenine' },
+    { name: 'Monastir', value: 'monastir' },
+    { name: 'Nabeul', value: 'nabeul' },
+    { name: 'Sfax', value: 'sfax' },
+    { name: 'Sidi Bouzid', value: 'sidibouzid' },
+    { name: 'Siliana', value: 'siliana' },
+    { name: 'Sousse', value: 'sousse' },
+    { name: 'Tataouine', value: 'tataouine' },
+    { name: 'Tozeur', value: 'tozeur' },
+    { name: 'Tunis', value: 'tunis' },
+    { name: 'Zaghouan', value: 'zaghouan' },
+  ];
+  gouvernoratForm: FormGroup;
   commande : CommandeModel = {
  
     RefCommande:'',
     UserName: '',
     Email: '',
     Date: this.Date,
-   
     NomClient: '',
     Adresse: '',
-    Gouvernerat:'',
+    Gouvernerat:  '',
     Order: '',
     PrixTotal: '',
     PrixLivraison: '',
@@ -71,7 +99,11 @@ client : ClientModel={
     }
   }
   constructor(private jwtHelper: JwtHelperService, private panierservice: PanierService,private commandeService : CommandeService,
-    private userService : ClientService,private router: Router,private storageService :StorageService) { }
+    private userService : ClientService,private router: Router,private storageService :StorageService,private fb: FormBuilder,private cdr: ChangeDetectorRef) { 
+      this.gouvernoratForm = this.fb.group({
+        selectedGouvernorat: ''
+      });
+    }
   decodeToken() {
     const token = localStorage.getItem('isLoggedin');
     const decodedToken = this.jwtHelper.decodeToken(token);
@@ -130,7 +162,13 @@ getTotal(pan) {
   }
   this.commande.RefCommande=resultat+'-2023'
 }
+onGouvernoratSelectionChange() {
+  this.cdr.detectChanges();
+  console.log('Selected Gouvernorat:', this.gouvernoratForm.value.selectedGouvernorat);
+}
 async Order(c: CommandeModel) {
+  
+  console.log('this.paniers2222222222222222222222',c.Gouvernerat)
   this.commandeType()
   console.log(this.commande.TypePaiement)
   c.Statut = "Encours";
@@ -176,18 +214,17 @@ async Order(c: CommandeModel) {
 
   }
 } 
-  paiementenligne(c :CommandeModel) {
-    this.commandeService.paiementenligne(c).subscribe((res:any)=>{
+   paiementenligne(c :CommandeModel) {
+    this.commandeService.paiementenligne(c).subscribe(async (res:any)=>{
       console.log(res)
     let link = res.data.result.link
     console.log(link)
-    for(let x of this.paniers){
-      this.panierservice.Removepanier(x.id).subscribe(res=>console.log(res))
-    }
-  
+    const createCommandeResponse2: any  = await this.panierservice.RemoveAllpanier(this.Email, this.Username).toPromise();
+
+  if(createCommandeResponse2){
     this.storageService.setPanier(0)
     window.open(link, '_blank');
-  
+  }
     
     }  )}
 
@@ -198,9 +235,12 @@ async paiementLivraison(c: CommandeModel) {
     const createCommandeResponse: any = await this.commandeService.CreateCommande(c).toPromise();
     if (createCommandeResponse) {
       const createCommandeResponse2: any  = await this.panierservice.RemoveAllpanier(this.Email, this.Username).toPromise();
-        console.log(createCommandeResponse2)
+     if(createCommandeResponse2){
+      console.log('send Mail Test ')
       this.storageService.setPanier(0);
-        this.router.navigate(['/success']);
+     this.commandeService.sendOrderEmail(c).subscribe(res=>console.log(res))
+      this.router.navigate(['/success']);
+     }
     }
   } catch (error) {
     console.error("Une erreur s'est produite: ", error);

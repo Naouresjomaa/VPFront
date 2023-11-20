@@ -10,6 +10,7 @@ export class PanierService {
     constructor(private http: HttpClient) {}
     AddPanier(data: PanierModel): Observable<any> {
         const headers = new HttpHeaders();
+        console.log('dataaaaa',data)
         return this.http.post(environment.apiurl + "/AddPanier", data, {
             headers: headers,
         });

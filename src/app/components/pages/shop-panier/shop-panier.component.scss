@@ -579,7 +579,9 @@ main {
     align-self: center;
     padding: 20px;
 }
-.checkout__input input {
+
+ 
+.checkout__input input{
 	height: 50px;
 	width: 100%;
 	border: 1px solid #e1e1e1;
@@ -587,4 +589,14 @@ main {
 	color: #000000 !important;
 	padding-left: 20px;
 	margin-bottom: 20px;
+}
+.select{
+  height: 50px;
+	width: 100%;
+	border: 1px solid #e1e1e1;
+	font-size: 14px;
+	color: #000000 !important;
+	padding-left: 20px;
+	margin-bottom: 20px;
+
 }

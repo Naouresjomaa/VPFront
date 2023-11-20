@@ -53,11 +53,12 @@ export class CartComponent implements OnInit {
     getPanier(){
         this.panierservice.Getpanier(this.Email,this.Username).subscribe((res:any)=>
        {
-        this.paniers=res;
+        this.paniers=[...res];
         console.log('this.paniers',this.paniers)
          this.getTotal(this.paniers);
         
         this.nbrpanier=this.paniers.length
+        console.log('this.nbrpanier',this.nbrpanier)
        } )
         
     }

@@ -1,10 +1,8 @@
 import { OnInit } from '@angular/core';
-import { Component, Renderer2, ElementRef, HostListener, AfterViewInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BrandService } from 'src/app/services/brand.service';
-import { ClientService } from 'src/app/services/client.service';
 import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
@@ -13,8 +11,8 @@ import { PanierService } from 'src/app/services/panier.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-brands :any;
-affichage = true;
+  brands :any;
+  affichage = true;
   nbrpanier: any;
   filteredBrand: any;
   term: any;

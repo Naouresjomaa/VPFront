@@ -8,4 +8,5 @@ export class PanierModel {
     UserName: any;
     Email: any;
     taille:any;
+    pointure? :any;
 }

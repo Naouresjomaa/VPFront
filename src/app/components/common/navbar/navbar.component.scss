@@ -306,6 +306,9 @@ li {
 }
 .navbar a:active {
   color:rgb(233, 68, 161);
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 /* Add a class for the active link */

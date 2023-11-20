@@ -688,6 +688,9 @@ a:visited {
 .size-box:active, .size-box:focus {
 background-color:#8a8a8a;; /* Red when selected */
 }
+.size-box.selected {
+  background-color: #8a8a8a; /* Red when selected */
+}
 .navv {
   width: 300px;
   background: #fae7e7;

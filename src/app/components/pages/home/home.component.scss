@@ -25,10 +25,10 @@ header {
   justify-content: center;
   top: 0;
   height: 110vh;
-  max-height: 700px;
+  max-height: 100vw; //this 700px
   width: 100%;
   background-size: cover;
-  background-image: url(https://media.veepee.com/v1/media/1d4d7309-a2b3-458c-8898-11de44335a12);
+  background-image: url('../../../../assets/img/veepee_home.jpeg');
 }
 @media (max-width: 768px) {
   .header {
@@ -526,7 +526,7 @@ li:active {
 }
 .titlecontainer {
   display: flex;
-  margin-top: -35%;
+  margin-top: -55%;
   margin-bottom: 50px;
   padding: 50px 15%;
   margin-left: -6px;
@@ -925,6 +925,11 @@ h1:visited {
   margin-bottom: 50px;
 
 }
+.titlecontainer77{
+  margin-top: -822px;
+  margin-bottom: 50px;
+
+}
 
 .left d-flex{
   margin: 10px;
@@ -957,15 +962,46 @@ h1:visited {
  
 }
 /************************responsive*********************************/
-
+@media (max-width:1813px) {
+  .titlecontainer77 {
+    margin-top: -671px;
+  } }
 /*tablette responsive*/
+@media (max-width:1188px) {
+  .page-content {
+    gap: 0px;
+  
+    width: 100%;
+    /* margin-top: -50px; */
+    margin-left: 0px;
+    margin-bottom: 500px;
+    
+  }
+  .titlecontainer77 {
+    margin-top: -671px;
+    margin-bottom: 50px;
+  }
 
+  .title {
+    margin-top: 0px;
+  }
+  .titlecontainer{
+    margin-left: -106px;
+   
+  }
+  
+ 
+}
 @media (max-width: 1000px) and (min-width: 770px) {
   .footerheader {
     display: none;
   }
   .veeplogo {
     justify-content: normal; 
+  }
+  .titlecontainer77 {
+    margin-top: -471px;
+    margin-bottom: 50px;
   }
   nav {
     display: none;
@@ -1193,6 +1229,9 @@ display: none;
     justify-content: flex-start;
     gap: 30px;
   }
+  .titlecontainer77{
+    margin-top: -400px;
+  }
 
 }
 
@@ -1215,25 +1254,7 @@ display: none;
         margin-bottom: 500px;
       }
   }
-  @media (max-width:1120px) {
-    .page-content {
-      gap: 0px;
-    
-      width: 100%;
-      /* margin-top: -50px; */
-      margin-left: 0px;
-      margin-bottom: 500px;
-    }
-
-    .title {
-      margin-top: 0px;
-    }
-    .titlecontainer{
-      margin-left: -106px;
-    }
-    
-   
-  }
+ 
   @media (max-width:944px) {
   
     .page-content {
@@ -1277,3 +1298,43 @@ display: none;
       background-image: url('../../../../assets/img/home-three/veepee_mobile.jpeg');
     }
   }
+  @media (max-width: 760px){
+    .titlecontainer77{
+      margin-top: -424px;
+    }
+      }
+      @media (max-width: 750px) and (min-width: 500px){
+        .titlecontainer77{
+          margin-top: -324px;
+        }
+          }
+          @media (max-width: 501px) and (min-width: 400px){
+            .titlecontainer77{
+              margin-top: -295px;
+            }
+              }
+              @media (max-width: 445px) {
+                .titlecontainer77{
+                  margin-top: -241px;
+                }
+                  }
+                  @media (max-width: 397px) {
+                    .titlecontainer77{
+                      margin-top: -200px;
+                    }
+                      }
+                      @media (max-width: 341px) {
+                        .titlecontainer77{
+                          margin-top: -150px;
+                        }
+                          }
+                          @media (max-width: 289px) {
+                            .titlecontainer77{
+                              margin-top: -110px;
+                            }
+                              }
+                              @media (max-width: 247px) {
+                                .titlecontainer77{
+                                  margin-top: -80px;
+                                }
+                                  }

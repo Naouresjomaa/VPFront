@@ -16,8 +16,11 @@ import { PopupComponent } from '../popup/popup.component';
   styleUrls: ['./products-details.component.scss']
 })
 export class ProductsDetailsComponent implements OnInit {
-id:any;
-selectedTaille:any=''
+  nbrPointure:any;
+  nbrTaille:any;
+  id:any;
+  selectedSize: any = null;
+  selectedTaille:any=''
     data: any;
     product: any;
     nbrprod: any;
@@ -64,22 +67,33 @@ selectedTaille:any=''
   GetProduct(){
     this.produitservice.getProduitByid(this.id).subscribe((res:any)=>{
         this.produit=res[0];
-        console.log('thiq=s.produiiiiiiiiiiiiit',this.produit)
+        this.nbrPointure=this.produit.pointure ? this.produit.pointure[0].length : 0 ;
+        this.nbrTaille=this.produit.Taille ? this.produit.Taille[0].length : 0;
+        console.log('thiq=s.produiiiiiiiiiiiiit',this.produit,this.nbrPointure,this.nbrTaille)
+
     })
   }
   selectTaille(taille: string) {
     this.panier.taille = taille;
     console.log('this.selectedTaille',this.panier.taille)
 }
+selectPointure(pointure: string) {
+  this.panier.pointure = pointure;
+  console.log('this.selectedPointure',this.panier.pointure)
+}
 modifierQuantite(valeur): void {
   if(valeur == '1'){
     this.panier.Quantite += 1;
   }
   if(valeur == '-1'){
-    this.panier.Quantite -= 1;
+    if(this.panier.Quantite > 0){
+      this.panier.Quantite -= 1;
+    }
+    
   }
 }
   Topanier(prod: any) {
+    
     if(!this.Email && !this.Username){
       
         this.dialog.open(PopupComponent ,{
@@ -94,7 +108,17 @@ modifierQuantite(valeur): void {
         title: "selectionnez une taille svp !",
         text: "",
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1200,
+        icon: "error",
+    });
+    }
+    else if(!this.panier.pointure && this.produit.categorie=="Chaussure"){
+      Swal.fire({
+        position: "center",
+        title: "selectionnez une pointure svp !",
+        text: "",
+        showConfirmButton: false,
+        timer: 1200,
         icon: "error",
     });
     }
@@ -105,7 +129,7 @@ modifierQuantite(valeur): void {
           this.panier.PrixUnitaire = prod.PrixR;
           this.panier.PrixTotale = 
               this.panier.PrixUnitaire * this.panier.Quantite
-    
+              console.log('proddddddddddddd',this.panier)
                       this.panierservice
                           .AddPanier(this.panier)
                           .subscribe((res) => {
@@ -123,7 +147,7 @@ modifierQuantite(valeur): void {
                                       title: "Produit ajouté au panier",
                                       text: "",
                                       showConfirmButton: false,
-                                      timer: 3000,
+                                      timer: 800,
                                       icon: "success",
                                   });
                                   this.cdr.detectChanges();
@@ -131,13 +155,15 @@ modifierQuantite(valeur): void {
                                   this.panier.ProdDetails = [];
                                   this.panier.PrixTotale = 0;
                                   this.panier.PrixUnitaire = 0;
+                                  this.panier.taille=''
+                                  this.panier.pointure=''
                               } else {
                                   Swal.fire({
                                       position: "center",
                                       title: "Quelque chose n'a pas marché !",
                                       text: "",
                                       showConfirmButton: false,
-                                      timer: 3000,
+                                      timer: 1000,
                                       icon: "error",
                                   });
                               }

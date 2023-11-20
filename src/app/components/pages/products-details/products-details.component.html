@@ -28,35 +28,37 @@
             <div class="right">
                 
                 <h1 *ngIf="produit">{{produit.Produit}} - {{produit.Couleur}}</h1>
-
-
                <div class="detail">
                 <div *ngIf="produit" class="price"> <span class="pinkp">{{produit.PrixR}} DNT</span>
                     <span *ngIf="produit" class="greenspan">-{{produit.Reduction}}%</span></div>
                 <div class="size">
-                   
                          <span *ngIf="produit" class="greyp">{{produit.Prix}} DNT
                          </span>  
                 </div>
-              
-               
                </div>
                <div class="quantity "> 
                 
                 <p *ngIf="produit" class="para">{{produit.DetailsP}} <br></p>
-                <div *ngIf="produit && produit.categorie == 'Mode'">
+                <div *ngIf="produit && nbrTaille > 0">
                 <div class="pname">Les Tailles Disponibles</div>
                 <div *ngIf="produit" class="sizes" >
-                    <div  *ngFor="let b of produit.Taille">
-                    <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
+                    <div  *ngFor="let b of produit.Taille;let i=index">
+                    <div  *ngIf="produit.QteDsStock[i] > 0"
+                        [style.backgroundColor]="panier.taille === b ? '#8a8a8a' : 'initial'"
+                         class="size-box" tabindex="0" 
+                         (click)="selectTaille(b); selectedSize = b">{{b}}</div>
                 </div>
                 </div>
             </div>
-            <div *ngIf="produit && produit.categorie == 'Chaussure'">
+            <div *ngIf="produit &&  nbrPointure > 0">
                 <div class="pname">Les Pointures Disponibles</div>
                 <div *ngIf="produit" class="sizes" >
-                    <div *ngFor="let b of produit.pointure">
-                    <div class="size-box" tabindex="0" (click)="selectTaille(b)">{{b}}</div>
+                    <div *ngFor="let b of produit.pointure ;let i=index">
+                    <div *ngIf="produit.QteDsStockP[i] > 0"
+                        [style.backgroundColor]="panier.pointure === b ? '#8a8a8a' : 'initial'"
+                        class="size-box" 
+                        (click)="selectPointure(b);selectedSize = b" 
+                         tabindex="0" >{{b}}</div>
                 </div>
                 </div>
             </div>

@@ -26,6 +26,7 @@ brand : any
     color: '',
     tag:''
   };
+  filtrePointure :''
    currentPage: number = 1;
    pageSize: number = 4;
    filteredProducts: any;
@@ -62,10 +63,11 @@ brand : any
  })
  }
   getCurrentPageProducts() {
+    console.log('hereeeeeeeeeeee',this.filteredProducts)
     const startIndex = (this.currentPage - 1) * this.pageSize;
     if(this.filteredProducts){
+      console.log('hereeeeeeeeeeee',this.filteredProducts)
       return this.filteredProducts.slice(startIndex, startIndex + this.pageSize);
-
     }
 }
 previousPage() {
@@ -112,6 +114,11 @@ getMaxPage() {
     const element = document.querySelector('.inner-bg111') as HTMLElement;
     element.style.backgroundImage = `url(${imageUrl})`;
   }
+  applyFiltre2(){
+if(this.filtrePointure){
+  
+}
+  }
   applyFilter() {
   console.log(this.filterModel)
     if (this.filterModel.genre) {
@@ -129,16 +136,29 @@ getMaxPage() {
       this.filterModel.color=''
       this.term=''
     } 
-    if (this.filterModel.size && this.brand.Categorie=='Mode'|| (this.filterModel.size && this.showTailleExtrav)) {
+    if (this.filterModel.size && this.brand.Categorie=='Mode') {
       this.filteredProducts = this.produits.filter(product => product.Taille.includes(this.filterModel.size));
       this.filterModel.size=''
       this.term=''
     } 
-    if ((this.filterModel.size && this.brand.Categorie=='Chaussure') || (this.filterModel.size && this.showPointurExtrav ) ) {
+    if ((this.filterModel.size && this.brand.Categorie=='Chaussure') ) {
       this.filteredProducts = this.produits.filter(product => product.pointure.includes(this.filterModel.size));
       this.filterModel.size=''
       this.term=''
     } 
+    if(this.showPointurExtrav && this.filterModel.size ){
+      console.log('Filtering by size:',this.filterModel.size)
+      this.filteredProducts = this.produits.filter(product => {
+        const isMatch = product.pointure.includes(this.filterModel.size);
+        if (isMatch) {
+            console.log("Matched product:", product);
+        }
+        return isMatch;
+    }); 
+    console.log("this.filteredProducts:", this.filteredProducts);
+    this.filterModel.size=''
+      this.term=''
+    }
     if (this.filterModel.tag) {
       this.filteredProducts = this.produits.filter(product => product.DetailsP.includes(this.filterModel.tag));
       this.filterModel.tag=''
@@ -150,8 +170,9 @@ getMaxPage() {
     this.showPointurExtrav = false 
   }
   showPointureExtra(){
-    this.showPointurExtrav = true 
     this.showTailleExtrav=false
+    this.showPointurExtrav = true 
+   
   }
   closedFiltre(){
     this.showTailleExtrav=false

@@ -254,7 +254,15 @@ li {
   padding-bottom: 18px;
   border-radius: 3px;
 }
-
+input{
+  height: 50px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  font-size: 14px;
+  color: #b7b7b7;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
 .navpp {
   font-family: "Ubuntu";
   color: rgba(0, 0, 0, 0.861);
@@ -731,9 +739,7 @@ h1:visited {
     padding-left: 0;
   }
 
-  .dropdown {
-    display: none;
-  }
+  
  .cpm{
   display: flex;
   flex-wrap: wrap;

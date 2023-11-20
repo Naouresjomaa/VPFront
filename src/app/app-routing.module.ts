@@ -40,7 +40,6 @@ const routes: Routes = [
     { path: "Enfant", component: EnfantComponent   },
     { path: "Beaute", component: BeauteComponent , },
     { path: "Voyage", component: VoyageComponent ,  },
-    
     { path: "Gastronomie", component: GastronomieComponent,   },
     { path: "Loisir", component: LoisirComponent ,  },
     { path: "Sport", component: SportComponent ,  },
@@ -50,7 +49,6 @@ const routes: Routes = [
     { path: "Panier", component: CartComponent ,  canActivate: [AuthGuard]},
     { path: "shop-panier", component: ShopPanierComponent , canActivate: [AuthGuard] },
     { path: "shopBrand/:id", component: ShopBrandComponent ,  },
-  
     { path: "products-details/:id", component: ProductsDetailsComponent,   },
     { path: "error", component: ErrorComponent },
     { path: "parrainage", component: TermsConditionComponent ,  canActivate: [AuthGuard] },
